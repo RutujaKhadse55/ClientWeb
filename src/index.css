@@ -1,0 +1,48 @@
+@import './styles/main.css';
+
+/* Global Modal Backdrop & Sharp Container */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 39, 33, 0.7);
+  backdrop-filter: blur(4px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-container {
+  width: 100%;
+  max-width: 660px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 0px !important;
+  padding: 32px;
+  position: relative;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: #F3ECE4;
+  border: 1px solid #E2DBD2;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1D2321;
+  transition: all 0.2s;
+}
+
+.modal-close-btn:hover {
+  background: #1A3C34;
+  color: #FFFFFF;
+}

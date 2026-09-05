@@ -1,0 +1,729 @@
+/* ==========================================================================
+   WEBSITE 2: TOP 10 MLM COMPANIES IN INDIA & REVIEWS
+   THEME: WARM IVORY & EXECUTIVE BOTTLE GREEN / FOREST GREEN
+   ========================================================================== */
+
+:root {
+  --s2-bg-main: #FAF8F2;
+  --s2-bg-sec: #EAEDE3;
+  --s2-primary-green: #174A3A;
+  --s2-deep-green: #0D3328;
+  --s2-accent: #718C7B;
+  --s2-text: #252B28;
+  --s2-text-sec: #68706B;
+  --s2-border: #D9DED5;
+  --s2-card: #FFFDF9;
+  --s2-card-hover: #FFFFFF;
+  --s2-gold: #D97706;
+  --s2-gold-light: #F59E0B;
+  --s2-shadow-sm: 0 2px 8px rgba(23, 74, 58, 0.05);
+  --s2-shadow-md: 0 8px 24px rgba(23, 74, 58, 0.08);
+  --s2-shadow-lg: 0 16px 40px rgba(23, 74, 58, 0.12);
+  --s2-shadow-gold: 0 8px 24px rgba(217, 119, 6, 0.15);
+  --s2-radius: 14px;
+}
+
+.theme-site2 {
+  background-color: var(--s2-bg-main);
+  color: var(--s2-text);
+  min-height: 100vh;
+}
+
+/* Navbar (Site 2) */
+.s2-navbar {
+  background: rgba(250, 248, 242, 0.92);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--s2-border);
+  position: sticky;
+  top: 41px;
+  z-index: 1000;
+}
+
+.s2-nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 74px;
+  gap: 20px;
+}
+
+.s2-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.s2-brand-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--s2-primary-green), var(--s2-deep-green));
+  color: #FAF8F2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(23, 74, 58, 0.25);
+}
+
+.s2-brand-text h3 {
+  font-size: 1.25rem;
+  color: var(--s2-deep-green);
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+
+.s2-brand-text h3 span {
+  color: var(--s2-gold);
+}
+
+.s2-brand-text p {
+  font-size: 0.72rem;
+  color: var(--s2-text-sec);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.s2-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.s2-nav-btn {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--s2-text-sec);
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.s2-nav-btn:hover {
+  color: var(--s2-primary-green);
+  background: var(--s2-bg-sec);
+}
+
+.s2-nav-btn.active {
+  color: var(--s2-deep-green);
+  background: var(--s2-bg-sec);
+  font-weight: 700;
+}
+
+.s2-nav-hgr {
+  color: var(--s2-deep-green) !important;
+  font-weight: 700 !important;
+}
+
+.s2-hgr-badge {
+  background: linear-gradient(135deg, #D97706, #B45309);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 6px;
+  margin-left: 6px;
+}
+
+.s2-cta-jump {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #5A1825, #3D0D18);
+  color: #FAF7F2;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 10px 18px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(90, 24, 37, 0.2);
+  transition: all 0.2s ease;
+}
+
+.s2-cta-jump:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(90, 24, 37, 0.35);
+}
+
+/* Hero Section (Site 2) */
+.s2-hero {
+  padding: 60px 0 40px;
+  text-align: center;
+  position: relative;
+  background: radial-gradient(circle at 50% 10%, rgba(113, 140, 123, 0.1) 0%, transparent 60%);
+}
+
+.s2-hero-container {
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.s2-badge-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.s2-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--s2-bg-sec);
+  border: 1px solid var(--s2-border);
+  color: var(--s2-primary-green);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+.s2-updated-stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--s2-card);
+  border: 1px solid var(--s2-border);
+  color: var(--s2-text-sec);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+.s2-hero-title {
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: var(--s2-deep-green);
+  line-height: 1.15;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+}
+
+.s2-hero-title span {
+  color: var(--s2-gold);
+}
+
+.s2-hero-sub {
+  font-size: 1.2rem;
+  color: var(--s2-text-sec);
+  line-height: 1.65;
+  margin-bottom: 32px;
+}
+
+.s2-trust-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.s2-trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--s2-deep-green);
+  background: var(--s2-card);
+  border: 1px solid var(--s2-border);
+  padding: 8px 16px;
+  border-radius: 30px;
+  box-shadow: var(--s2-shadow-sm);
+}
+
+/* Top Comparison Table Section */
+.s2-comparison-section {
+  padding: 30px 0 50px;
+}
+
+.s2-table-card {
+  background: var(--s2-card);
+  border: 1px solid var(--s2-border);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--s2-shadow-sm);
+}
+
+.s2-top-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.s2-top-table th {
+  background: var(--s2-bg-sec);
+  color: var(--s2-deep-green);
+  padding: 16px 20px;
+  font-weight: 800;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid var(--s2-border);
+}
+
+.s2-top-table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--s2-border);
+  font-size: 0.92rem;
+  color: var(--s2-text);
+  vertical-align: middle;
+}
+
+.s2-top-table tr:hover td {
+  background: var(--s2-bg-sec);
+}
+
+.s2-row-hgr td {
+  background: rgba(217, 119, 6, 0.04) !important;
+}
+
+.s2-rank-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--s2-bg-sec);
+  color: var(--s2-deep-green);
+  font-weight: 800;
+  font-size: 0.85rem;
+  margin-right: 10px;
+}
+
+.s2-rank-circle.hgr-star-circle {
+  background: linear-gradient(135deg, #D97706, #B45309);
+  color: #fff;
+}
+
+.s2-market-pill {
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.s2-market-pill.established {
+  background: rgba(23, 74, 58, 0.1);
+  color: var(--s2-primary-green);
+}
+
+.s2-market-pill.global {
+  background: rgba(56, 189, 248, 0.12);
+  color: #0369A1;
+}
+
+.s2-market-pill.emerging {
+  background: rgba(217, 119, 6, 0.12);
+  color: var(--s2-gold);
+}
+
+.s2-btn-table-review {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--s2-deep-green);
+  background: var(--s2-bg-sec);
+  border: 1px solid var(--s2-border);
+  padding: 6px 14px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.s2-btn-table-review:hover {
+  background: var(--s2-primary-green);
+  color: #fff;
+}
+
+.s2-btn-table-hgr {
+  background: linear-gradient(135deg, #D97706, #B45309);
+  color: #fff;
+  border: none;
+}
+
+.s2-btn-table-hgr:hover {
+  background: #92400E;
+}
+
+/* Ranked Cards List (1 to 10) */
+.s2-listicle-section {
+  padding: 20px 0 60px;
+}
+
+.s2-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--s2-border);
+  padding-bottom: 18px;
+}
+
+.s2-toolbar h2 {
+  font-size: 1.6rem;
+  color: var(--s2-deep-green);
+}
+
+.s2-filters {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.s2-filter-btn {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--s2-text-sec);
+  background: var(--s2-card);
+  border: 1px solid var(--s2-border);
+  padding: 6px 14px;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+}
+
+.s2-filter-btn:hover {
+  color: var(--s2-primary-green);
+  border-color: var(--s2-accent);
+}
+
+.s2-filter-btn.active {
+  background: var(--s2-primary-green);
+  color: #fff;
+  border-color: var(--s2-primary-green);
+}
+
+.s2-cards-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.s2-company-card {
+  background: var(--s2-card);
+  border: 1px solid var(--s2-border);
+  border-radius: 18px;
+  padding: 32px;
+  box-shadow: var(--s2-shadow-sm);
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.s2-company-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--s2-shadow-md);
+  border-color: var(--s2-accent);
+}
+
+/* Highlighted HGR Corporation (#10) Spotlight Card */
+.s2-hgr-spotlight-card {
+  background: linear-gradient(135deg, #FFFDF9 0%, #FAF5EB 100%);
+  border: 2px solid var(--s2-gold);
+  box-shadow: var(--s2-shadow-gold);
+}
+
+.s2-hgr-spotlight-card::before {
+  content: '⭐ EDITOR’S PICK: EMERGING COMPANY TO WATCH';
+  position: absolute;
+  top: -12px;
+  left: 32px;
+  background: linear-gradient(135deg, #D97706, #B45309);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 4px 14px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.3);
+}
+
+.s2-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.s2-header-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.s2-rank-badge-big {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--s2-bg-sec);
+  color: var(--s2-deep-green);
+  font-weight: 900;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.s2-rank-badge-big.hgr-big {
+  background: linear-gradient(135deg, #D97706, #B45309);
+  color: #fff;
+}
+
+.s2-company-title {
+  font-size: 1.55rem;
+  color: var(--s2-deep-green);
+  line-height: 1.25;
+}
+
+.s2-company-sub {
+  font-size: 0.85rem;
+  color: var(--s2-text-sec);
+  margin-top: 4px;
+}
+
+.s2-rating-block {
+  text-align: right;
+}
+
+.s2-stars {
+  color: var(--s2-gold);
+  font-size: 1.1rem;
+}
+
+.s2-rating-score {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--s2-deep-green);
+}
+
+.s2-company-summary {
+  font-size: 1rem;
+  color: var(--s2-text);
+  line-height: 1.65;
+  margin-bottom: 18px;
+}
+
+.s2-why-notable {
+  background: var(--s2-bg-sec);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(217, 222, 213, 0.8);
+}
+
+.s2-why-notable strong {
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: var(--s2-primary-green);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+.s2-why-notable p {
+  font-size: 0.92rem;
+  color: var(--s2-text);
+  line-height: 1.55;
+}
+
+.s2-categories-strip {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.s2-cat-chip {
+  background: #FFFFFF;
+  border: 1px solid var(--s2-border);
+  color: var(--s2-deep-green);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 6px;
+}
+
+/* HGR 4-Pillar Grid inside listicle */
+.s2-hgr-pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.s2-pillar-box {
+  background: #FFFFFF;
+  border: 1px solid var(--s2-border);
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.s2-pillar-box h5 {
+  font-size: 0.92rem;
+  color: var(--s2-deep-green);
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.s2-pillar-box p {
+  font-size: 0.82rem;
+  color: var(--s2-text-sec);
+  line-height: 1.45;
+}
+
+.s2-pros-cons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.s2-pros-box, .s2-cons-box {
+  background: var(--s2-bg-sec);
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.s2-pros-box h5 {
+  color: var(--s2-primary-green);
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.s2-cons-box h5 {
+  color: #92400E;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.s2-pros-box ul li, .s2-cons-box ul li {
+  font-size: 0.86rem;
+  color: var(--s2-text);
+  margin-bottom: 4px;
+  position: relative;
+  padding-left: 14px;
+}
+
+.s2-pros-box ul li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--s2-primary-green);
+}
+
+.s2-cons-box ul li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: #92400E;
+}
+
+.s2-card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  border-top: 1px solid var(--s2-border);
+  padding-top: 18px;
+}
+
+.s2-btn-hgr-full {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #174A3A, #0D3328);
+  color: #FAF8F2;
+  font-weight: 800;
+  font-size: 0.95rem;
+  padding: 12px 24px;
+  border-radius: 10px;
+  box-shadow: var(--s2-shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.s2-btn-hgr-full:hover {
+  background: #0D3328;
+  transform: translateY(-2px);
+}
+
+.s2-btn-quick-review {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--s2-bg-sec);
+  color: var(--s2-deep-green);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 10px 18px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.s2-btn-quick-review:hover {
+  background: var(--s2-primary-green);
+  color: #fff;
+}
+
+/* Footer (Site 2) */
+.s2-footer {
+  background: var(--s2-deep-green);
+  color: #FAF8F2;
+  padding: 60px 0 30px;
+  margin-top: 60px;
+}
+
+.s2-footer h4 {
+  color: #FAF8F2;
+  font-size: 1rem;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.s2-footer p {
+  color: #C8D1CA;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.s2-footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.s2-footer-links button {
+  color: #C8D1CA;
+  text-align: left;
+  font-size: 0.88rem;
+  transition: color 0.2s;
+}
+
+.s2-footer-links button:hover {
+  color: #fff;
+}
+
+.s2-footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 24px;
+  margin-top: 40px;
+  font-size: 0.8rem;
+  color: #9AA89D;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
