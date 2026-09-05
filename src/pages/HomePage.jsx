@@ -15,28 +15,15 @@ export default function HomePage({ onNavigate, onOpenChecklist }) {
               <h1 className="hero-title serif-headline">
                 Top 10 MLM Companies in India: Market Leadership, Categories & Emerging Trends
               </h1>
-              
-              <div className="hero-meta-row">
-                <span>By Industry Research Desk</span>
-                <span>•</span>
-                <span>Updated: September 2026</span>
-                <span>•</span>
-                <span><Clock size={13} style={{ verticalAlign: 'middle', marginRight: '4px' }} /> 10 min read</span>
-              </div>
 
-              <div className="hero-image-wrap">
-                <img 
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&auto=format&fit=crop&q=80" 
-                  alt="Top 10 MLM Companies in India" 
-                />
-              </div>
+
 
               <p className="hero-excerpt">
                 India's direct selling sector has developed into a diverse multi-category ecosystem spanning wellness, nutrition, beauty, and daily FMCG goods. This comprehensive market overview examines 10 notable companies shaping the Indian landscape, from legacy pioneers like Vestige, Amway, and Modicare to emerging digital-first innovators.
               </p>
 
               <div>
-                <button 
+                <button
                   className="btn-card-action"
                   onClick={() => onNavigate('top-10-rankings')}
                   style={{ background: '#1A3C34', color: '#FFFFFF' }}
@@ -136,7 +123,7 @@ export default function HomePage({ onNavigate, onOpenChecklist }) {
                         <span style={{ color: '#5C6662', fontSize: '0.85rem' }}>HQ: {comp.hq}</span>
                       </td>
                       <td>
-                        <button 
+                        <button
                           className="btn-view-all"
                           onClick={() => onNavigate('top-10-rankings')}
                           style={{ fontSize: '0.8rem' }}
@@ -165,9 +152,9 @@ export default function HomePage({ onNavigate, onOpenChecklist }) {
             {/* Card 1: Benefits */}
             <div className="editorial-card">
               <div className="card-image">
-                <img 
-                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&auto=format&fit=crop&q=80" 
-                  alt="Benefits of Direct Selling" 
+                <img
+                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&auto=format&fit=crop&q=80"
+                  alt="Benefits of Direct Selling"
                 />
               </div>
               <span className="category-tag">Foundations</span>
@@ -184,9 +171,9 @@ export default function HomePage({ onNavigate, onOpenChecklist }) {
             {/* Card 2: How to Choose */}
             <div className="editorial-card">
               <div className="card-image">
-                <img 
-                  src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&auto=format&fit=crop&q=80" 
-                  alt="How to Choose the Right MLM" 
+                <img
+                  src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&auto=format&fit=crop&q=80"
+                  alt="How to Choose the Right MLM"
                 />
               </div>
               <span className="category-tag" style={{ background: '#8C4A52' }}>Evaluation</span>
@@ -203,9 +190,9 @@ export default function HomePage({ onNavigate, onOpenChecklist }) {
             {/* Card 3: MLM vs Job */}
             <div className="editorial-card">
               <div className="card-image">
-                <img 
-                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&auto=format&fit=crop&q=80" 
-                  alt="MLM vs Traditional Business or Job" 
+                <img
+                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&auto=format&fit=crop&q=80"
+                  alt="MLM vs Traditional Business or Job"
                 />
               </div>
               <span className="category-tag" style={{ background: '#C27D38' }}>Comparative Study</span>
@@ -236,7 +223,7 @@ export default function HomePage({ onNavigate, onOpenChecklist }) {
               Before investing time or capital with any direct selling company, verify legal MCA registration, mandatory 30-day buyback policies, and genuine consumer demand.
             </p>
           </div>
-          <button 
+          <button
             className="btn-card-action"
             onClick={() => onNavigate('how-to-choose')}
             style={{ background: '#1A3C34', color: '#FFFFFF', padding: '14px 28px', fontSize: '0.92rem' }}
