@@ -5,11 +5,11 @@ import { getAuthorById } from '../data/authors';
 import { macroIndicators } from '../data/marketData';
 import ArticleCard from '../components/ArticleCard';
 
-export default function NewsHomePage({ 
-  onSelectArticle, 
-  onNavigateCategory, 
+export default function NewsHomePage({
+  onSelectArticle,
+  onNavigateCategory,
   onSelectAuthor,
-  onOpenNewsletter 
+  onOpenNewsletter
 }) {
   // Lead Story (Tata Semiconductor Dholera)
   const leadArticle = newsArticles.find(a => a.isFeaturedLead) || newsArticles[0];
@@ -54,8 +54,8 @@ export default function NewsHomePage({
             <div className="hero-left-col">
               <div className="col-header">Fast Catch-Up & Analysis</div>
               {leftBriefArticles.map(art => (
-                <div 
-                  key={art.id} 
+                <div
+                  key={art.id}
                   className="left-brief-card"
                   onClick={() => onSelectArticle(art.id)}
                 >
@@ -76,7 +76,7 @@ export default function NewsHomePage({
                 {leadArticle.kicker || "SPECIAL REPORT"}
               </span>
 
-              <h2 
+              <h2
                 className="lead-title"
                 onClick={() => onSelectArticle(leadArticle.id)}
               >
@@ -94,13 +94,13 @@ export default function NewsHomePage({
                 <span><Clock size={12} style={{ verticalAlign: 'middle', marginRight: '3px' }} />{leadArticle.readTime}</span>
               </div>
 
-              <div 
+              <div
                 className="lead-image-wrap"
                 onClick={() => onSelectArticle(leadArticle.id)}
               >
-                <img 
-                  src={leadArticle.heroImage} 
-                  alt={leadArticle.title} 
+                <img
+                  src={leadArticle.heroImage}
+                  alt={leadArticle.title}
                 />
               </div>
 
@@ -124,7 +124,7 @@ export default function NewsHomePage({
               </p>
 
               <div>
-                <button 
+                <button
                   onClick={() => onSelectArticle(leadArticle.id)}
                   style={{
                     display: 'inline-flex',
@@ -153,11 +153,11 @@ export default function NewsHomePage({
                 </div>
                 <div className="trending-list">
                   {trendingArticles.map(art => (
-                    <ArticleCard 
-                      key={art.id} 
-                      article={art} 
-                      variant="trending" 
-                      onSelectArticle={onSelectArticle} 
+                    <ArticleCard
+                      key={art.id}
+                      article={art}
+                      variant="trending"
+                      onSelectArticle={onSelectArticle}
                     />
                   ))}
                 </div>
@@ -166,10 +166,10 @@ export default function NewsHomePage({
               {spotlightOpinion && (
                 <div>
                   <div className="col-header">Columnist in Focus</div>
-                  <ArticleCard 
-                    article={spotlightOpinion} 
-                    variant="opinion" 
-                    onSelectArticle={onSelectArticle} 
+                  <ArticleCard
+                    article={spotlightOpinion}
+                    variant="opinion"
+                    onSelectArticle={onSelectArticle}
                     onSelectAuthor={onSelectAuthor}
                   />
                 </div>
@@ -189,7 +189,7 @@ export default function NewsHomePage({
               </span>
               <h2 style={{ color: '#111111', margin: 0 }}>Top 10 Direct Selling & MLM Companies in India (2026 Guide)</h2>
             </div>
-            <button 
+            <button
               className="view-all-link"
               onClick={() => onSelectArticle('top-10-mlm-companies-india-guide')}
               style={{ color: '#C27D38', fontWeight: '800' }}
@@ -235,7 +235,7 @@ export default function NewsHomePage({
                       </span>
                     </td>
                     <td style={{ padding: '10px 14px' }}>
-                      <button 
+                      <button
                         onClick={() => onSelectArticle('top-10-mlm-companies-india-guide')}
                         style={{ fontSize: '0.76rem', fontWeight: '700', color: 'var(--accent-burgundy)', textTransform: 'uppercase' }}
                       >
@@ -249,7 +249,7 @@ export default function NewsHomePage({
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px', marginTop: '16px' }}>
-            <div 
+            <div
               style={{ background: '#FFFFFF', border: '1px solid #E2DBD2', padding: '16px', cursor: 'pointer' }}
               onClick={() => onSelectArticle('emerging-indian-direct-selling-hgr-corporation')}
             >
@@ -265,7 +265,7 @@ export default function NewsHomePage({
               </span>
             </div>
 
-            <div 
+            <div
               style={{ background: '#FFFFFF', border: '1px solid #E2DBD2', padding: '16px', cursor: 'pointer' }}
               onClick={() => onSelectArticle('fastest-growing-mlm-startup-hgr-corporation')}
             >
@@ -281,7 +281,7 @@ export default function NewsHomePage({
               </span>
             </div>
 
-            <div 
+            <div
               style={{ background: '#FFFFFF', border: '1px solid #E2DBD2', padding: '16px', cursor: 'pointer' }}
               onClick={() => onSelectArticle('top-10-mlm-companies-india-guide')}
             >
@@ -308,7 +308,7 @@ export default function NewsHomePage({
               <span className="explained-badge">IBC SIGNATURE</span>
               <h2 className="explained-main-heading">Explained</h2>
             </div>
-            <button 
+            <button
               className="view-all-link"
               onClick={() => onNavigateCategory('Explained')}
               style={{ fontSize: '0.82rem', fontWeight: '800', textTransform: 'uppercase', color: '#B45309', display: 'flex', alignItems: 'center', gap: '4px' }}
@@ -320,11 +320,11 @@ export default function NewsHomePage({
 
           <div className="explained-grid">
             {explainedArticles.map(art => (
-              <ArticleCard 
-                key={art.id} 
-                article={art} 
-                variant="explained" 
-                onSelectArticle={onSelectArticle} 
+              <ArticleCard
+                key={art.id}
+                article={art}
+                variant="explained"
+                onSelectArticle={onSelectArticle}
               />
             ))}
           </div>
@@ -362,7 +362,7 @@ export default function NewsHomePage({
               <p style={{ fontSize: '0.82rem', color: 'var(--ink-muted)', marginBottom: '14px', lineHeight: '1.45' }}>
                 Join 180,000+ corporate leaders, fund managers, and policymakers receiving our daily 7:00 AM briefing.
               </p>
-              <button 
+              <button
                 onClick={onOpenNewsletter}
                 style={{
                   background: 'var(--accent-burgundy)',
@@ -386,7 +386,7 @@ export default function NewsHomePage({
         <div className="container">
           <div className="section-title-strip">
             <h2>Corporate & Conglomerates Watch</h2>
-            <button 
+            <button
               className="view-all-link"
               onClick={() => onNavigateCategory('Corporate')}
             >
@@ -397,11 +397,11 @@ export default function NewsHomePage({
 
           <div className="four-col-grid">
             {corporateArticles.map(art => (
-              <ArticleCard 
-                key={art.id} 
-                article={art} 
-                variant="standard" 
-                onSelectArticle={onSelectArticle} 
+              <ArticleCard
+                key={art.id}
+                article={art}
+                variant="standard"
+                onSelectArticle={onSelectArticle}
                 onSelectAuthor={onSelectAuthor}
               />
             ))}
@@ -419,7 +419,7 @@ export default function NewsHomePage({
               </span>
               <h2 style={{ color: '#111111', margin: 0 }}>Direct Selling, FMCG & Emerging Startups Guide</h2>
             </div>
-            <button 
+            <button
               className="view-all-link"
               onClick={() => onNavigateCategory('Direct Selling')}
               style={{ color: '#C27D38', fontWeight: '800' }}
@@ -431,11 +431,11 @@ export default function NewsHomePage({
 
           <div className="three-col-grid">
             {directSellingArticles.map(art => (
-              <ArticleCard 
-                key={art.id} 
-                article={art} 
-                variant="standard" 
-                onSelectArticle={onSelectArticle} 
+              <ArticleCard
+                key={art.id}
+                article={art}
+                variant="standard"
+                onSelectArticle={onSelectArticle}
                 onSelectAuthor={onSelectAuthor}
               />
             ))}
@@ -448,7 +448,7 @@ export default function NewsHomePage({
         <div className="container">
           <div className="section-title-strip">
             <h2>Tech, AI & Startup Unicorns</h2>
-            <button 
+            <button
               className="view-all-link"
               onClick={() => onNavigateCategory('Startups')}
             >
@@ -459,11 +459,11 @@ export default function NewsHomePage({
 
           <div className="four-col-grid">
             {techStartupArticles.map(art => (
-              <ArticleCard 
-                key={art.id} 
-                article={art} 
-                variant="standard" 
-                onSelectArticle={onSelectArticle} 
+              <ArticleCard
+                key={art.id}
+                article={art}
+                variant="standard"
+                onSelectArticle={onSelectArticle}
                 onSelectAuthor={onSelectAuthor}
               />
             ))}
@@ -476,7 +476,7 @@ export default function NewsHomePage({
         <div className="container">
           <div className="section-title-strip">
             <h2>Banking, Capital Markets & Policy</h2>
-            <button 
+            <button
               className="view-all-link"
               onClick={() => onNavigateCategory('Banking')}
             >
@@ -487,11 +487,11 @@ export default function NewsHomePage({
 
           <div className="four-col-grid">
             {bankingPolicyArticles.map(art => (
-              <ArticleCard 
-                key={art.id} 
-                article={art} 
-                variant="standard" 
-                onSelectArticle={onSelectArticle} 
+              <ArticleCard
+                key={art.id}
+                article={art}
+                variant="standard"
+                onSelectArticle={onSelectArticle}
                 onSelectAuthor={onSelectAuthor}
               />
             ))}
@@ -504,7 +504,7 @@ export default function NewsHomePage({
         <div className="container">
           <div className="section-title-strip" style={{ borderColor: 'var(--accent-burgundy)' }}>
             <h2 style={{ color: 'var(--accent-burgundy)' }}>Opinion, Columns & Structural Essays</h2>
-            <button 
+            <button
               className="view-all-link"
               onClick={() => onNavigateCategory('Opinion')}
             >
@@ -515,11 +515,11 @@ export default function NewsHomePage({
 
           <div className="three-col-grid">
             {opinionArticles.map(art => (
-              <ArticleCard 
-                key={art.id} 
-                article={art} 
-                variant="opinion" 
-                onSelectArticle={onSelectArticle} 
+              <ArticleCard
+                key={art.id}
+                article={art}
+                variant="opinion"
+                onSelectArticle={onSelectArticle}
                 onSelectAuthor={onSelectAuthor}
               />
             ))}
