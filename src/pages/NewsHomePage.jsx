@@ -198,8 +198,8 @@ export default function NewsHomePage({
             </button>
           </div>
 
-          <div style={{ background: '#FFFFFF', border: '1px solid #E2DBD2', overflowX: 'auto', marginBottom: '16px' }}>
-            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.88rem', textAlign: 'left' }}>
+          <div className="mlm-table-wrapper" style={{ background: '#FFFFFF', border: '1px solid #E2DBD2', overflowX: 'auto', marginBottom: '16px', WebkitOverflowScrolling: 'touch' }}>
+            <table style={{ width: '100%', minWidth: '540px', borderCollapse: 'collapse', fontSize: '0.88rem', textAlign: 'left' }}>
               <thead>
                 <tr style={{ background: '#F8FAFC', borderBottom: '2px solid var(--ink-border-dark)' }}>
                   <th style={{ padding: '10px 14px', fontWeight: '800', textTransform: 'uppercase', fontSize: '0.75rem' }}>Rank & Company</th>
