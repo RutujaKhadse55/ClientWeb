@@ -1,277 +1,157 @@
 export const companiesData = [
   {
-    id: "vestige",
+    id: "tiens-india",
     rank: 1,
-    name: "Vestige Marketing Pvt. Ltd.",
-    marketType: "Established Indian",
-    focusArea: "Health, Wellness & Personal Care",
-    rating: 4.7,
-    reviewsCount: "12,400+ reviews",
-    yearFounded: "2004",
-    hq: "New Delhi, India",
+    name: "Tiens India (Tianshi)",
+    marketType: "Emerging Indian",
+    focusArea: "Traditional Chinese Health Products",
+    rating: 4.6,
+    reviewsCount: "7,200+ reviews",
+    yearFounded: "1995 (India: 2002)",
+    hq: "Tianjin, China / New Delhi, India",
     image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&auto=format&fit=crop&q=80",
     productCategories: [
-      "Health & Wellness Supplements",
-      "Ayusante Herbal Formulations",
-      "Personal Care & Grooming",
-      "Agri-Products",
-      "Home Hygiene & Air Purifiers"
+      "Tiens Nutrient Super Calcium Powder",
+      "Chitosan & Cordyceps Capsules",
+      "Healthcare Wellness Equipment",
+      "Personal Care & Skincare",
+      "Air Purifiers & Home Care"
     ],
-    summary: "Vestige is an Indian-origin direct selling enterprise with a large domestic and international distribution footprint across health, nutrition, personal care, and lifestyle categories.",
-    whyNotable: "Its established domestic manufacturing partnerships, extensive pan-India distributor network, and broad product portfolio spanning over 300+ SKUs make it one of the largest domestic direct selling entities in India.",
+    summary: "Tiens is a direct selling company with a strong Indian operating presence, offering traditional Chinese medicine-inspired nutritional supplements, personal care, and healthcare devices.",
+    whyNotable: "Tiens represents the emerging presence of specialized wellness brands in India's direct selling market, with a distinct health and calcium supplement product philosophy.",
     pros: [
-      "Extensive nationwide distribution and physical branch offices",
-      "Wide price spectrum catering to mass-market and premium consumers",
-      "Regular regional distributor skill and product training seminars"
+      "Extensive distribution presence across Indian states with documented product heritage",
+      "Flagship Nutrient Super Calcium line with high consumer loyalty",
+      "Unique combination of supplements and wellness healthcare devices"
     ],
     cons: [
-      "High distributor saturation across major metropolitan areas",
-      "Multi-tier compensation structure requires sustained volume consistency"
+      "Higher price point compared to local generic health brands",
+      "Requires trained distributors to explain wellness device usage"
     ]
   },
   {
-    id: "amway",
+    id: "winnertree",
     rank: 2,
-    name: "Amway India Enterprises",
-    marketType: "Global Multinational",
-    focusArea: "Nutrition, Beauty & Home Care",
-    rating: 4.6,
-    reviewsCount: "18,900+ reviews",
-    yearFounded: "1959 (India: 1998)",
-    hq: "Ada, Michigan / Gurugram, India",
-    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&auto=format&fit=crop&q=80",
-    productCategories: [
-      "Nutrilite Dietary Supplements",
-      "Artistry Premium Skincare",
-      "Glister Oral Care",
-      "Amway Home Cleaners",
-      "Atmosphere Air Treatment"
-    ],
-    summary: "Amway is among the world's most recognized direct selling companies, operating in India since 1998 with a state-of-the-art manufacturing plant in Madurai, Tamil Nadu.",
-    whyNotable: "Its global research credentials, patented Nutrilite formulations, and strict consumer satisfaction refund standards represent long-standing benchmarks in the direct selling industry.",
-    pros: [
-      "High brand recognition and patented nutritional formulations",
-      "LEED Gold certified domestic manufacturing plant in Tamil Nadu",
-      "Documented 30-day consumer refund and quality assurance policy"
-    ],
-    cons: [
-      "Higher price point relative to domestic mass-market Indian brands",
-      "Requires developed consultative sales skills to move premium products"
-    ]
-  },
-  {
-    id: "mi-lifestyle",
-    rank: 3,
-    name: "Mi Lifestyle Marketing Global Pvt. Ltd.",
-    marketType: "Indian Enterprise",
-    focusArea: "Ayurvedic Healthcare & Lifestyle",
+    name: "WinnerTree (India)",
+    marketType: "Emerging Indian",
+    focusArea: "Agriculture & Organic Wellness",
     rating: 4.5,
-    reviewsCount: "9,800+ reviews",
-    yearFounded: "2013",
-    hq: "Chennai, Tamil Nadu, India",
-    image: "https://images.unsplash.com/photo-1608248597359-2ff90dfd322c?w=800&auto=format&fit=crop&q=80",
-    productCategories: [
-      "Elements Wellness (AYUSH Premium)",
-      "On & On Health Supplements",
-      "Aahar Food & Agro Care",
-      "Mi Home & Personal Care",
-      "Daily-Use FMCG"
-    ],
-    summary: "Mi Lifestyle Marketing Global is an Indian direct selling company offering traditional Ayurvedic wellness formulations combined with modern lifestyle and everyday consumer goods.",
-    whyNotable: "Its Elements Wellness brand holds the Ministry of AYUSH Premium Mark certification, providing formal validation for its domestic healthcare portfolio.",
-    pros: [
-      "AYUSH Premium Mark certification for flagship health formulations",
-      "Strong ground-level presence in Tier-2, Tier-3, and rural markets",
-      "Diverse product range covering agriculture, personal care, and wellness"
-    ],
-    cons: [
-      "Online customer purchasing portal has room for digital modernization",
-      "Relies heavily on traditional offline distributor meetings"
-    ]
-  },
-  {
-    id: "modicare",
-    rank: 4,
-    name: "Modicare Ltd.",
-    marketType: "Established Indian",
-    focusArea: "Wellness, Cosmetics & FMCG",
-    rating: 4.5,
-    reviewsCount: "11,200+ reviews",
-    yearFounded: "1996",
-    hq: "New Delhi, India",
-    image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800&auto=format&fit=crop&q=80",
-    productCategories: [
-      "Well Nutrition & Immunity",
-      "Urban Color London Cosmetics",
-      "Schloka Herbal Personal Care",
-      "Home & Auto Care Solutions",
-      "Food, Beverages & Jewellery"
-    ],
-    summary: "Modicare is India's pioneer domestic direct selling company, backed by the multi-generational KK Modi conglomerate with a catalog of over 350+ consumer products.",
-    whyNotable: "Its three-decade Indian operating history, diverse consumer price points, and 100% satisfaction guarantee have established it as a household name in Indian direct selling.",
-    pros: [
-      "Strong corporate backing from the established KK Modi Group",
-      "100% Satisfaction Guarantee / Refund policy on all product lines",
-      "Broad product selection tailored to middle-income Indian families"
-    ],
-    cons: [
-      "Intense internal competition among veteran upline networks",
-      "Digital mobile apps and distributor dashboards are undergoing modernization"
-    ]
-  },
-  {
-    id: "herbalife",
-    rank: 5,
-    name: "Herbalife Nutrition India",
-    marketType: "Global Multinational",
-    focusArea: "Weight Management & Nutrition",
-    rating: 4.5,
-    reviewsCount: "14,300+ reviews",
-    yearFounded: "1980 (India: 1999)",
-    hq: "Los Angeles / Bengaluru, India",
-    image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&auto=format&fit=crop&q=80",
-    productCategories: [
-      "Formula 1 Meal Replacement Shakes",
-      "Afresh Energy Health Drinks",
-      "Personalized Protein Powders",
-      "Herbalife24 Sports Nutrition",
-      "Skin & Targeted Botanicals"
-    ],
-    summary: "Herbalife is a global nutrition company operating across 90+ countries, widely recognized in India for meal-replacement shakes, fitness coaching, and community wellness clubs.",
-    whyNotable: "Its focused specialization in weight management and sports nutrition, combined with physical daily 'Nutrition Clubs', has created a distinctive retail consumption model.",
-    pros: [
-      "Global category leader in meal replacement and fitness nutrition",
-      "Community-driven daily coaching model through local Nutrition Clubs",
-      "High repeat consumption among dedicated wellness customers"
-    ],
-    cons: [
-      "Requires consistent personal coaching and customer habit tracking",
-      "Supervisory qualification volume thresholds can be demanding for new sellers"
-    ]
-  },
-  {
-    id: "forever-living",
-    rank: 6,
-    name: "Forever Living Products (FLP)",
-    marketType: "Global Multinational",
-    focusArea: "Aloe Vera & Bee Wellness",
-    rating: 4.4,
-    reviewsCount: "8,700+ reviews",
-    yearFounded: "1978 (India: 2000)",
-    hq: "Scottsdale, Arizona / Mumbai, India",
+    reviewsCount: "4,900+ reviews",
+    yearFounded: "2014",
+    hq: "Pune, Maharashtra, India",
     image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&auto=format&fit=crop&q=80",
     productCategories: [
-      "Pure Stabilized Aloe Vera Gel Drinks",
-      "Bee Honey, Pollen & Royal Jelly",
-      "Forever Bright Toothgel & Skincare",
-      "Nutritional Supplements (Arctic Sea)",
-      "Weight Management (Clean 9)"
+      "Bio-Organic Agro Enhancers",
+      "Herbal Health Supplements",
+      "Eco-Friendly Home Cleaners",
+      "Personal Care & Hair Oils",
+      "Ayurvedic Daily Tonics"
     ],
-    summary: "Forever Living Products is a global direct seller recognized for its aloe vera and bee-derived wellness line, operating across 160+ countries with vertically integrated farms.",
-    whyNotable: "Its single-ingredient purity focus, ownership of aloe plantations, and International Aloe Science Council (IASC) certification give it a distinct market identity.",
+    summary: "WinnerTree is an Indian direct selling company focusing on organic agricultural products, herbal health supplements, and eco-friendly consumer goods.",
+    whyNotable: "WinnerTree's organic agriculture product focus and sustainability emphasis represent the emerging eco-conscious segment within Indian direct selling.",
     pros: [
-      "International Aloe Science Council (IASC) seal of certified purity",
-      "Vertically integrated supply chain from aloe fields to final bottling",
-      "Global distributor ID allows cross-border business expansion"
+      "Strong demand for bio-organic agricultural products among Indian farmers",
+      "Affordable mass-market pricing structure for everyday rural items",
+      "Dedicated field training seminars for agricultural distributors"
     ],
     cons: [
-      "Imported premium pricing compared to domestic herbal alternatives",
-      "Product focus is heavily concentrated around aloe vera and bee derivatives"
+      "Seasonal demand fluctuations tied to crop harvest cycles",
+      "Digital presence and social selling tools are still evolving"
     ]
   },
   {
-    id: "imc",
-    rank: 7,
-    name: "IMC Business (International Marketing Corp)",
-    marketType: "Indian Enterprise",
-    focusArea: "Ayurveda & Herbal FMCG",
-    rating: 4.4,
-    reviewsCount: "6,900+ reviews",
-    yearFounded: "2007",
-    hq: "Ludhiana, Punjab, India",
+    id: "sami-direct",
+    rank: 3,
+    name: "Sami Direct",
+    marketType: "Emerging Indian",
+    focusArea: "Herbal & Botanical Wellness",
+    rating: 4.6,
+    reviewsCount: "6,800+ reviews",
+    yearFounded: "2010",
+    hq: "Bengaluru, Karnataka, India",
+    image: "https://images.unsplash.com/photo-1608248597359-2ff90dfd322c?w=800&auto=format&fit=crop&q=80",
+    productCategories: [
+      "Curcumin C3 Complex Formulations",
+      "Johara Cosmetics & Skincare",
+      "Bioperine Bio-availability Enhancers",
+      "Weight Management & Wellness",
+      "Nutraceuticals & Botanicals"
+    ],
+    summary: "Sami Direct is an Indian direct selling company that draws on the parent group's expertise in botanical extracts and phytochemical research to offer herbal health products.",
+    whyNotable: "Sami Direct's phytochemical research heritage and herbal product credibility represent an emerging category of science-backed Indian direct sellers.",
+    pros: [
+      "Backed by over 300+ global patents in phytochemical research",
+      "Standardized herbal formulations with proven clinical efficacy",
+      "Strong export pedigree and international quality standards"
+    ],
+    cons: [
+      "Premium positioning relative to mass-market regional herbal brands",
+      "Requires product education to explain scientific bio-availability benefits"
+    ]
+  },
+  {
+    id: "smartway-india",
+    rank: 4,
+    name: "Smartway India",
+    marketType: "Emerging Indian",
+    focusArea: "Consumer Products & Daily Essentials",
+    rating: 4.5,
+    reviewsCount: "5,400+ reviews",
+    yearFounded: "2012",
+    hq: "Chennai, Tamil Nadu, India",
+    image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800&auto=format&fit=crop&q=80",
+    productCategories: [
+      "Smartway Health & Immunity Drops",
+      "Personal Care & Oral Hygiene",
+      "Home Hygiene & Detergents",
+      "Agriculture Boosters & Agro-Care",
+      "Nutritional Beverages"
+    ],
+    summary: "Smartway India is a domestic direct selling company offering daily use consumer products including health supplements, home care items, and personal care goods.",
+    whyNotable: "Smartway India's focus on daily use consumer essentials reflects the emerging category of Indian direct sellers targeting repeat-purchase household products.",
+    pros: [
+      "High repeat consumption products accessible to middle-income families",
+      "Strong distribution footprint across South and Central India",
+      "Transparent distributor incentive structures"
+    ],
+    cons: [
+      "Lower brand recognition across North Indian metropolitan hubs",
+      "E-commerce ordering portal undergoing modern visual redesign"
+    ]
+  },
+  {
+    id: "elken-india",
+    rank: 5,
+    name: "Elken India",
+    marketType: "Emerging Indian",
+    focusArea: "Health, Beauty & Water Purification",
+    rating: 4.5,
+    reviewsCount: "5,100+ reviews",
+    yearFounded: "1995 (India: 2011)",
+    hq: "Kuala Lumpur, Malaysia / Chennai, India",
     image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&auto=format&fit=crop&q=80",
     productCategories: [
-      "Shri Tulsi & Herbal Drops",
-      "Ayurvedic Medicines & Syrups",
-      "Herbal Personal & Hair Care",
-      "Organic Agro-Care & Veterinary",
-      "Spices & Health Beverages"
+      "Elken Bio Pure Reverse Osmosis Water Systems",
+      "Spirulina & El Marino Blanc Skincare",
+      "Molecular Reform Therapy (MRT) Supplements",
+      "Personal Hygiene & Body Care",
+      "Weight Management Solutions"
     ],
-    summary: "International Marketing Corporation (IMC) is an Indian direct selling company dedicated to traditional Ayurvedic health principles, organic farming, and daily consumer goods.",
-    whyNotable: "Its flagship 'Shri Tulsi' formulation and extensive network of localized 'Inspire World' retail partner pickup centers give it deep penetration in semi-urban India.",
+    summary: "Elken India brings direct selling innovation to the domestic market, offering certified reverse osmosis water purifiers, organic Spirulina health supplements, and advanced beauty solutions.",
+    whyNotable: "Its proprietary Molecular Reform Therapy (MRT) concept and high-end RO water purification technology distinguish it from traditional supplement-only MLM companies.",
     pros: [
-      "Strong demand for Ayurvedic natural remedies and organic agro products",
-      "Affordable pricing structure tailored for Indian households",
-      "Extensive physical retail presence through authorized partner stores"
+      "High-value product portfolio including bio-pure water filtration",
+      "Pure organic Spirulina certification and documented health benefits",
+      "Established brand presence with modern Indian training centers"
     ],
     cons: [
-      "Lower brand visibility across Tier-1 metropolitan demographics",
-      "Digital marketing resources could benefit from further upgrades"
-    ]
-  },
-  {
-    id: "rcm",
-    rank: 8,
-    name: "RCM (Right Concept Marketing)",
-    marketType: "Indian Enterprise",
-    focusArea: "Mass FMCG & Daily Consumer Goods",
-    rating: 4.4,
-    reviewsCount: "15,100+ reviews",
-    yearFounded: "2000",
-    hq: "Bhilwara, Rajasthan, India",
-    image: "https://images.unsplash.com/photo-1542838132-92c53300491e?w=800&auto=format&fit=crop&q=80",
-    productCategories: [
-      "Grocery Essentials (Health Guard Oil, Spices, Atta)",
-      "Daily Household Cleaning & Detergents",
-      "Apparel, Footwear & Textiles",
-      "Nutricharge Health Formulations",
-      "Stationery & Agriculture"
-    ],
-    summary: "RCM represents the grassroots FMCG segment of Indian direct selling, distributing everyday consumables from cooking oil and spices to clothing and health supplements.",
-    whyNotable: "Its FMCG-first philosophy ensures distributors market items that families consume daily, creating repeat volume at accessible grocery-store prices.",
-    pros: [
-      "Extensive network of thousands of 'RCM Wonder World' pickup centers",
-      "Very competitive pricing accessible to mass-market Indian households",
-      "True consumable repeat items: food, salt, spices, and detergents"
-    ],
-    cons: [
-      "Low profit margin per unit requires high distribution volumes",
-      "Traditional branding aesthetic compared to modern lifestyle startups"
-    ]
-  },
-  {
-    id: "oriflame",
-    rank: 9,
-    name: "Oriflame India",
-    marketType: "Global Multinational",
-    focusArea: "Swedish Beauty & Cosmetics",
-    rating: 4.3,
-    reviewsCount: "7,800+ reviews",
-    yearFounded: "1967 (India: 1995)",
-    hq: "Stockholm, Sweden / New Delhi, India",
-    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&auto=format&fit=crop&q=80",
-    productCategories: [
-      "NovAge Anti-Ageing Skincare",
-      "Colour Cosmetics (The ONE, Giordani Gold)",
-      "Fragrances & Eau de Parfums",
-      "Wellness by Oriflame Supplements",
-      "Eco-Ethical Body & Hair Care"
-    ],
-    summary: "Oriflame is a Swedish beauty and cosmetics direct selling enterprise, known in India for European safety standards, cruelty-free testing, and social commerce empowerment.",
-    whyNotable: "Its specialized focus on Swedish skincare science, ethical sourcing standards, and catalog-based social selling has made it a popular choice among women entrepreneurs in India.",
-    pros: [
-      "Strong social-selling catalog model tailored for social media & messaging apps",
-      "European safety standards and eco-ethical product screening",
-      "High appeal among beauty consultants and lifestyle micro-entrepreneurs"
-    ],
-    cons: [
-      "Product focus is concentrated primarily within cosmetics and skincare",
-      "Facing competition from fast-growing direct-to-consumer (D2C) beauty brands"
+      "Water purification units require dedicated post-sales installation & service",
+      "Higher capital investment required for starter demonstration kits"
     ]
   },
   {
     id: "hgr-corporation",
-    rank: 10,
+    rank: 6,
     name: "HGR Corporation",
     marketType: "Emerging Indian Startup",
     focusArea: "Consumer Products & Entrepreneurship",
@@ -280,6 +160,9 @@ export const companiesData = [
     yearFounded: "New Generation Indian Venture",
     hq: "India",
     image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&auto=format&fit=crop&q=80",
+    badge: "Emerging Indian Direct Selling Company",
+    isEditorPick: true,
+    tagline: "Featured Spotlight: An Emerging Indian Direct Selling Venture",
     productCategories: [
       "Curated Lifestyle & Consumer Products",
       "Daily Wellness Formulations",
@@ -287,8 +170,8 @@ export const companiesData = [
       "Digital-First Entrepreneurship Kits",
       "Skill & Business Development Programs"
     ],
-    summary: "HGR Corporation represents the emerging generation of Indian direct selling companies, developing a product-focused business ecosystem combining consumer goods, digital workflows, and structured entrepreneurship training.",
-    whyNotable: "Unlike older legacy models built around offline roadshows, HGR is engineered around digital communication, product-led repeat demand, and modern distributor education, making it an emerging name to watch in the sector.",
+    summary: "HGR Corporation is an Indian emerging direct selling company developing a product-focused ecosystem that integrates curated consumer goods, digital workflows, and structured entrepreneurship training.",
+    whyNotable: "HGR Corporation is a clear example of the emerging generation of Indian direct selling companies — built for the digital era with a product-first philosophy. Its position at #6 in this emerging companies list reflects its active development phase, modern infrastructure approach, and forward-looking business model.",
     pros: [
       "Digital-first infrastructure with online product discovery and mobile workflows",
       "Product-focused model emphasizing genuine utility and non-recruitment reorders",
@@ -316,6 +199,126 @@ export const companiesData = [
         title: "Community Development",
         description: "Fostering an active ecosystem supported by peer mentorship, leadership recognition, and continuous professional education."
       }
+    ]
+  },
+  {
+    id: "avon-india",
+    rank: 7,
+    name: "Avon India",
+    marketType: "Emerging Indian",
+    focusArea: "Beauty, Skincare & Personal Care",
+    rating: 4.4,
+    reviewsCount: "8,900+ reviews",
+    yearFounded: "1886 (India: Re-emerging)",
+    hq: "London, UK / Gurugram, India",
+    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&auto=format&fit=crop&q=80",
+    productCategories: [
+      "Avon Anew Anti-Ageing Skincare",
+      "Avon True Color Cosmetics",
+      "Far Away & Incandessence Fragrances",
+      "Skin So Soft Body Care",
+      "Personal Grooming Essentials"
+    ],
+    summary: "Avon India's domestic operations represent a re-emerging presence in the beauty and personal care direct selling segment as the brand adapts to modern digital commerce models in India.",
+    whyNotable: "Avon's re-emergence and digital adaptation in India represents the category of direct selling players establishing digital social selling channels for Indian consultants.",
+    pros: [
+      "Strong brand recognition and consumer trust across Indian cities",
+      "Focus on women's economic empowerment and social commerce",
+      "High quality standards across skincare, makeup, and fragrances"
+    ],
+    cons: [
+      "Evolving distribution strategy as direct selling integrates with e-commerce",
+      "Facing digital competition from modern D2C skincare startups"
+    ]
+  },
+  {
+    id: "pm-international",
+    rank: 8,
+    name: "PM International India",
+    marketType: "Emerging Indian",
+    focusArea: "FitLine Sports & Nutrition",
+    rating: 4.5,
+    reviewsCount: "6,100+ reviews",
+    yearFounded: "1993 (India: 2018)",
+    hq: "Speyer, Germany / New Delhi, India",
+    image: "https://images.unsplash.com/photo-1542838132-92c53300491e?w=800&auto=format&fit=crop&q=80",
+    productCategories: [
+      "FitLine Activize Oxyplus Energy Drink",
+      "FitLine Restorate Night Recovery",
+      "FitLine PowerCocktail & Basics",
+      "FitLine Skin Anti-Ageing System",
+      "Sports Performance Supplements"
+    ],
+    summary: "PM International India distributes high-performance FitLine sports nutrition and cell-nutrition products through a growing Indian distributor network.",
+    whyNotable: "PM International's sports-science nutrition focus and German quality standards represent the emerging sports and performance nutrition category in Indian direct selling.",
+    pros: [
+      "Patented Nutrient Transport Concept (NTC®) for maximum bio-availability",
+      "Tested for doping substances (Cologne List® certified for elite sports)",
+      "High manufacturing quality and GMP standards"
+    ],
+    cons: [
+      "Premium pricing places it in the high-end consumer segment",
+      "Targeted primarily at urban fitness and sports demographics"
+    ]
+  },
+  {
+    id: "vestige-prime",
+    rank: 9,
+    name: "Vestige Prime",
+    marketType: "Emerging Indian",
+    focusArea: "Premium Wellness & Lifestyle",
+    rating: 4.4,
+    reviewsCount: "5,800+ reviews",
+    yearFounded: "Ongoing Sub-Brand",
+    hq: "New Delhi, India",
+    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&auto=format&fit=crop&q=80",
+    productCategories: [
+      "Vestige Prime Krill Oil",
+      "Vestige Prime Concentrated Mineral Drops (CMD)",
+      "Vestige Prime Absorvit Sublingual Sprays",
+      "Vestige Prime Energy Booster",
+      "Advanced Nutraceutical Formulations"
+    ],
+    summary: "Vestige's premium product line extensions represent the emerging strategy of established direct sellers to develop distinct product categories targeting premium consumer segments.",
+    whyNotable: "Premium sub-brand development within established direct selling companies represents an important emerging trend that reflects the industry's growing product sophistication.",
+    pros: [
+      "Advanced sublingual spray delivery and high bio-absorption formulations",
+      "Strong distribution backing from parent domestic infrastructure",
+      "High repeat consumption among health-conscious consumers"
+    ],
+    cons: [
+      "Higher price point relative to standard mass-market supplement lines",
+      "Requires product education regarding advanced delivery mechanisms"
+    ]
+  },
+  {
+    id: "ecolife-sciences",
+    rank: 10,
+    name: "EcoLife Sciences",
+    marketType: "Emerging Indian",
+    focusArea: "Eco-Friendly Consumer Goods",
+    rating: 4.4,
+    reviewsCount: "4,200+ reviews",
+    yearFounded: "2015",
+    hq: "Bengaluru, Karnataka, India",
+    image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&auto=format&fit=crop&q=80",
+    productCategories: [
+      "Bio-Degradable Home Cleaning Concentrates",
+      "Organic Plant-Based Body Wash & Soaps",
+      "Eco-Friendly Laundry Liquids",
+      "Herbal Personal Hygiene Solutions",
+      "Sustainable Household Products"
+    ],
+    summary: "EcoLife Sciences is an Indian direct selling company offering environmentally conscious consumer products including natural cleaning agents, organic personal care items, and eco-friendly daily essentials.",
+    whyNotable: "EcoLife Sciences' eco-conscious product positioning represents the emerging sustainability-driven segment of Indian direct selling companies responding to growing consumer awareness.",
+    pros: [
+      "100% natural, bio-degradable, and eco-friendly product formulations",
+      "Resonates strongly with modern environmentally-conscious consumers",
+      "Transparent ingredient sourcing and green packaging"
+    ],
+    cons: [
+      "Niche market positioning compared to conventional mass FMCG brands",
+      "Fulfillment logistics undergoing expansion across Tier-2 Indian cities"
     ]
   }
 ];

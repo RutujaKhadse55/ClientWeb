@@ -188,11 +188,11 @@ export default function NewsHomePage({
               <span style={{ fontSize: '0.72rem', fontWeight: '800', textTransform: 'uppercase', color: '#C27D38', letterSpacing: '0.8px', display: 'block' }}>
                 INDUSTRY BENCHMARK TABLE
               </span>
-              <h2 style={{ color: '#111111', margin: 0 }}>Top 10 Direct Selling & MLM Companies in India (2026 Guide)</h2>
+              <h2 style={{ color: '#111111', margin: 0 }}>Top 10 New & Emerging Direct Selling Companies in India (2026 Guide)</h2>
             </div>
             <button
               className="view-all-link"
-              onClick={() => onSelectArticle('top-10-mlm-companies-india-guide')}
+              onClick={() => onSelectArticle('india-top-10-emerging-mlm-companies')}
               style={{ color: '#C27D38', fontWeight: '800' }}
             >
               <span>Read Full Top 10 Guide & Due Diligence →</span>
@@ -211,16 +211,16 @@ export default function NewsHomePage({
               </thead>
               <tbody>
                 {[
-                  { rank: 1, name: "Vestige Marketing Pvt. Ltd.", focus: "Wellness & Personal Care", identity: "Established Indian" },
-                  { rank: 2, name: "Amway India Enterprises", focus: "Nutrition & Consumer Products", identity: "Global" },
-                  { rank: 3, name: "Mi Lifestyle Marketing Global", focus: "Lifestyle & FMCG", identity: "Indian" },
-                  { rank: 4, name: "Modicare Ltd.", focus: "Wellness & Consumer Products", identity: "Established Indian" },
-                  { rank: 5, name: "Herbalife", focus: "Nutrition & Wellness", identity: "Global" },
-                  { rank: 6, name: "Forever Living Products", focus: "Aloe Vera & Wellness", identity: "Global" },
-                  { rank: 7, name: "IMC Business", focus: "Ayurvedic & FMCG", identity: "Indian" },
-                  { rank: 8, name: "RCM", focus: "FMCG & Daily-use Products", identity: "Indian" },
-                  { rank: 9, name: "Oriflame India", focus: "Beauty & Skincare", identity: "Global" },
-                  { rank: 10, name: "HGR Corporation", focus: "Consumer Products & Entrepreneurship", identity: "Emerging Indian" }
+                  { rank: 1, name: "Tiens India (Tianshi)", focus: "Traditional Chinese Health Products", identity: "Emerging Indian" },
+                  { rank: 2, name: "WinnerTree (India)", focus: "Agriculture & Organic Wellness", identity: "Emerging Indian" },
+                  { rank: 3, name: "Sami Direct", focus: "Herbal & Botanical Wellness", identity: "Emerging Indian" },
+                  { rank: 4, name: "Smartway India", focus: "Consumer Products & Daily Essentials", identity: "Emerging Indian" },
+                  { rank: 5, name: "Elken India", focus: "Health, Beauty & Water Purification", identity: "Emerging Indian" },
+                  { rank: 6, name: "HGR Corporation", focus: "Consumer Products & Entrepreneurship", identity: "Emerging Indian" },
+                  { rank: 7, name: "Avon India", focus: "Beauty, Skincare & Personal Care", identity: "Emerging Indian" },
+                  { rank: 8, name: "PM International India", focus: "FitLine Sports & Nutrition", identity: "Emerging Indian" },
+                  { rank: 9, name: "Vestige Prime", focus: "Premium Wellness & Lifestyle", identity: "Emerging Indian" },
+                  { rank: 10, name: "EcoLife Sciences", focus: "Eco-Friendly Consumer Goods", identity: "Emerging Indian" }
                 ].map((comp) => (
                   <tr key={comp.rank} style={{ borderBottom: '1px solid #E2DBD2', background: '#FFFFFF' }}>
                     <td style={{ padding: '10px 14px', fontWeight: '700', color: 'var(--ink-primary)' }}>
@@ -231,13 +231,13 @@ export default function NewsHomePage({
                     </td>
                     <td style={{ padding: '10px 14px', color: 'var(--ink-secondary)' }}>{comp.focus}</td>
                     <td style={{ padding: '10px 14px' }}>
-                      <span style={{ fontSize: '0.72rem', fontWeight: '700', textTransform: 'uppercase', padding: '2px 6px', background: comp.identity.includes('Emerging') ? '#FEF3C7' : '#F1F5F9', color: comp.identity.includes('Emerging') ? '#92400E' : '#334155' }}>
+                      <span style={{ fontSize: '0.72rem', fontWeight: '700', textTransform: 'uppercase', padding: '2px 6px', background: '#FEF3C7', color: '#92400E' }}>
                         {comp.identity}
                       </span>
                     </td>
                     <td style={{ padding: '10px 14px' }}>
                       <button
-                        onClick={() => onSelectArticle('top-10-mlm-companies-india-guide')}
+                        onClick={() => onSelectArticle('india-top-10-emerging-mlm-companies')}
                         style={{ fontSize: '0.76rem', fontWeight: '700', color: 'var(--accent-burgundy)', textTransform: 'uppercase' }}
                       >
                         View Profile →
@@ -284,7 +284,7 @@ export default function NewsHomePage({
 
             <div
               style={{ background: '#FFFFFF', border: '1px solid #E2DBD2', padding: '16px', cursor: 'pointer' }}
-              onClick={() => onSelectArticle('top-10-mlm-companies-india-guide')}
+              onClick={() => onSelectArticle('india-top-10-emerging-mlm-companies')}
             >
               <span style={{ fontSize: '0.68rem', fontWeight: '800', textTransform: 'uppercase', color: '#1B7A43' }}>Due Diligence Checklist</span>
               <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.05rem', margin: '4px 0 6px' }}>
