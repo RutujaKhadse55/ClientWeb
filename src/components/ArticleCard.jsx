@@ -5,6 +5,7 @@ import { getAuthorById } from '../data/authors';
 export default function ArticleCard({ 
   article, 
   variant = "standard", 
+  rank,
   onSelectArticle, 
   onSelectAuthor 
 }) {
@@ -13,12 +14,13 @@ export default function ArticleCard({
 
   // Variant: Numbered Trending Item
   if (variant === "trending") {
+    const displayRank = rank !== undefined ? rank : (article.trendingRank || "•");
     return (
       <div 
         className="trending-item" 
         onClick={() => onSelectArticle(article.id)}
       >
-        <span className="trending-rank">#{article.trendingRank || "•"}</span>
+        <span className="trending-rank">#{displayRank}</span>
         <div className="trending-content">
           <h4>{article.title}</h4>
           <div className="trending-meta">

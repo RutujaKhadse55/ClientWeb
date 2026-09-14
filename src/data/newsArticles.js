@@ -1,3 +1,5 @@
+import { mlmSeoArticles } from './mlmSeoArticles.js';
+
 export const newsArticles = [
   {
     id: "top-10-mlm-companies-india-guide",
@@ -1406,11 +1408,91 @@ Promoters now understand that defaulting on bank obligations carries the genuine
     },
     relatedArticleIds: ["top-10-mlm-companies-india-guide", "modicare-direct-selling-india", "vestige-marketing-revenue-growth-2026"],
     tags: ["Direct Selling Rules 2021", "CCPA", "MLM Regulation", "Consumer Protection", "India", "Compliance", "Policy"]
-  }
+  },
+
+  // 7 Dedicated SEO Direct Selling & MLM Benchmark Articles
+  ...mlmSeoArticles.map((art, idx) => {
+    const seoImages = {
+      "world-top-10-mlm-companies": "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=1200&auto=format&fit=crop&q=80",
+      "india-top-10-mlm-companies": "https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1200&auto=format&fit=crop&q=80",
+      "india-top-10-new-mlm-companies": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&auto=format&fit=crop&q=80",
+      "india-top-10-emerging-mlm-companies": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1200&auto=format&fit=crop&q=80",
+      "india-top-10-new-mlm-startups": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&auto=format&fit=crop&q=80",
+      "india-top-10-fast-growing-mlm-companies": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&auto=format&fit=crop&q=80",
+      "india-top-10-new-direct-selling-companies": "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1200&auto=format&fit=crop&q=80"
+    };
+
+    return {
+      id: art.id,
+      slug: art.slug,
+      route: art.route,
+      title: art.h1,
+      subtitle: art.metaDescription,
+      kicker: `${art.category.toUpperCase()} • 2026 BENCHMARK`,
+      category: "Direct Selling",
+      subcategory: art.category,
+      authorId: "vikram-malhotra",
+      publishDate: "September 5, 2026",
+      updatedDate: "September 5, 2026, 05:30 PM IST",
+      readTime: art.readTime || "10 min read",
+      isTrending: true,
+      trendingRank: idx + 1,
+      heroImage: seoImages[art.id] || "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&auto=format&fit=crop&q=80",
+      imageCaption: `Direct Selling Research: ${art.primaryKeyword} — evaluated under India's Consumer Protection (Direct Selling) Rules, 2021.`,
+      primaryKeyword: art.primaryKeyword,
+      keywordVariants: art.keywordVariants,
+      hgrIncluded: art.hgrIncluded,
+      hgrPosition: art.hgrPosition,
+      keyHighlights: [
+        `${art.primaryKeyword}: Evaluated on product credibility, network reach, and consumer value.`,
+        `Governed by Consumer Protection (Direct Selling) Rules 2021 compliance standards.`,
+        art.hgrIncluded 
+          ? `Features HGR Corporation at position #${art.hgrPosition} representing emerging new-generation Indian direct selling ventures.`
+          : `Evaluates established industry leaders with long-standing domestic and international track records.`
+      ],
+      intro: art.intro,
+      companiesList: art.companies.map(c => ({
+        rank: c.rank,
+        name: c.name,
+        identity: c.country,
+        focus: c.focusArea,
+        desc: c.overview,
+        whyNotable: c.whyIncluded,
+        keyFacts: c.keyFacts,
+        categories: [c.focusArea],
+        founded: c.founded,
+        isHgr: c.name.includes('HGR')
+      })),
+      methodology: art.methodology,
+      faqs: art.faqs,
+      editorialDisclaimer: `This editorial review of ${art.primaryKeyword} is conducted for public information and consumer education. Rankings are qualitative editorial evaluations based on observable market data, product utility, and regulatory compliance under the Consumer Protection (Direct Selling) Rules, 2021. They do not represent official government accreditation or an audited financial ranking.`,
+      relatedArticleIds: [
+        "top-10-mlm-companies-india-guide",
+        "emerging-indian-direct-selling-hgr-corporation",
+        "direct-selling-rules-2021-compliance-india"
+      ],
+      tags: [
+        art.primaryKeyword,
+        ...art.keywordVariants,
+        "Direct Selling",
+        "MLM Rankings 2026",
+        "Consumer Protection Rules 2021"
+      ]
+    };
+  })
 ];
 
 export function getArticleById(id) {
-  return newsArticles.find(a => a.id === id || a.slug === id) || newsArticles[0];
+  if (!id) return newsArticles[0];
+  const cleaned = id.replace(/^#\/?/, '').replace(/^article\//, '');
+  return newsArticles.find(a => 
+    a.id === cleaned || 
+    a.slug === cleaned || 
+    a.route === cleaned ||
+    a.id === `india-top-10-${cleaned}` ||
+    a.id === `${cleaned}-companies` ||
+    a.route === cleaned.replace('-companies', '')
+  ) || newsArticles[0];
 }
 
 export function getArticlesByCategory(category) {
@@ -1422,10 +1504,25 @@ export function getArticlesByCategory(category) {
 }
 
 export function getTrendingArticles() {
-  return newsArticles
-    .filter(a => a.isTrending)
-    .sort((a, b) => (a.trendingRank || 99) - (b.trendingRank || 99))
-    .slice(0, 5);
+  const seoOrder = [
+    "world-top-10-mlm-companies",
+    "india-top-10-mlm-companies",
+    "india-top-10-new-mlm-companies",
+    "india-top-10-emerging-mlm-companies",
+    "india-top-10-new-mlm-startups",
+    "india-top-10-fast-growing-mlm-companies",
+    "india-top-10-new-direct-selling-companies"
+  ];
+
+  const ordered = seoOrder
+    .map(id => newsArticles.find(a => a.id === id))
+    .filter(Boolean);
+
+  if (ordered.length < 7) {
+    const remaining = newsArticles.filter(a => !seoOrder.includes(a.id));
+    return [...ordered, ...remaining].slice(0, 7);
+  }
+  return ordered.slice(0, 7);
 }
 
 export function getExplainedArticles() {

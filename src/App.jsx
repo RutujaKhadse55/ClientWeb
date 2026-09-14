@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import NewsHeader from './components/NewsHeader';
 import MarketTicker from './components/MarketTicker';
 import BreakingNewsBar from './components/BreakingNewsBar';
@@ -16,9 +16,37 @@ import NewsletterModal from './components/NewsletterModal';
 import AuthorModal from './components/AuthorModal';
 
 export default function App() {
-  const [currentRoute, setCurrentRoute] = useState('home'); // 'home', 'article', 'category', 'editorial-policy'
-  const [currentArticleId, setCurrentArticleId] = useState(null);
-  const [currentCategory, setCurrentCategory] = useState('Markets');
+  const getInitialState = () => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const articleParam = params.get('article') || params.get('route') || params.get('page');
+      if (articleParam) {
+        return { route: 'article', articleId: articleParam, category: 'Direct Selling' };
+      }
+      const catParam = params.get('category');
+      if (catParam) {
+        return { route: 'category', articleId: null, category: catParam };
+      }
+      const hash = window.location.hash.replace(/^#\/?/, '');
+      if (hash) {
+        if (hash.startsWith('category/')) {
+          return { route: 'category', articleId: null, category: hash.replace('category/', '') };
+        }
+        if (hash === 'editorial-policy') {
+          return { route: 'editorial-policy', articleId: null, category: 'Markets' };
+        }
+        if (hash !== 'home') {
+          return { route: 'article', articleId: hash.replace('article/', ''), category: 'Direct Selling' };
+        }
+      }
+    }
+    return { route: 'home', articleId: null, category: 'Markets' };
+  };
+
+  const initial = getInitialState();
+  const [currentRoute, setCurrentRoute] = useState(initial.route);
+  const [currentArticleId, setCurrentArticleId] = useState(initial.articleId);
+  const [currentCategory, setCurrentCategory] = useState(initial.category);
   const [selectedAuthorId, setSelectedAuthorId] = useState(null);
 
   // Modal states
@@ -26,21 +54,41 @@ export default function App() {
   const [isNewsletterOpen, setIsNewsletterOpen] = useState(false);
   const [isAuthorModalOpen, setIsAuthorModalOpen] = useState(false);
 
+  useEffect(() => {
+    const handleHashChange = () => {
+      const state = getInitialState();
+      setCurrentRoute(state.route);
+      if (state.articleId) setCurrentArticleId(state.articleId);
+      if (state.category) setCurrentCategory(state.category);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
   // Navigation handlers
   const handleNavigate = (route) => {
     setCurrentRoute(route);
+    if (route === 'home') {
+      window.location.hash = '';
+    } else if (route === 'editorial-policy') {
+      window.location.hash = 'editorial-policy';
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleSelectArticle = (articleId) => {
     setCurrentArticleId(articleId);
     setCurrentRoute('article');
+    window.location.hash = articleId;
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleNavigateCategory = (category) => {
     setCurrentCategory(category);
     setCurrentRoute('category');
+    window.location.hash = `category/${category.toLowerCase()}`;
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -50,18 +98,19 @@ export default function App() {
   };
 
   return (
-    <div className="site-wrapper" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      {/* Newspaper Top Header */}
+    <div className="site-wrapper" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: 'var(--bg-cream, #FAF7F2)' }}>
+      {/* Newspaper Top Header with Category Navigation */}
       <NewsHeader 
         currentRoute={currentRoute}
         currentCategory={currentCategory}
         onNavigate={handleNavigate}
         onNavigateCategory={handleNavigateCategory}
+        onSelectArticle={handleSelectArticle}
         onOpenSearch={() => setIsSearchOpen(true)}
         onOpenNewsletter={() => setIsNewsletterOpen(true)}
       />
 
-      {/* Live Market Ticker Strip */}
+      {/* Live Dalal Street & Global Market Ticker Strip */}
       <MarketTicker />
 
       {/* Breaking News Flash Strip */}
@@ -113,6 +162,7 @@ export default function App() {
       <NewsFooter 
         onNavigate={handleNavigate}
         onNavigateCategory={handleNavigateCategory}
+        onSelectArticle={handleSelectArticle}
       />
 
       {/* Interactive Modals */}

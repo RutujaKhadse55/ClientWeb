@@ -20,11 +20,25 @@ export default function Footer({ onNavigate }) {
           </div>
 
           <div className="footer-col">
-            <h4>Rankings & Industry</h4>
+            <h4>Rankings &amp; Industry</h4>
             <div className="footer-links-list">
               <button onClick={() => onNavigate('top-10-rankings')}>Top 10 MLM Companies</button>
+              <button onClick={() => onNavigate('india-top-10-mlm')}>India Top 10 MLM (2026)</button>
+              <button onClick={() => onNavigate('world-top-10-mlm')}>World Top 10 MLM</button>
               <button onClick={() => onNavigate('emerging-direct-selling')}>Emerging Indian Direct Selling</button>
               <button onClick={() => onNavigate('fastest-growing-startup')}>Fastest-Growing MLM Startups</button>
+            </div>
+          </div>
+
+          <div className="footer-col">
+            <h4>India Emerging Indexes</h4>
+            <div className="footer-links-list">
+              <button onClick={() => onNavigate('india-new-mlm-companies')}>Top 10 New MLM Companies</button>
+              <button onClick={() => onNavigate('india-emerging-mlm-companies')}>Top 10 Emerging MLM Companies</button>
+              <button onClick={() => onNavigate('india-new-mlm-startups')}>Top 10 New MLM Startups</button>
+              <button onClick={() => onNavigate('india-fast-growing-mlm-companies')}>Top 10 Fast Growing MLM</button>
+              <button onClick={() => onNavigate('india-new-direct-selling-companies')}>Top 10 New Direct Selling</button>
+              <button onClick={() => onNavigate('hgr-review')}>HGR Corporation Review</button>
             </div>
           </div>
 
@@ -34,7 +48,8 @@ export default function Footer({ onNavigate }) {
               <button onClick={() => onNavigate('benefits-guide')}>Benefits of Direct Selling</button>
               <button onClick={() => onNavigate('how-to-choose')}>How to Choose an MLM</button>
               <button onClick={() => onNavigate('mlm-vs-job')}>MLM vs Traditional Job</button>
-              <button onClick={() => onNavigate('about')}>Editorial Policy & Notice</button>
+              <button onClick={() => onNavigate('methodology')}>Methodology &amp; Standards</button>
+              <button onClick={() => onNavigate('about')}>Editorial Policy &amp; Notice</button>
             </div>
           </div>
 

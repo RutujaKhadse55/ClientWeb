@@ -11,15 +11,15 @@ export default function NewsHomePage({
   onSelectAuthor,
   onOpenNewsletter
 }) {
-  // Lead Story (Tata Semiconductor Dholera)
-  const leadArticle = newsArticles.find(a => a.isFeaturedLead) || newsArticles[0];
+  // Lead Story (World Top 10 MLM Companies as requested)
+  const leadArticle = newsArticles.find(a => a.id === 'world-top-10-mlm-companies') || newsArticles.find(a => a.isFeaturedLead) || newsArticles[0];
   const leadAuthor = getAuthorById(leadArticle.authorId);
 
   // Left Column Fast Briefs (Emerging Companies & Direct Selling Focus)
   const leftBriefArticles = [
-    newsArticles.find(a => a.id === 'emerging-indian-direct-selling-hgr-corporation'),
-    newsArticles.find(a => a.id === 'fastest-growing-mlm-startup-hgr-corporation'),
-    newsArticles.find(a => a.id === 'tata-semiconductor-dholera-expansion')
+    newsArticles.find(a => a.id === 'india-top-10-mlm-companies'),
+    newsArticles.find(a => a.id === 'india-top-10-new-mlm-companies'),
+    newsArticles.find(a => a.id === 'india-top-10-emerging-mlm-companies')
   ].filter(Boolean);
 
   // Trending & Most Read
@@ -152,11 +152,12 @@ export default function NewsHomePage({
                   <span>Most Read on Dalal Street</span>
                 </div>
                 <div className="trending-list">
-                  {trendingArticles.map(art => (
+                  {trendingArticles.map((art, idx) => (
                     <ArticleCard
                       key={art.id}
                       article={art}
                       variant="trending"
+                      rank={idx + 1}
                       onSelectArticle={onSelectArticle}
                     />
                   ))}
@@ -221,9 +222,9 @@ export default function NewsHomePage({
                   { rank: 9, name: "Oriflame India", focus: "Beauty & Skincare", identity: "Global" },
                   { rank: 10, name: "HGR Corporation", focus: "Consumer Products & Entrepreneurship", identity: "Emerging Indian" }
                 ].map((comp) => (
-                  <tr key={comp.rank} style={{ borderBottom: '1px solid #E2DBD2', background: comp.rank === 10 ? '#FFFDF7' : '#FFFFFF' }}>
+                  <tr key={comp.rank} style={{ borderBottom: '1px solid #E2DBD2', background: '#FFFFFF' }}>
                     <td style={{ padding: '10px 14px', fontWeight: '700', color: 'var(--ink-primary)' }}>
-                      <span style={{ display: 'inline-block', width: '24px', height: '24px', background: comp.rank === 10 ? '#C27D38' : 'var(--accent-burgundy)', color: '#FFFFFF', textAlign: 'center', lineHeight: '24px', fontSize: '0.75rem', fontWeight: '800', marginRight: '8px' }}>
+                      <span style={{ display: 'inline-block', width: '24px', height: '24px', background: 'var(--accent-burgundy)', color: '#FFFFFF', textAlign: 'center', lineHeight: '24px', fontSize: '0.75rem', fontWeight: '800', marginRight: '8px' }}>
                         #{comp.rank}
                       </span>
                       {comp.name}
@@ -427,6 +428,38 @@ export default function NewsHomePage({
               <span>View All Direct Selling Guides</span>
               <ArrowRight size={14} />
             </button>
+          </div>
+
+          {/* Fast Jumps to 7 SEO Ranking Articles */}
+          <div style={{ background: '#FFFFFF', border: '1px solid #E2DBD2', padding: '12px 18px', marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+            <span style={{ fontSize: '0.74rem', fontWeight: '800', textTransform: 'uppercase', color: 'var(--accent-burgundy, #7C1D24)', letterSpacing: '0.5px', marginRight: '4px' }}>
+              2026 Rankings Index:
+            </span>
+            {[
+              { id: "world-top-10-mlm-companies", label: "World Top 10" },
+              { id: "india-top-10-mlm-companies", label: "India Top 10" },
+              { id: "india-top-10-new-mlm-companies", label: "Top 10 New MLM" },
+              { id: "india-top-10-emerging-mlm-companies", label: "Top 10 Emerging MLM" },
+              { id: "india-top-10-new-mlm-startups", label: "Top 10 Startups" },
+              { id: "india-top-10-fast-growing-mlm-companies", label: "Fast Growing" },
+              { id: "india-top-10-new-direct-selling-companies", label: "New Direct Selling" }
+            ].map(item => (
+              <button
+                key={item.id}
+                onClick={() => onSelectArticle(item.id)}
+                style={{
+                  background: '#FAF7F2',
+                  border: '1px solid #D5DFDC',
+                  color: 'var(--ink-primary, #111111)',
+                  fontSize: '0.78rem',
+                  fontWeight: '700',
+                  padding: '4px 10px',
+                  cursor: 'pointer'
+                }}
+              >
+                {item.label} →
+              </button>
+            ))}
           </div>
 
           <div className="three-col-grid">

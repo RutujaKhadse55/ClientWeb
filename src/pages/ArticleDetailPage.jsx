@@ -1,28 +1,30 @@
 import React, { useState } from 'react';
-import { 
-  Clock, 
-  Share2, 
-  Bookmark, 
-  Printer, 
-  ThumbsUp, 
-  MessageSquare, 
-  ArrowLeft, 
-  ArrowRight, 
-  Check, 
-  Globe, 
-  MessageCircle, 
-  Send 
+import {
+  Clock,
+  Share2,
+  Bookmark,
+  Printer,
+  ThumbsUp,
+  MessageSquare,
+  ArrowLeft,
+  ArrowRight,
+  Check,
+  Globe,
+  MessageCircle,
+  Send,
+  ShieldCheck,
+  Trophy
 } from 'lucide-react';
 import { getArticleById, getRelatedArticles, getTrendingArticles } from '../data/newsArticles';
 import { getAuthorById } from '../data/authors';
 import ArticleCard from '../components/ArticleCard';
 
-export default function ArticleDetailPage({ 
-  articleId, 
-  onNavigate, 
-  onNavigateCategory, 
-  onSelectArticle, 
-  onSelectAuthor 
+export default function ArticleDetailPage({
+  articleId,
+  onNavigate,
+  onNavigateCategory,
+  onSelectArticle,
+  onSelectAuthor
 }) {
   const article = getArticleById(articleId);
   const author = getAuthorById(article.authorId);
@@ -32,6 +34,7 @@ export default function ArticleDetailPage({
   const [fontSizeOffset, setFontSizeOffset] = useState(0); // -1, 0, 1, 2
   const [copied, setCopied] = useState(false);
   const [bookmarked, setBookmarked] = useState(false);
+  const [openFaq, setOpenFaq] = useState(null);
   const [newComment, setNewComment] = useState('');
   const [comments, setComments] = useState([
     {
@@ -110,17 +113,27 @@ export default function ArticleDetailPage({
                 </p>
               )}
 
+              {/* SEO Keyword Variants Strip */}
+              {article.keywordVariants && article.keywordVariants.length > 0 && (
+                <div style={{ background: '#FAF7F2', border: '1px solid #E2DBD2', borderLeft: '3px solid var(--accent-burgundy)', padding: '10px 16px', margin: '14px 0 18px', fontSize: '0.82rem', color: 'var(--ink-muted)' }}>
+                  <strong style={{ color: 'var(--accent-burgundy)', textTransform: 'uppercase', fontSize: '0.72rem', letterSpacing: '0.5px' }}>
+                    Search Themes &amp; Also Searched As:
+                  </strong>{' '}
+                  {article.keywordVariants.join(' • ')}
+                </div>
+              )}
+
               {/* Author & Timestamp Bar */}
               <div className="article-author-strip">
                 <div className="author-info-block">
-                  <img 
-                    src={author.avatar} 
-                    alt={author.name} 
+                  <img
+                    src={author.avatar}
+                    alt={author.name}
                     className="author-avatar-img"
                     onClick={() => onSelectAuthor(author.id)}
                   />
                   <div className="author-details-text">
-                    <span 
+                    <span
                       className="author-name-link"
                       onClick={() => onSelectAuthor(author.id)}
                     >
@@ -144,22 +157,22 @@ export default function ArticleDetailPage({
               {/* Reading Tools & Share Bar */}
               <div className="article-toolbar">
                 <div className="toolbar-social-btns">
-                  <button 
-                    className="tool-icon-btn" 
+                  <button
+                    className="tool-icon-btn"
                     onClick={handleShare}
                     title="Copy Link"
                   >
                     {copied ? <Check size={14} color="var(--accent-green)" /> : <Share2 size={14} />}
                   </button>
-                  <button 
+                  <button
                     className="tool-icon-btn"
                     onClick={() => setBookmarked(!bookmarked)}
                     title="Bookmark Story"
                   >
                     <Bookmark size={14} fill={bookmarked ? "var(--accent-burgundy)" : "none"} />
                   </button>
-                  <button 
-                    className="tool-icon-btn" 
+                  <button
+                    className="tool-icon-btn"
                     onClick={() => window.print()}
                     title="Print Story"
                   >
@@ -174,21 +187,21 @@ export default function ArticleDetailPage({
 
                 <div className="toolbar-font-control">
                   <span>Text Size:</span>
-                  <button 
-                    className="font-size-btn" 
+                  <button
+                    className="font-size-btn"
                     onClick={() => setFontSizeOffset(prev => Math.max(-1, prev - 1))}
                     disabled={fontSizeOffset === -1}
                   >
                     A-
                   </button>
-                  <button 
-                    className="font-size-btn" 
+                  <button
+                    className="font-size-btn"
                     onClick={() => setFontSizeOffset(0)}
                   >
                     Reset
                   </button>
-                  <button 
-                    className="font-size-btn" 
+                  <button
+                    className="font-size-btn"
                     onClick={() => setFontSizeOffset(prev => Math.min(2, prev + 1))}
                     disabled={fontSizeOffset === 2}
                   >
@@ -226,44 +239,61 @@ export default function ArticleDetailPage({
                 {article.intro}
               </p>
 
-              {/* Companies List if available (e.g. Top 10 Direct Selling Guide) */}
+              {/* Companies List if available (e.g. Top 10 Direct Selling & MLM Benchmark Guides) */}
               {article.companiesList && article.companiesList.length > 0 && (
                 <div style={{ margin: '32px 0', display: 'flex', flexDirection: 'column', gap: '20px' }}>
-                  <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.5rem', borderBottom: '2px solid var(--ink-border-dark)', paddingBottom: '8px' }}>
-                    10 Leading & Notable Direct Selling Enterprises in India
-                  </h2>
+                  <div style={{ borderBottom: '2px solid var(--ink-border-dark)', paddingBottom: '10px', display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: '8px' }}>
+                    <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.5rem', margin: 0, color: 'var(--ink-primary)' }}>
+                      {article.primaryKeyword ? `${article.primaryKeyword}: 2026 Editorial Rankings` : "10 Leading & Notable Direct Selling Enterprises in India"}
+                    </h2>
+                    <span style={{ fontSize: '0.78rem', color: 'var(--ink-muted)', textTransform: 'uppercase', letterSpacing: '0.5px', fontWeight: '700' }}>
+                      Editorial Evaluation Index
+                    </span>
+                  </div>
+
                   {article.companiesList.map(comp => (
-                    <div 
-                      key={comp.rank} 
-                      style={{ 
-                        background: comp.rank === 10 ? '#FFFDF7' : '#FFFFFF', 
-                        border: comp.rank === 10 ? '2px solid #C27D38' : '1px solid var(--ink-border)', 
-                        padding: '20px', 
-                        position: 'relative' 
+                    <div
+                      key={comp.rank}
+                      style={{
+                        background: '#FFFFFF',
+                        border: '1px solid var(--ink-border)',
+                        padding: '24px',
+                        position: 'relative',
+                        borderLeft: '5px solid var(--accent-burgundy)'
                       }}
+                      id={`company-${comp.rank}`}
                     >
-                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '8px', marginBottom: '8px' }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                          <span style={{ background: comp.rank === 10 ? '#C27D38' : 'var(--accent-burgundy)', color: '#FFFFFF', fontWeight: '800', fontSize: '0.85rem', width: '28px', height: '28px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '8px', marginBottom: '10px' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
+                          <span style={{ background: 'var(--accent-burgundy)', color: '#FFFFFF', fontWeight: '900', fontSize: '0.9rem', width: '32px', height: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                             #{comp.rank}
                           </span>
-                          <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.25rem', margin: 0, color: 'var(--ink-primary)' }}>
+                          <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.35rem', margin: 0, color: 'var(--ink-primary)', fontWeight: '800' }}>
                             {comp.name}
                           </h3>
                         </div>
-                        <span style={{ fontSize: '0.72rem', fontWeight: '700', textTransform: 'uppercase', background: '#F1F5F9', border: '1px solid #CBD5E1', padding: '3px 8px', color: '#334155' }}>
-                          {comp.identity}
-                        </span>
+                        <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', alignItems: 'center' }}>
+                          {comp.identity && (
+                            <span style={{ fontSize: '0.72rem', fontWeight: '700', textTransform: 'uppercase', background: '#F1F5F9', border: '1px solid #CBD5E1', padding: '3px 8px', color: '#334155' }}>
+                              {comp.identity}
+                            </span>
+                          )}
+                          {comp.founded && (
+                            <span style={{ fontSize: '0.72rem', color: 'var(--ink-muted)' }}>
+                              Founded: {comp.founded}
+                            </span>
+                          )}
+                        </div>
                       </div>
 
-                      <p style={{ fontSize: '0.94rem', color: 'var(--ink-secondary)', marginBottom: '12px' }}>
+                      <p style={{ fontSize: '0.96rem', color: 'var(--ink-secondary)', lineHeight: '1.65', marginBottom: '12px' }}>
                         {comp.desc}
                       </p>
 
                       {comp.categories && (
                         <div style={{ marginBottom: '10px' }}>
                           <strong style={{ fontSize: '0.76rem', textTransform: 'uppercase', color: 'var(--ink-muted)', display: 'block', marginBottom: '4px' }}>
-                            Key Product Categories:
+                            Primary Focus / Product Categories:
                           </strong>
                           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                             {comp.categories.map((cat, cIdx) => (
@@ -276,12 +306,69 @@ export default function ArticleDetailPage({
                       )}
 
                       {comp.whyNotable && (
-                        <div style={{ background: '#F8FAFC', padding: '10px 14px', borderLeft: '3px solid var(--accent-blue)', marginTop: '10px', fontSize: '0.86rem', color: '#1E293B' }}>
-                          <strong>Why Notable:</strong> {comp.whyNotable}
+                        <div style={{ background: '#FAF7F2', padding: '12px 16px', borderLeft: '3px solid var(--accent-burgundy)', marginTop: '10px', marginBottom: '10px', fontSize: '0.88rem', color: 'var(--ink-primary)' }}>
+                          <strong style={{ fontSize: '0.76rem', textTransform: 'uppercase', color: 'var(--accent-burgundy)', display: 'block', marginBottom: '3px', letterSpacing: '0.5px' }}>
+                            Why {comp.name} Is Included:
+                          </strong>
+                          {comp.whyNotable}
+                        </div>
+                      )}
+
+                      {comp.keyFacts && comp.keyFacts.length > 0 && (
+                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: '10px' }}>
+                          {comp.keyFacts.map((fact, idx) => (
+                            <span key={idx} style={{ background: '#FAF7F2', border: '1px solid #E2DBD2', fontSize: '0.78rem', padding: '3px 10px', color: 'var(--ink-primary)', fontWeight: '600' }}>
+                              ✓ {fact}
+                            </span>
+                          ))}
                         </div>
                       )}
                     </div>
                   ))}
+                </div>
+              )}
+
+              {/* Research Methodology */}
+              {article.methodology && (
+                <div style={{ background: '#FAF7F2', border: '1px solid #E2DBD2', borderTop: '3px solid var(--accent-burgundy)', padding: '24px 28px', margin: '36px 0' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
+                    <ShieldCheck size={20} color="var(--accent-burgundy)" />
+                    <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.35rem', margin: 0, color: 'var(--ink-primary)' }}>
+                      Research Methodology &amp; Evaluation Criteria
+                    </h3>
+                  </div>
+                  <p style={{ fontSize: '0.94rem', lineHeight: '1.75', color: 'var(--ink-secondary)', margin: 0 }}>
+                    {article.methodology}
+                  </p>
+                </div>
+              )}
+
+              {/* Frequently Asked Questions Accordion */}
+              {article.faqs && article.faqs.length > 0 && (
+                <div style={{ margin: '36px 0', borderTop: '2px solid var(--ink-border-dark)', paddingTop: '24px' }}>
+                  <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.45rem', marginBottom: '18px', color: 'var(--ink-primary)' }}>
+                    Frequently Asked Questions: {article.primaryKeyword || "Direct Selling"}
+                  </h3>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                    {article.faqs.map((faq, fIdx) => (
+                      <div key={fIdx} style={{ border: '1px solid #E2DBD2', background: '#FFFFFF' }}>
+                        <button
+                          onClick={() => setOpenFaq(openFaq === fIdx ? null : fIdx)}
+                          style={{ width: '100%', padding: '14px 18px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', textAlign: 'left', background: openFaq === fIdx ? '#FAF7F2' : '#FFFFFF', border: 'none', cursor: 'pointer', fontFamily: 'var(--font-serif)', fontSize: '1.05rem', fontWeight: '700', color: 'var(--ink-primary)' }}
+                        >
+                          <span>{faq.question}</span>
+                          <span style={{ fontSize: '1.2rem', color: 'var(--accent-burgundy)', fontWeight: '800' }}>
+                            {openFaq === fIdx ? '−' : '+'}
+                          </span>
+                        </button>
+                        {openFaq === fIdx && (
+                          <div style={{ padding: '14px 18px', borderTop: '1px solid #E2DBD2', fontSize: '0.92rem', lineHeight: '1.65', color: 'var(--ink-secondary)', background: '#FFFFFF' }}>
+                            {faq.answer}
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
                 </div>
               )}
 
@@ -344,9 +431,9 @@ export default function ArticleDetailPage({
 
               {/* Editorial Disclaimer Callout */}
               {article.editorialDisclaimer && (
-                <div style={{ background: '#FAF7F2', border: '1px solid #E2DBD2', borderLeft: '4px solid #C27D38', padding: '16px 20px', margin: '32px 0' }}>
-                  <h4 style={{ fontSize: '0.78rem', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.6px', color: '#C27D38', marginBottom: '6px' }}>
-                    Editorial Notice & Regulatory Disclaimer
+                <div style={{ background: '#FAF7F2', border: '1px solid #E2DBD2', borderLeft: '4px solid var(--accent-burgundy)', padding: '16px 20px', margin: '32px 0' }}>
+                  <h4 style={{ fontSize: '0.78rem', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.6px', color: 'var(--accent-burgundy)', marginBottom: '6px' }}>
+                    Editorial Notice &amp; Regulatory Disclaimer
                   </h4>
                   <p style={{ fontSize: '0.84rem', color: 'var(--ink-muted)', lineHeight: '1.5', margin: 0 }}>
                     {article.editorialDisclaimer}
@@ -362,8 +449,8 @@ export default function ArticleDetailPage({
                   Topics:
                 </span>
                 {article.tags.map((t, i) => (
-                  <span 
-                    key={i} 
+                  <span
+                    key={i}
                     className="article-tag-item"
                     onClick={() => onNavigateCategory(t)}
                   >
@@ -375,14 +462,14 @@ export default function ArticleDetailPage({
 
             {/* Author Bio Box */}
             <div className="author-bio-card">
-              <img 
-                src={author.avatar} 
+              <img
+                src={author.avatar}
                 alt={author.name}
                 onClick={() => onSelectAuthor(author.id)}
-                style={{ cursor: 'pointer' }} 
+                style={{ cursor: 'pointer' }}
               />
               <div className="author-bio-content">
-                <h4 
+                <h4
                   onClick={() => onSelectAuthor(author.id)}
                   style={{ cursor: 'pointer' }}
                 >
@@ -401,7 +488,7 @@ export default function ArticleDetailPage({
               </div>
 
               <form className="comment-input-box" onSubmit={handlePostComment}>
-                <textarea 
+                <textarea
                   placeholder="Share your perspective or domain insights on this report..."
                   value={newComment}
                   onChange={(e) => setNewComment(e.target.value)}
@@ -430,6 +517,60 @@ export default function ArticleDetailPage({
           {/* Sidebar: Related Stories & Most Read */}
           <aside className="article-sidebar">
             <div className="sidebar-sticky-wrap">
+              {/* Direct Selling & MLM Benchmark Index Widget */}
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--ink-border)', padding: '20px', marginBottom: '24px', borderTop: '3px solid var(--accent-burgundy)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
+                  <Trophy size={16} color="var(--accent-burgundy)" />
+                  <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.15rem', margin: 0, color: 'var(--ink-primary)', fontWeight: '800' }}>
+                    Direct Selling &amp; MLM Index
+                  </h3>
+                </div>
+                <p style={{ fontSize: '0.78rem', color: 'var(--ink-muted)', marginBottom: '14px', lineHeight: '1.4' }}>
+                  2026 Editorial Benchmarks &amp; Evaluated Rankings:
+                </p>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                  {[
+                    { id: "world-top-10-mlm-companies", title: "World Top 10 MLM Companies" },
+                    { id: "india-top-10-mlm-companies", title: "India Top 10 MLM Companies" },
+                    { id: "india-top-10-new-mlm-companies", title: "India Top 10 New MLM Companies" },
+                    { id: "india-top-10-emerging-mlm-companies", title: "India Top 10 Emerging MLM Companies" },
+                    { id: "india-top-10-new-mlm-startups", title: "India Top 10 New MLM Startups" },
+                    { id: "india-top-10-fast-growing-mlm-companies", title: "India Top 10 Fast Growing MLM" },
+                    { id: "india-top-10-new-direct-selling-companies", title: "India Top 10 New Direct Selling" },
+                    { id: "top-10-mlm-companies-india-guide", title: "All India 10 Leading Guide" },
+                    { id: "emerging-indian-direct-selling-hgr-corporation", title: "Emerging Indian Direct Selling (HGR)" },
+                    { id: "fastest-growing-mlm-startup-hgr-corporation", title: "Fastest-Growing MLM Startup (HGR)" }
+                  ].map(item => {
+                    const isCurrent = article.id === item.id || article.route === item.id;
+                    return (
+                      <button
+                        key={item.id}
+                        onClick={() => onSelectArticle(item.id)}
+                        style={{
+                          width: '100%',
+                          textAlign: 'left',
+                          background: isCurrent ? '#FAF7F2' : 'none',
+                          border: 'none',
+                          borderLeft: isCurrent ? '3px solid var(--accent-burgundy)' : '3px solid transparent',
+                          padding: '7px 8px',
+                          fontSize: '0.82rem',
+                          fontWeight: isCurrent ? '800' : '600',
+                          color: isCurrent ? 'var(--accent-burgundy)' : 'var(--ink-secondary)',
+                          cursor: 'pointer',
+                          display: 'flex',
+                          justifyContent: 'space-between',
+                          alignItems: 'center',
+                          transition: 'background 0.15s'
+                        }}
+                      >
+                        <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', paddingRight: '6px' }}>{item.title}</span>
+                        <ArrowRight size={11} color={isCurrent ? 'var(--accent-burgundy)' : '#999'} />
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
               {/* Related In Depth Stories */}
               <div>
                 <h3 className="col-header" style={{ marginBottom: '14px' }}>
@@ -437,11 +578,11 @@ export default function ArticleDetailPage({
                 </h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
                   {relatedArticles.map(art => (
-                    <ArticleCard 
-                      key={art.id} 
-                      article={art} 
-                      variant="compact" 
-                      onSelectArticle={onSelectArticle} 
+                    <ArticleCard
+                      key={art.id}
+                      article={art}
+                      variant="compact"
+                      onSelectArticle={onSelectArticle}
                     />
                   ))}
                 </div>
@@ -459,12 +600,13 @@ export default function ArticleDetailPage({
               <div>
                 <h3 className="col-header">Trending in Markets</h3>
                 <div className="trending-list">
-                  {trendingArticles.slice(0, 4).map(art => (
-                    <ArticleCard 
-                      key={art.id} 
-                      article={art} 
-                      variant="trending" 
-                      onSelectArticle={onSelectArticle} 
+                  {trendingArticles.map((art, idx) => (
+                    <ArticleCard
+                      key={art.id}
+                      article={art}
+                      variant="trending"
+                      rank={idx + 1}
+                      onSelectArticle={onSelectArticle}
                     />
                   ))}
                 </div>

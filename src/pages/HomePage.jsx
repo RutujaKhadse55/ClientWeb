@@ -1,8 +1,8 @@
 import React from 'react';
-import { ArrowRight, Clock, ShieldCheck, CheckSquare, Trophy, TrendingUp, Layers, CheckCircle } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { companiesData } from '../data/companies';
 
-export default function HomePage({ onNavigate, onOpenChecklist }) {
+export default function HomePage({ onNavigate, onOpenChecklist: _onOpenChecklist }) {
   return (
     <div>
       {/* Magazine Hero Section */}
@@ -135,6 +135,165 @@ export default function HomePage({ onNavigate, onOpenChecklist }) {
                   ))}
                 </tbody>
               </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2026 Targeted MLM & Direct Selling Category Guides */}
+      <section className="section-wrapper" style={{ background: '#F8F5F0', borderTop: '2px solid #1D2321', borderBottom: '1px solid #E2DBD2' }}>
+        <div className="container">
+          <div className="section-title-bar">
+            <div>
+              <span style={{ fontSize: '0.75rem', fontWeight: '800', textTransform: 'uppercase', color: '#8C4A52', letterSpacing: '0.8px' }}>
+                EDITORIAL MARKET GUIDES &bull; 2026 EDITION
+              </span>
+              <h2 className="section-heading" style={{ margin: '4px 0 0' }}>
+                Targeted MLM &amp; Direct Selling Category Guides
+              </h2>
+            </div>
+            <span style={{ fontSize: '0.85rem', color: '#5C6662' }}>7 Comprehensive Market Analysis Articles</span>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '20px', marginTop: '24px' }}>
+            {/* Card 1: World Top 10 */}
+            <div style={{ background: '#FFFFFF', border: '1px solid #E2DBD2', padding: '24px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', borderTop: '4px solid #1A3C34' }}>
+              <div>
+                <span className="notice-badge" style={{ background: '#1A3C34', color: '#FFFFFF', fontSize: '0.72rem' }}>GLOBAL BENCHMARK</span>
+                <h3 style={{ fontSize: '1.22rem', color: '#1D2321', margin: '10px 0 8px', fontWeight: '800' }}>
+                  World Top 10 MLM Companies
+                </h3>
+                <p style={{ fontSize: '0.88rem', color: '#5C6662', lineHeight: '1.6', marginBottom: '14px' }}>
+                  Global leaders evaluated on multi-continent distributor reach, revenue scale, and product credibility (Amway, Herbalife, Vorwerk).
+                </p>
+              </div>
+              <button
+                className="btn-card-action"
+                onClick={() => onNavigate('world-top-10-mlm')}
+                style={{ padding: '8px 14px', fontSize: '0.82rem', background: '#1A3C34', color: '#FFFFFF' }}
+              >
+                <span>Read World Top 10 →</span>
+              </button>
+            </div>
+
+            {/* Card 2: India Top 10 */}
+            <div style={{ background: '#FFFFFF', border: '1px solid #E2DBD2', padding: '24px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', borderTop: '4px solid #8C4A52' }}>
+              <div>
+                <span className="notice-badge" style={{ background: '#8C4A52', color: '#FFFFFF', fontSize: '0.72rem' }}>NATIONAL LEADERS</span>
+                <h3 style={{ fontSize: '1.22rem', color: '#1D2321', margin: '10px 0 8px', fontWeight: '800' }}>
+                  India Top 10 MLM Companies
+                </h3>
+                <p style={{ fontSize: '0.88rem', color: '#5C6662', lineHeight: '1.6', marginBottom: '14px' }}>
+                  Established market giants operating across India with proven longevity, deep product lines, and legal compliance.
+                </p>
+              </div>
+              <button
+                className="btn-card-action"
+                onClick={() => onNavigate('india-top-10-mlm')}
+                style={{ padding: '8px 14px', fontSize: '0.82rem', background: '#8C4A52', color: '#FFFFFF' }}
+              >
+                <span>Read India Top 10 →</span>
+              </button>
+            </div>
+
+            {/* Card 3: India New MLM Companies */}
+            <div style={{ background: '#FFFFFF', border: '1px solid #E2DBD2', padding: '24px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', borderTop: '4px solid #1A3C34' }}>
+              <div>
+                <span className="notice-badge" style={{ background: '#1A3C34', color: '#FFFFFF', fontSize: '0.72rem' }}>NEW ENTRANTS</span>
+                <h3 style={{ fontSize: '1.22rem', color: '#1D2321', margin: '10px 0 8px', fontWeight: '800' }}>
+                  India Top 10 New MLM Companies
+                </h3>
+                <p style={{ fontSize: '0.88rem', color: '#5C6662', lineHeight: '1.6', marginBottom: '14px' }}>
+                  Newer market entrants founded in the post-digital era, emphasizing product utility and digital distributor training.
+                </p>
+              </div>
+              <button
+                className="btn-card-action"
+                onClick={() => onNavigate('india-new-mlm-companies')}
+                style={{ padding: '8px 14px', fontSize: '0.82rem', background: '#1A3C34', color: '#FFFFFF' }}
+              >
+                <span>Explore New MLM →</span>
+              </button>
+            </div>
+
+            {/* Card 4: India Emerging MLM */}
+            <div style={{ background: '#FFFFFF', border: '1px solid #E2DBD2', padding: '24px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', borderTop: '4px solid #8C4A52' }}>
+              <div>
+                <span className="notice-badge" style={{ background: '#8C4A52', color: '#FFFFFF', fontSize: '0.72rem' }}>EMERGING PLAYERS</span>
+                <h3 style={{ fontSize: '1.22rem', color: '#1D2321', margin: '10px 0 8px', fontWeight: '800' }}>
+                  India Top 10 Emerging MLM Companies
+                </h3>
+                <p style={{ fontSize: '0.88rem', color: '#5C6662', lineHeight: '1.6', marginBottom: '14px' }}>
+                  Companies transitioning from early growth into established presence with expanding catalogs and geographic reach.
+                </p>
+              </div>
+              <button
+                className="btn-card-action"
+                onClick={() => onNavigate('india-emerging-mlm-companies')}
+                style={{ padding: '8px 14px', fontSize: '0.82rem', background: '#8C4A52', color: '#FFFFFF' }}
+              >
+                <span>View Emerging MLM →</span>
+              </button>
+            </div>
+
+            {/* Card 5: India New MLM Startups */}
+            <div style={{ background: '#FFFFFF', border: '1px solid #E2DBD2', padding: '24px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', borderTop: '4px solid #C27D38' }}>
+              <div>
+                <span className="notice-badge" style={{ background: '#C27D38', color: '#FFFFFF', fontSize: '0.72rem' }}>AGILE STARTUPS</span>
+                <h3 style={{ fontSize: '1.22rem', color: '#1D2321', margin: '10px 0 8px', fontWeight: '800' }}>
+                  India Top 10 New MLM Startups
+                </h3>
+                <p style={{ fontSize: '0.88rem', color: '#5C6662', lineHeight: '1.6', marginBottom: '14px' }}>
+                  High-agility ventures combining lean operations, WhatsApp commerce, and entrepreneur-first partnership structures.
+                </p>
+              </div>
+              <button
+                className="btn-card-action"
+                onClick={() => onNavigate('india-new-mlm-startups')}
+                style={{ padding: '8px 14px', fontSize: '0.82rem', background: '#C27D38', color: '#FFFFFF' }}
+              >
+                <span>View MLM Startups →</span>
+              </button>
+            </div>
+
+            {/* Card 6: India Fast Growing MLM */}
+            <div style={{ background: '#FFFFFF', border: '1px solid #E2DBD2', padding: '24px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', borderTop: '4px solid #1A3C34' }}>
+              <div>
+                <span className="notice-badge" style={{ background: '#1A3C34', color: '#FFFFFF', fontSize: '0.72rem' }}>HIGH MOMENTUM</span>
+                <h3 style={{ fontSize: '1.22rem', color: '#1D2321', margin: '10px 0 8px', fontWeight: '800' }}>
+                  India Top 10 Fast Growing MLM Companies
+                </h3>
+                <p style={{ fontSize: '0.88rem', color: '#5C6662', lineHeight: '1.6', marginBottom: '14px' }}>
+                  Enterprises showing measurable growth across distributor onboarding, tier-2/3 expansion, and repeat consumer adoption.
+                </p>
+              </div>
+              <button
+                className="btn-card-action"
+                onClick={() => onNavigate('india-fast-growing-mlm-companies')}
+                style={{ padding: '8px 14px', fontSize: '0.82rem', background: '#1A3C34', color: '#FFFFFF' }}
+              >
+                <span>View Fast Growing →</span>
+              </button>
+            </div>
+
+            {/* Card 7: India New Direct Selling */}
+            <div style={{ background: '#FFFFFF', border: '1px solid #E2DBD2', padding: '24px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', borderTop: '4px solid #8C4A52' }}>
+              <div>
+                <span className="notice-badge" style={{ background: '#8C4A52', color: '#FFFFFF', fontSize: '0.72rem' }}>DIRECT SALES 2021</span>
+                <h3 style={{ fontSize: '1.22rem', color: '#1D2321', margin: '10px 0 8px', fontWeight: '800' }}>
+                  India Top 10 New Direct Selling Companies
+                </h3>
+                <p style={{ fontSize: '0.88rem', color: '#5C6662', lineHeight: '1.6', marginBottom: '14px' }}>
+                  Newer enterprises operating under the Consumer Protection (Direct Selling) Rules, 2021 with genuine product utility.
+                </p>
+              </div>
+              <button
+                className="btn-card-action"
+                onClick={() => onNavigate('india-new-direct-selling-companies')}
+                style={{ padding: '8px 14px', fontSize: '0.82rem', background: '#8C4A52', color: '#FFFFFF' }}
+              >
+                <span>View Direct Selling →</span>
+              </button>
             </div>
           </div>
         </div>
