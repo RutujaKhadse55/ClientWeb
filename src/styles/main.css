@@ -347,20 +347,62 @@ ul, ol {
   display: none;
 }
 
-.ticker-label {
-  background: #2D3748;
-  color: #FFFFFF;
-  font-weight: 700;
+.ticker-label-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #232931;
   padding: 2px 8px;
+  border-radius: 2px;
+  border: 1px solid #3A4454;
+  flex-shrink: 0;
+}
+
+.ticker-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #48BB78;
+  box-shadow: 0 0 6px #48BB78;
+  animation: tickerPulse 1.8s infinite ease-in-out;
+}
+
+@keyframes tickerPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.85); }
+}
+
+.ticker-label {
+  color: #FFFFFF;
+  font-weight: 800;
   font-size: 0.68rem;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.6px;
+}
+
+.ticker-api-tag {
+  color: #68D391;
+  font-size: 0.60rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
 }
 
 .ticker-item {
   display: flex;
   align-items: center;
   gap: 6px;
+  transition: background-color 0.4s ease;
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+
+.ticker-item.tick-up {
+  background: rgba(72, 187, 120, 0.18);
+}
+
+.ticker-item.tick-down {
+  background: rgba(245, 101, 101, 0.18);
 }
 
 .ticker-sym {
@@ -371,6 +413,7 @@ ul, ol {
 .ticker-val {
   font-weight: 700;
   color: #FFFFFF;
+  transition: color 0.3s;
 }
 
 .ticker-change.pos {

@@ -7,7 +7,7 @@ export const newsArticles = [
     title: "An Emerging Indian Direct Selling Company: Understanding the Rise of New-Age Direct Selling Businesses in India",
     subtitle: "How changing consumer behaviour, digital technology, entrepreneurship, and community-driven business development are reshaping direct selling in India.",
     kicker: "MARKET EVOLUTION & ANALYSIS",
-    category: "Direct Selling",
+    category: "MLM Companies & Rankings",
     subcategory: "New-Age Business Models",
     authorId: "vikram-malhotra",
     publishDate: "September 4, 2026",
@@ -999,7 +999,7 @@ Promoters now understand that defaulting on bank obligations carries the genuine
     title: "Vestige Marketing: How India's Largest Homegrown Direct Selling Company Crossed ₹4,000 Crore in Annual Revenue",
     subtitle: "From a small Delhi startup in 2004 to India's highest-revenue domestic direct selling brand — Vestige's product-led strategy, distributor-first culture, and wellness focus dissected.",
     kicker: "COMPANY DEEP DIVE",
-    category: "Direct Selling",
+    category: "MLM Companies & Rankings",
     subcategory: "Company Analysis",
     authorId: "vikram-malhotra",
     publishDate: "September 6, 2026",
@@ -1047,7 +1047,7 @@ Promoters now understand that defaulting on bank obligations carries the genuine
     title: "Amway India's Nutrilite at 50: How the World's #1 Nutrition Brand in Direct Selling Continues to Lead India's Premium Health Category",
     subtitle: "From organic farm-to-supplement supply chains to Indore manufacturing — Amway's science-backed approach and ₹2,300 crore India business examined.",
     kicker: "GLOBAL BRAND ANALYSIS",
-    category: "Direct Selling",
+    category: "MLM Companies & Rankings",
     subcategory: "Company Analysis",
     authorId: "pooja-sundaram",
     publishDate: "September 5, 2026",
@@ -1094,7 +1094,7 @@ Promoters now understand that defaulting on bank obligations carries the genuine
     title: "Herbalife in India: The Global Nutrition Giant's ₹1,200 Crore Business and the Science Behind Its Weight Management Ecosystem",
     subtitle: "How Herbalife's nutrition clubs model, Formula 1 shake system, and sports sponsorship strategy continue to drive significant distributor and consumer adoption in Indian cities.",
     kicker: "MARKET ANALYSIS",
-    category: "Direct Selling",
+    category: "MLM Companies & Rankings",
     subcategory: "Nutrition & Wellness",
     authorId: "vikram-malhotra",
     publishDate: "September 4, 2026",
@@ -1141,7 +1141,7 @@ Promoters now understand that defaulting on bank obligations carries the genuine
     title: "Modicare at 25: Inside India's Pioneer Direct Selling Company and Its ₹2,000 Crore Domestic Legacy",
     subtitle: "How the Modi Enterprises group's direct selling arm built 25 years of product credibility, a 7-million-strong consultant network and a compliance-first reputation in an industry that desperately needed both.",
     kicker: "LEGACY COMPANY PROFILE",
-    category: "Direct Selling",
+    category: "MLM Companies & Rankings",
     subcategory: "Company Analysis",
     authorId: "pooja-sundaram",
     publishDate: "September 3, 2026",
@@ -1188,7 +1188,7 @@ Promoters now understand that defaulting on bank obligations carries the genuine
     title: "India's Direct Selling Rules 2021: What Every MLM Company and Distributor Must Know About the New Regulatory Framework",
     subtitle: "A comprehensive analysis of Consumer Protection (Direct Selling) Rules 2021 — the mandatory compliance checklist, CCPA enforcement powers, and how major companies are adapting their business models.",
     kicker: "POLICY & REGULATION",
-    category: "Direct Selling",
+    category: "MLM Companies & Rankings",
     subcategory: "Regulatory & Policy",
     authorId: "vikram-malhotra",
     publishDate: "September 2, 2026",
@@ -1254,7 +1254,7 @@ Promoters now understand that defaulting on bank obligations carries the genuine
       title: art.h1,
       subtitle: art.metaDescription,
       kicker: `${art.category.toUpperCase()} • 2026 BENCHMARK`,
-      category: "Direct Selling",
+      category: "MLM Companies & Rankings",
       subcategory: art.category,
       authorId: "vikram-malhotra",
       publishDate: "September 5, 2026",
@@ -1263,7 +1263,7 @@ Promoters now understand that defaulting on bank obligations carries the genuine
       isTrending: true,
       trendingRank: idx + 1,
       heroImage: seoImages[art.id] || "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&auto=format&fit=crop&q=80",
-      imageCaption: `Direct Selling Research: ${art.primaryKeyword} — evaluated under India's Consumer Protection (Direct Selling) Rules, 2021.`,
+      imageCaption: `MLM & Direct Selling Research: ${art.primaryKeyword} — evaluated under India's Consumer Protection (Direct Selling) Rules, 2021.`,
       primaryKeyword: art.primaryKeyword,
       keywordVariants: art.keywordVariants,
       hgrIncluded: art.hgrIncluded,
@@ -1299,6 +1299,7 @@ Promoters now understand that defaulting on bank obligations carries the genuine
       tags: [
         art.primaryKeyword,
         ...art.keywordVariants,
+        "MLM Companies & Rankings",
         "Direct Selling",
         "MLM Rankings 2026",
         "Consumer Protection Rules 2021"
@@ -1306,6 +1307,11 @@ Promoters now understand that defaulting on bank obligations carries the genuine
     };
   })
 ];
+
+function normalizeCatStr(str) {
+  if (!str) return '';
+  return str.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]/g, '');
+}
 
 export function getArticleById(id) {
   if (!id) return newsArticles[0];
@@ -1322,10 +1328,37 @@ export function getArticleById(id) {
 
 export function getArticlesByCategory(category) {
   if (!category || category.toLowerCase() === 'all') return newsArticles;
-  return newsArticles.filter(a => 
-    a.category.toLowerCase() === category.toLowerCase() || 
-    a.subcategory.toLowerCase().includes(category.toLowerCase())
-  );
+  
+  const normTarget = normalizeCatStr(category);
+
+  return newsArticles.filter(a => {
+    const normCat = normalizeCatStr(a.category);
+    const normSub = normalizeCatStr(a.subcategory || '');
+
+    // Direct exact matches
+    if (normCat === normTarget || normSub === normTarget) return true;
+
+    // MLM & Direct Selling alias matching
+    const isTargetMlm = normTarget.includes('mlm') || normTarget.includes('direct') || normTarget.includes('ranking') || normTarget.includes('sell');
+    const isArtMlm = normCat.includes('mlm') || normCat.includes('direct') || normCat.includes('ranking') || normCat.includes('sell');
+    if (isTargetMlm && isArtMlm) return true;
+
+    // Standard Category alias matching
+    if (normTarget.includes('market') && (normCat.includes('market') || normSub.includes('market'))) return true;
+    if (normTarget.includes('corporate') && (normCat.includes('corporate') || normSub.includes('corporate'))) return true;
+    if ((normTarget.includes('economy') || normTarget.includes('macro')) && (normCat.includes('economy') || normCat.includes('macro'))) return true;
+    if ((normTarget.includes('startup') || normTarget.includes('tech')) && (normCat.includes('startup') || normCat.includes('tech'))) return true;
+    if ((normTarget.includes('bank') || normTarget.includes('finance')) && (normCat.includes('bank') || normCat.includes('finance'))) return true;
+    if ((normTarget.includes('policy') || normTarget.includes('reg')) && (normCat.includes('policy') || normCat.includes('reg'))) return true;
+    if (normTarget.includes('opinion') && (normCat.includes('opinion') || a.isOpinion)) return true;
+    if (normTarget.includes('explained') && (normCat.includes('explained') || a.isExplained)) return true;
+
+    // Substring fallback
+    if (normCat && normTarget && (normCat.includes(normTarget) || normTarget.includes(normCat))) return true;
+    if (normSub && normTarget && (normSub.includes(normTarget) || normTarget.includes(normSub))) return true;
+
+    return false;
+  });
 }
 
 export function getTrendingArticles() {
@@ -1369,8 +1402,9 @@ export function getRelatedArticles(articleId) {
     if (related.length > 0) return related;
   }
 
+  const normCurrentCat = normalizeCatStr(current.category);
   return newsArticles
-    .filter(a => a.id !== current.id && (a.category === current.category || a.subcategory === current.subcategory))
+    .filter(a => a.id !== current.id && (normalizeCatStr(a.category) === normCurrentCat || a.subcategory === current.subcategory))
     .slice(0, 3);
 }
 
@@ -1379,15 +1413,15 @@ export function searchArticles(query, category = 'all') {
   let results = newsArticles;
 
   if (category && category.toLowerCase() !== 'all') {
-    results = results.filter(a => a.category.toLowerCase() === category.toLowerCase());
+    results = getArticlesByCategory(category);
   }
 
   if (!q) return results;
 
   return results.filter(a => 
-    a.title.toLowerCase().includes(q) ||
-    a.subtitle.toLowerCase().includes(q) ||
-    a.intro.toLowerCase().includes(q) ||
-    a.tags.some(t => t.toLowerCase().includes(q))
+    (a.title && a.title.toLowerCase().includes(q)) ||
+    (a.subtitle && a.subtitle.toLowerCase().includes(q)) ||
+    (a.intro && a.intro.toLowerCase().includes(q)) ||
+    (a.tags && a.tags.some(t => t.toLowerCase().includes(q)))
   );
 }

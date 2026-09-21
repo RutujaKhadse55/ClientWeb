@@ -6,7 +6,7 @@ export default function SearchModal({ onClose, onSelectArticle }) {
   const [query, setQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
 
-  const categories = ['all', 'Markets', 'Corporate', 'Economy', 'Startups', 'Banking', 'Policy', 'Explained'];
+  const categories = ['all', 'Markets', 'Corporate', 'MLM Companies & Rankings', 'Economy', 'Startups', 'Banking', 'Policy', 'Explained'];
   const results = searchArticles(query, selectedCategory);
 
   return (

@@ -21,22 +21,27 @@ export default function App() {
       const params = new URLSearchParams(window.location.search);
       const articleParam = params.get('article') || params.get('route') || params.get('page');
       if (articleParam) {
-        return { route: 'article', articleId: articleParam, category: 'Direct Selling' };
+        return { route: 'article', articleId: articleParam, category: 'MLM Companies & Rankings' };
       }
       const catParam = params.get('category');
       if (catParam) {
-        return { route: 'category', articleId: null, category: catParam };
+        const norm = catParam.toLowerCase();
+        const cat = (norm.includes('mlm') || norm.includes('direct') || norm.includes('rank')) ? 'MLM Companies & Rankings' : catParam;
+        return { route: 'category', articleId: null, category: cat };
       }
       const hash = window.location.hash.replace(/^#\/?/, '');
       if (hash) {
         if (hash.startsWith('category/')) {
-          return { route: 'category', articleId: null, category: hash.replace('category/', '') };
+          const rawCat = decodeURIComponent(hash.replace('category/', ''));
+          const norm = rawCat.toLowerCase();
+          const cat = (norm.includes('mlm') || norm.includes('direct') || norm.includes('rank')) ? 'MLM Companies & Rankings' : rawCat;
+          return { route: 'category', articleId: null, category: cat };
         }
         if (hash === 'editorial-policy') {
           return { route: 'editorial-policy', articleId: null, category: 'Markets' };
         }
         if (hash !== 'home') {
-          return { route: 'article', articleId: hash.replace('article/', ''), category: 'Direct Selling' };
+          return { route: 'article', articleId: hash.replace('article/', ''), category: 'MLM Companies & Rankings' };
         }
       }
     }
@@ -86,9 +91,12 @@ export default function App() {
   };
 
   const handleNavigateCategory = (category) => {
-    setCurrentCategory(category);
+    const norm = category.toLowerCase();
+    const finalCategory = (norm.includes('mlm') || norm.includes('direct') || norm.includes('rank')) ? 'MLM Companies & Rankings' : category;
+    setCurrentCategory(finalCategory);
     setCurrentRoute('category');
-    window.location.hash = `category/${category.toLowerCase()}`;
+    const slug = finalCategory.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+    window.location.hash = `category/${slug}`;
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 

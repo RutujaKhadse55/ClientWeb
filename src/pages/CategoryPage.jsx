@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { ArrowLeft, Filter, SlidersHorizontal, ArrowRight } from 'lucide-react';
 import { getArticlesByCategory, newsArticles } from '../data/newsArticles';
 import ArticleCard from '../components/ArticleCard';
@@ -12,7 +12,14 @@ export default function CategoryPage({
   const [selectedSubcat, setSelectedSubcat] = useState('all');
   const [sortBy, setSortBy] = useState('newest');
 
+  // Reset subcategory filter whenever category changes to avoid stale/empty views
+  useEffect(() => {
+    setSelectedSubcat('all');
+  }, [category]);
+
   const categoryDescriptions = {
+    "MLM Companies & Rankings": "Comprehensive reporting, verified editorial rankings, due-diligence benchmarks, and regulatory coverage on MLM companies and direct selling businesses in India and globally.",
+    "Direct Selling": "Comprehensive reporting, verified editorial rankings, due-diligence benchmarks, and regulatory coverage on MLM companies and direct selling businesses in India and globally.",
     Markets: "Real-time coverage of Dalal Street equity indices, derivative regulations, foreign institutional flows, currency valuations, and primary market IPO listings.",
     Corporate: "In-depth investigative reports on India's largest conglomerates, executive strategy, industrial capacity additions, clean energy transitions, and boardroom governance.",
     Economy: "Macroeconomic indicators, GDP growth projections, fiscal policy, GST Council deliberations, and Reserve Bank of India monetary policy analysis.",
@@ -40,7 +47,7 @@ export default function CategoryPage({
   const filteredArticles = useMemo(() => {
     let list = rawArticles;
     if (selectedSubcat !== 'all') {
-      list = list.filter(a => a.subcategory === selectedSubcat);
+      list = list.filter(a => (a.subcategory || '').toLowerCase().trim() === selectedSubcat.toLowerCase().trim());
     }
 
     return [...list].sort((a, b) => {
@@ -54,6 +61,23 @@ export default function CategoryPage({
     });
   }, [rawArticles, selectedSubcat, sortBy]);
 
+  // Display Name formatting
+  const displayCategory = useMemo(() => {
+    const lower = (category || '').toLowerCase();
+    if (lower.includes('mlm') || lower.includes('direct') || lower.includes('rank')) {
+      return "MLM Companies & Rankings";
+    }
+    if (lower.includes('market')) return "Markets & IPOs";
+    if (lower.includes('corp')) return "Corporate Watch";
+    if (lower.includes('econ') || lower.includes('macro')) return "Macro & Economy";
+    if (lower.includes('start') || lower.includes('tech')) return "Tech & Startups";
+    if (lower.includes('bank') || lower.includes('fin')) return "Banking & Finance";
+    if (lower.includes('polic') || lower.includes('reg')) return "Policy & Regulations";
+    if (lower.includes('opin') || lower.includes('col')) return "Columns & Op-Ed";
+    if (lower.includes('explain')) return "The Explained Series";
+    return category;
+  }, [category]);
+
   return (
     <div style={{ padding: '24px 0 60px', background: '#FFFFFF' }}>
       <div className="container">
@@ -61,16 +85,16 @@ export default function CategoryPage({
         <div className="article-breadcrumbs">
           <span style={{ cursor: 'pointer' }} onClick={() => onNavigate('home')}>Home</span>
           <span>/</span>
-          <span className="curr">{category}</span>
+          <span className="curr">{displayCategory}</span>
         </div>
 
         {/* Category Header */}
         <header className="category-page-header">
           <h1 className="category-page-title">
-            {category} Channel
+            {displayCategory} Channel
           </h1>
           <p className="category-page-subline">
-            {categoryDescriptions[category] || `Comprehensive reporting and investigative coverage on ${category}.`}
+            {categoryDescriptions[category] || categoryDescriptions[displayCategory] || `Comprehensive reporting and investigative coverage on ${displayCategory}.`}
           </p>
         </header>
 
@@ -83,7 +107,7 @@ export default function CategoryPage({
             {subcategories.map(sub => (
               <button
                 key={sub}
-                className={`subcat-pill ${selectedSubcat === sub ? 'active' : ''}`}
+                className={`subcat-pill ${selectedSubcat.toLowerCase() === sub.toLowerCase() ? 'active' : ''}`}
                 onClick={() => setSelectedSubcat(sub)}
               >
                 {sub === 'all' ? 'All Sub-Beats' : sub}

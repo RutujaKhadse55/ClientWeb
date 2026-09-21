@@ -55,7 +55,7 @@ export default function NewsFooter({ onNavigate, onNavigateCategory, onSelectArt
             <div className="footer-links-list">
               <button onClick={() => onNavigateCategory('Markets')}>Markets &amp; Derivatives</button>
               <button onClick={() => onNavigateCategory('Corporate')}>Corporate &amp; Conglomerates</button>
-              <button onClick={() => onNavigateCategory('Direct Selling')}>Direct Selling &amp; Retail</button>
+              <button onClick={() => onNavigateCategory('MLM Companies & Rankings')}>MLM Companies &amp; Rankings</button>
               <button onClick={() => onNavigateCategory('Economy')}>Macro &amp; Economy</button>
               <button onClick={() => onNavigateCategory('Startups')}>Tech &amp; Startups</button>
               <button onClick={() => onNavigateCategory('Banking')}>Banking &amp; Credit</button>
@@ -64,7 +64,7 @@ export default function NewsFooter({ onNavigate, onNavigateCategory, onSelectArt
           </div>
 
           <div className="footer-col">
-            <h4 style={{ color: '#E2A03F' }}>Direct Selling Benchmarks</h4>
+            <h4 style={{ color: '#E2A03F' }}>MLM Companies &amp; Rankings</h4>
             <div className="footer-links-list">
               <button onClick={() => handleArticleClick('world-top-10-mlm-companies')}>World Top 10 MLM Companies</button>
               <button onClick={() => handleArticleClick('india-top-10-mlm-companies')}>India Top 10 MLM Companies</button>

@@ -41,8 +41,12 @@ export default function NewsHomePage({
   // Banking, Finance & Policy Section
   const bankingPolicyArticles = newsArticles.filter(a => a.category === 'Banking' || a.category === 'Policy' || a.category === 'Markets').slice(0, 4);
 
-  // Direct Selling & Entrepreneurship Special Reports
-  const directSellingArticles = newsArticles.filter(a => a.category === 'Direct Selling');
+  // MLM Companies, Direct Selling & Entrepreneurship Special Reports
+  const directSellingArticles = newsArticles.filter(a => 
+    a.category === 'MLM Companies & Rankings' || 
+    a.category === 'Direct Selling' ||
+    (a.category && a.category.toLowerCase().includes('mlm'))
+  );
 
   return (
     <div>
@@ -418,14 +422,14 @@ export default function NewsHomePage({
               <span style={{ fontSize: '0.72rem', fontWeight: '800', textTransform: 'uppercase', color: '#C27D38', letterSpacing: '0.8px', display: 'block' }}>
                 SPECIAL RESEARCH & EVALUATION REPORTS
               </span>
-              <h2 style={{ color: '#111111', margin: 0 }}>Direct Selling, FMCG & Emerging Startups Guide</h2>
+              <h2 style={{ color: '#111111', margin: 0 }}>MLM Companies &amp; Rankings, Direct Selling &amp; Emerging Startups Guide</h2>
             </div>
             <button
               className="view-all-link"
-              onClick={() => onNavigateCategory('Direct Selling')}
+              onClick={() => onNavigateCategory('MLM Companies & Rankings')}
               style={{ color: '#C27D38', fontWeight: '800' }}
             >
-              <span>View All Direct Selling Guides</span>
+              <span>View All MLM Companies &amp; Rankings</span>
               <ArrowRight size={14} />
             </button>
           </div>

@@ -28,7 +28,7 @@ export default function NewsHeader({
     { id: "all", label: "Home", isHome: true },
     { id: "Markets", label: "Markets & IPOs" },
     { id: "Corporate", label: "Corporate Watch" },
-    { id: "Direct Selling", label: "Direct Selling & Rankings", isSpecialTag: true, hasDropdown: true },
+    { id: "MLM Companies & Rankings", label: "MLM Companies & Rankings", isSpecialTag: true, hasDropdown: true },
     { id: "Economy", label: "Macro & Economy" },
     { id: "Startups", label: "Tech & Startups" },
     { id: "Banking", label: "Banking & Finance" },
@@ -83,9 +83,15 @@ export default function NewsHeader({
         <div className="container category-nav-inner">
           <div className="category-links">
             {categories.map((cat) => {
+              const normCurrentCat = (currentCategory || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+              const normCatId = cat.id.toLowerCase().replace(/[^a-z0-9]/g, '');
+              
               const isSelected = 
                 (cat.isHome && currentRoute === 'home') || 
-                (currentRoute === 'category' && currentCategory?.toLowerCase() === cat.id.toLowerCase());
+                (currentRoute === 'category' && (
+                  normCurrentCat === normCatId ||
+                  (cat.hasDropdown && (normCurrentCat.includes('mlm') || normCurrentCat.includes('direct') || normCurrentCat.includes('ranking')))
+                ));
 
               if (cat.hasDropdown) {
                 return (
@@ -98,7 +104,7 @@ export default function NewsHeader({
                     <button
                       className={`cat-nav-item ${isSelected ? 'active' : ''}`}
                       onClick={() => {
-                        onNavigateCategory('Direct Selling');
+                        onNavigateCategory('MLM Companies & Rankings');
                       }}
                       style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', fontWeight: '700' }}
                     >
@@ -163,7 +169,7 @@ export default function NewsHeader({
                           <button
                             onClick={() => {
                               setIsDsOpen(false);
-                              onNavigateCategory('Direct Selling');
+                              onNavigateCategory('MLM Companies & Rankings');
                             }}
                             style={{
                               width: '100%',
@@ -177,7 +183,7 @@ export default function NewsHeader({
                               cursor: 'pointer'
                             }}
                           >
-                            Browse All Direct Selling Coverage →
+                            Browse All MLM Companies &amp; Rankings →
                           </button>
                         </div>
                       </div>
