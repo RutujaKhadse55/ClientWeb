@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://directsellingindia.org/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- About -->
+  <url>
+    <loc>https://directsellingindia.org/about</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Rankings Hub -->
+  <url>
+    <loc>https://directsellingindia.org/rankings</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- Top 10 MLM Companies India -->
+  <url>
+    <loc>https://directsellingindia.org/rankings/top-10-mlm-companies-india</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- Fastest Growing MLM Companies -->
+  <url>
+    <loc>https://directsellingindia.org/rankings/fastest-growing-mlm-companies-india</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Emerging Companies -->
+  <url>
+    <loc>https://directsellingindia.org/rankings/emerging-direct-selling-companies-india</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- New Direct Selling Companies -->
+  <url>
+    <loc>https://directsellingindia.org/rankings/new-direct-selling-companies-india</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- World Top 10 MLM -->
+  <url>
+    <loc>https://directsellingindia.org/rankings/world-top-10-mlm-companies</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- News Section -->
+  <url>
+    <loc>https://directsellingindia.org/news</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Category: MLM Companies & Rankings -->
+  <url>
+    <loc>https://directsellingindia.org/category/mlm-companies-rankings</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Category: Markets -->
+  <url>
+    <loc>https://directsellingindia.org/category/markets</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Category: Business -->
+  <url>
+    <loc>https://directsellingindia.org/category/business</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Category: Regulation -->
+  <url>
+    <loc>https://directsellingindia.org/category/regulation</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Education Hub -->
+  <url>
+    <loc>https://directsellingindia.org/education</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- How to Choose a Direct Selling Company -->
+  <url>
+    <loc>https://directsellingindia.org/education/how-to-choose-direct-selling-company</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- MLM vs Job Article -->
+  <url>
+    <loc>https://directsellingindia.org/education/mlm-vs-job-india</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Benefits Page -->
+  <url>
+    <loc>https://directsellingindia.org/education/benefits-of-direct-selling</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Methodology -->
+  <url>
+    <loc>https://directsellingindia.org/methodology</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Editorial Policy -->
+  <url>
+    <loc>https://directsellingindia.org/editorial-policy</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Rankings FAQ -->
+  <url>
+    <loc>https://directsellingindia.org/rankings/faq</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://directsellingindia.org/privacy-policy</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Terms of Use -->
+  <url>
+    <loc>https://directsellingindia.org/terms-of-use</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://directsellingindia.org/contact</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>

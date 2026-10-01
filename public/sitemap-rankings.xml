@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- India Top 10 MLM Companies -->
+  <url>
+    <loc>https://directsellingindia.org/rankings/top-10-mlm-companies-india</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- India Fastest Growing MLM Companies -->
+  <url>
+    <loc>https://directsellingindia.org/rankings/fastest-growing-mlm-companies-india</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- India Emerging MLM Companies -->
+  <url>
+    <loc>https://directsellingindia.org/rankings/emerging-mlm-companies-india</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- India New Direct Selling Companies -->
+  <url>
+    <loc>https://directsellingindia.org/rankings/new-direct-selling-companies-india</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- India New MLM Startups -->
+  <url>
+    <loc>https://directsellingindia.org/rankings/new-mlm-startups-india</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- India New MLM Companies -->
+  <url>
+    <loc>https://directsellingindia.org/rankings/new-mlm-companies-india</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- World Top 10 MLM Companies -->
+  <url>
+    <loc>https://directsellingindia.org/rankings/world-top-10-mlm-companies</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Rankings FAQ -->
+  <url>
+    <loc>https://directsellingindia.org/rankings/faq</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>

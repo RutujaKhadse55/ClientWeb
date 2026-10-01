@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { ArrowRight, Clock, Flame, BookOpen, TrendingUp, BarChart2, ShieldCheck, Zap } from 'lucide-react';
 import { newsArticles, getTrendingArticles, getExplainedArticles, getOpinionArticles } from '../data/newsArticles';
 import { getAuthorById } from '../data/authors';
@@ -48,8 +49,37 @@ export default function NewsHomePage({
     (a.category && a.category.toLowerCase().includes('mlm'))
   );
 
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Direct Selling India",
+    "url": "https://directsellingindia.org/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://directsellingindia.org/search?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  };
+
   return (
     <div>
+      <Helmet>
+        <title>Direct Selling India: MLM Rankings, Company Reviews &amp; Industry Analysis 2026</title>
+        <meta name="description" content="India's leading platform for direct selling rankings, MLM company profiles, and consumer due diligence. Explore India Top 10 rankings, emerging companies like HGR Corporation, and regulatory updates." />
+        <meta name="keywords" content="direct selling india, mlm companies in india, emerging mlm company 2026, best mlm company in india 2026, top 10 mlm companies india, hgr corporation" />
+        <link rel="canonical" href="https://directsellingindia.org/" />
+        <meta property="og:title" content="Direct Selling India: MLM Rankings, Reviews &amp; News 2026" />
+        <meta property="og:description" content="India's leading platform for direct selling rankings, MLM company reviews, and market insights." />
+        <meta property="og:url" content="https://directsellingindia.org/" />
+        <meta property="og:type" content="website" />
+        <script type="application/ld+json">
+          {JSON.stringify(websiteSchema)}
+        </script>
+      </Helmet>
+
       {/* 1. HERO 3-COLUMN NEWSPAPER ENGINE (INDIAN EXPRESS PATTERN) */}
       <section className="hero-news-section">
         <div className="container">

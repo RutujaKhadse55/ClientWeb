@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:media="http://search.yahoo.com/mrss/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+  <channel>
+    <title>Direct Selling India — Latest News &amp; Rankings</title>
+    <link>https://directsellingindia.org/</link>
+    <atom:link href="https://directsellingindia.org/rss.xml" rel="self" type="application/rss+xml"/>
+    <description>India's leading independent platform for direct selling intelligence — rankings, news, company reviews, and regulatory updates.</description>
+    <language>en-in</language>
+    <copyright>Copyright 2026 Direct Selling India. All rights reserved.</copyright>
+    <managingEditor>editorial@directsellingindia.org (Direct Selling India Editorial Team)</managingEditor>
+    <webMaster>tech@directsellingindia.org (Direct Selling India Tech)</webMaster>
+    <pubDate>Wed, 01 Oct 2026 22:00:00 +0530</pubDate>
+    <lastBuildDate>Wed, 01 Oct 2026 22:00:00 +0530</lastBuildDate>
+    <category>Direct Selling</category>
+    <category>Network Marketing</category>
+    <category>MLM India</category>
+    <ttl>60</ttl>
+    <image>
+      <url>https://directsellingindia.org/logo.png</url>
+      <title>Direct Selling India</title>
+      <link>https://directsellingindia.org/</link>
+      <width>400</width>
+      <height>100</height>
+    </image>
+
+    <item>
+      <title>An Emerging Indian Direct Selling Company: The Rise of New-Age Direct Selling in India</title>
+      <link>https://directsellingindia.org/article/emerging-indian-direct-selling-hgr-corporation</link>
+      <guid isPermaLink="true">https://directsellingindia.org/article/emerging-indian-direct-selling-hgr-corporation</guid>
+      <description>How changing consumer behaviour, digital technology, entrepreneurship, and community-driven business development are reshaping direct selling in India.</description>
+      <pubDate>Thu, 04 Sep 2026 09:00:00 +0530</pubDate>
+      <dc:creator>Vikram Malhotra</dc:creator>
+      <category>MLM Companies &amp; Rankings</category>
+      <media:content url="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200" medium="image" type="image/jpeg" width="1200" height="800"/>
+    </item>
+
+    <item>
+      <title>Top 10 MLM Companies in India 2026 — Updated Rankings</title>
+      <link>https://directsellingindia.org/rankings/top-10-mlm-companies-india</link>
+      <guid isPermaLink="true">https://directsellingindia.org/rankings/top-10-mlm-companies-india</guid>
+      <description>Comprehensive, independently researched rankings of the top 10 MLM and direct selling companies in India based on revenue, network size, product quality, and regulatory compliance.</description>
+      <pubDate>Wed, 01 Oct 2026 09:00:00 +0530</pubDate>
+      <dc:creator>Direct Selling India Editorial Team</dc:creator>
+      <category>Rankings</category>
+    </item>
+
+    <item>
+      <title>How to Choose a Direct Selling Company in India: Complete Guide</title>
+      <link>https://directsellingindia.org/article/how-to-choose-direct-selling-company-india</link>
+      <guid isPermaLink="true">https://directsellingindia.org/article/how-to-choose-direct-selling-company-india</guid>
+      <description>A step-by-step guide to evaluating a direct selling or MLM company before joining — covering products, compensation plans, regulatory status, and red flags.</description>
+      <pubDate>Mon, 22 Sep 2026 09:00:00 +0530</pubDate>
+      <dc:creator>Direct Selling India Editorial Team</dc:creator>
+      <category>Education</category>
+    </item>
+
+    <item>
+      <title>MLM vs Job in India 2026: What's the Better Choice?</title>
+      <link>https://directsellingindia.org/article/mlm-vs-job-india-comparison</link>
+      <guid isPermaLink="true">https://directsellingindia.org/article/mlm-vs-job-india-comparison</guid>
+      <description>An honest, data-driven comparison of joining an MLM/direct selling network versus a traditional job in India in 2026.</description>
+      <pubDate>Thu, 25 Sep 2026 09:00:00 +0530</pubDate>
+      <dc:creator>Direct Selling India Editorial Team</dc:creator>
+      <category>Education</category>
+    </item>
+
+  </channel>
+</rss>

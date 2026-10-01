@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import {
   Clock,
   Share2,
@@ -26,7 +28,9 @@ export default function ArticleDetailPage({
   onSelectArticle,
   onSelectAuthor
 }) {
-  const article = getArticleById(articleId);
+  const { articleId: routeParamId } = useParams();
+  const effectiveId = routeParamId || articleId;
+  const article = getArticleById(effectiveId);
   const author = getAuthorById(article.authorId);
   const relatedArticles = getRelatedArticles(article.id);
   const trendingArticles = getTrendingArticles();
@@ -81,8 +85,91 @@ export default function ArticleDetailPage({
     }
   };
 
+  const canonicalUrl = `https://directsellingindia.org/article/${article.id}`;
+  const pageTitle = article.metaTitle || `${article.title} | Direct Selling India`;
+  const pageDesc = article.metaDescription || article.subtitle || (article.intro ? article.intro.slice(0, 160) : "Direct Selling India Article");
+
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": article.title,
+    "description": pageDesc,
+    "image": [article.heroImage || "https://directsellingindia.org/og-image.jpg"],
+    "datePublished": "2026-09-01T08:00:00+05:30",
+    "dateModified": "2026-09-05T11:15:00+05:30",
+    "author": {
+      "@type": "Person",
+      "name": author?.name || "Direct Selling India Newsroom"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Direct Selling India",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://directsellingindia.org/logo.png"
+      }
+    },
+    "mainEntityOfPage": canonicalUrl
+  };
+
+  const itemListSchema = article.companies ? {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": article.title,
+    "description": pageDesc,
+    "itemListElement": article.companies.map((c) => ({
+      "@type": "ListItem",
+      "position": c.rank,
+      "name": c.name,
+      "description": c.overview
+    }))
+  } : null;
+
+  const faqSchema = article.faqs ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": article.faqs.map(f => ({
+      "@type": "Question",
+      "name": f.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": f.answer
+      }
+    }))
+  } : null;
+
   return (
     <article className="article-page-wrapper">
+      <Helmet>
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDesc} />
+        {article.keywordVariants && (
+          <meta name="keywords" content={article.keywordVariants.join(', ')} />
+        )}
+        <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDesc} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:type" content="article" />
+        <meta property="og:image" content={article.heroImage || "https://directsellingindia.org/og-image.jpg"} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDesc} />
+        <meta name="twitter:image" content={article.heroImage || "https://directsellingindia.org/og-image.jpg"} />
+        <script type="application/ld+json">
+          {JSON.stringify(articleSchema)}
+        </script>
+        {itemListSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(itemListSchema)}
+          </script>
+        )}
+        {faqSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(faqSchema)}
+          </script>
+        )}
+      </Helmet>
       <div className="container">
         {/* Breadcrumb Bar */}
         <div className="article-breadcrumbs">

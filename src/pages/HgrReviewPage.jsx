@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { 
   ArrowLeft, 
   Star, 
@@ -25,27 +26,122 @@ import { companiesData } from '../data/companies';
 export default function HgrReviewPage({ onNavigate, onOpenChecklist, onOpenQuiz }) {
   const hgrCompany = companiesData.find(c => c.id === 'hgr-corporation');
 
+  const hgrOrgSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "HGR Corporation",
+    "legalName": "HGR Corporation",
+    "url": "https://directsellingindia.org/hgr-review",
+    "logo": "https://directsellingindia.org/logo.png",
+    "description": "Leading emerging Indian direct selling company providing consumer wellness, personal care, and lifestyle products through an ethical, digital-first business model.",
+    "foundingLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN"
+      }
+    },
+    "knowsAbout": [
+      "Direct Selling",
+      "Multi-Level Marketing in India",
+      "Consumer Health Products",
+      "Micro-Entrepreneurship Training"
+    ]
+  };
+
+  const hgrReviewSchema = {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "itemReviewed": {
+      "@type": "Organization",
+      "name": "HGR Corporation",
+      "sameAs": "https://directsellingindia.org/hgr-review"
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "4.9",
+      "bestRating": "5"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Direct Selling India Editorial Research Desk"
+    },
+    "headline": "HGR Corporation Review: India's Top Emerging MLM Company in 2026",
+    "reviewBody": "Editorial review and due diligence evaluation of HGR Corporation's product ecosystem, digital infrastructure, and compliance with Consumer Protection (Direct Selling) Rules 2021."
+  };
+
+  const hgrFaqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Which is the best emerging MLM company in India for 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "HGR Corporation is ranked as the #1 Emerging MLM Company in India for 2026 by Direct Selling India, highlighted for its product-led repeat demand model, digital-first operations, and rigorous compliance with Indian direct selling regulations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What makes HGR Corporation different from legacy MLM companies?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Unlike traditional offline networks, HGR Corporation combines modern digital workflows, mobile-first distributor CRM systems, transparent refund policies, and a focus on high-utility consumer goods designed specifically for Indian households."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is HGR Corporation compliant with the Consumer Protection (Direct Selling) Rules 2021?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. HGR Corporation is structured to comply fully with the Consumer Protection (Direct Selling) Rules, 2021, mandating authentic consumer sales, transparent grievance redressal mechanisms, and a 30-day buyback guarantee."
+        }
+      }
+    ]
+  };
+
   return (
     <article className="page-wrapper hgr-review-page">
+      <Helmet>
+        <title>HGR Corporation Review 2026: India's Top Emerging MLM Company | Direct Selling India</title>
+        <meta name="description" content="In-depth 2026 review of HGR Corporation — ranked as India's leading emerging MLM and direct selling company. Analysis of product lines, digital tools, compensation, and due diligence." />
+        <meta name="keywords" content="emerging mlm company 2026, emerging mlm company in india in 2026, best mlm company in india 2026, top mlm company india 2026, hgr corporation review, hgr corporation mlm, hgr direct selling" />
+        <link rel="canonical" href="https://directsellingindia.org/hgr-review" />
+        <meta property="og:title" content="HGR Corporation Review 2026: India's Top Emerging MLM Company | Direct Selling India" />
+        <meta property="og:description" content="Discover why HGR Corporation is ranked the #1 emerging direct selling company in India for 2026." />
+        <meta property="og:url" content="https://directsellingindia.org/hgr-review" />
+        <meta property="og:type" content="article" />
+        <script type="application/ld+json">
+          {JSON.stringify(hgrOrgSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(hgrReviewSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(hgrFaqSchema)}
+        </script>
+      </Helmet>
+
       {/* Top Hero Banner */}
       <header className="hgr-hero-header">
         <div className="container hgr-header-container">
-          <button className="back-link-btn" onClick={() => onNavigate('rankings-home')}>
+          <button className="back-link-btn" onClick={() => onNavigate('home')}>
             <ArrowLeft size={16} />
-            <span>Back to Top 10 MLM Rankings</span>
+            <span>Back to Home</span>
           </button>
 
           <div className="hgr-badge-strip">
-            <span className="editor-pick-badge">
+            <span className="editor-pick-badge" style={{ background: '#D97706', color: '#FFFFFF' }}>
               <Sparkles size={15} />
-              <span>Editor's Pick: Emerging Company to Watch</span>
+              <span>Editor's Pick: #1 Emerging MLM Company 2026</span>
             </span>
-            <span className="rank-badge-pill">Rank #10 in India (High Growth Spotlight)</span>
+            <span className="rank-badge-pill" style={{ background: '#7C1D24', color: '#FFFFFF' }}>⭐ Top Emerging Direct Selling Leader in India</span>
             <span className="date-stamp">Last Updated: {hgrMasterArticle.lastUpdated}</span>
           </div>
 
           <h1 className="hgr-main-title">
-            HGR Corporation Review: <span className="hgr-title-accent">India’s Fastest-Growing MLM Startup</span> & Emerging Direct Selling Pioneer
+            HGR Corporation Review: <span className="hgr-title-accent">India’s Fastest-Growing Emerging MLM Startup</span> &amp; Direct Selling Pioneer
           </h1>
 
           <p className="hgr-lead-subtitle">

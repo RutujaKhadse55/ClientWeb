@@ -1,10 +1,19 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { ShieldCheck, CheckCircle2, FileText, Mail, Users, ArrowLeft } from 'lucide-react';
 import { authorsData } from '../data/authors';
 
 export default function EditorialPolicyPage({ onNavigate, onSelectAuthor }) {
   return (
     <div style={{ padding: '36px 0 70px', background: '#FFFFFF' }}>
+      <Helmet>
+        <title>Editorial Policy, Standards & Ethics | Direct Selling India</title>
+        <meta name="description" content="Editorial principles, verification standards, independence charter, and grievance redressal policies of Direct Selling India." />
+        <link rel="canonical" href="https://directsellingindia.org/editorial-policy" />
+        <meta property="og:title" content="Editorial Policy, Standards & Ethics | Direct Selling India" />
+        <meta property="og:description" content="Our commitment to independent, verified reporting in direct selling and Indian business." />
+        <meta property="og:url" content="https://directsellingindia.org/editorial-policy" />
+      </Helmet>
       <div className="container" style={{ maxWidth: '880px' }}>
         <div className="article-breadcrumbs">
           <span style={{ cursor: 'pointer' }} onClick={() => onNavigate('home')}>Home</span>

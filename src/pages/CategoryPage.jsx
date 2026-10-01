@@ -1,4 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Filter, SlidersHorizontal, ArrowRight } from 'lucide-react';
 import { getArticlesByCategory, newsArticles } from '../data/newsArticles';
 import ArticleCard from '../components/ArticleCard';
@@ -9,13 +11,16 @@ export default function CategoryPage({
   onSelectArticle, 
   onSelectAuthor 
 }) {
+  const { categoryId, categorySlug } = useParams();
+  const paramCat = categorySlug || categoryId;
+  const effectiveCategory = category || (paramCat ? paramCat.replace(/-/g, ' ').replace(/\band\b/g, '&') : 'MLM Companies & Rankings');
   const [selectedSubcat, setSelectedSubcat] = useState('all');
   const [sortBy, setSortBy] = useState('newest');
 
   // Reset subcategory filter whenever category changes to avoid stale/empty views
   useEffect(() => {
     setSelectedSubcat('all');
-  }, [category]);
+  }, [effectiveCategory]);
 
   const categoryDescriptions = {
     "MLM Companies & Rankings": "Comprehensive reporting, verified editorial rankings, due-diligence benchmarks, and regulatory coverage on MLM companies and direct selling businesses in India and globally.",
@@ -31,8 +36,8 @@ export default function CategoryPage({
   };
 
   const rawArticles = useMemo(() => {
-    return getArticlesByCategory(category);
-  }, [category]);
+    return getArticlesByCategory(effectiveCategory);
+  }, [effectiveCategory]);
 
   // Extract unique subcategories
   const subcategories = useMemo(() => {
@@ -63,7 +68,7 @@ export default function CategoryPage({
 
   // Display Name formatting
   const displayCategory = useMemo(() => {
-    const lower = (category || '').toLowerCase();
+    const lower = (effectiveCategory || '').toLowerCase();
     if (lower.includes('mlm') || lower.includes('direct') || lower.includes('rank')) {
       return "MLM Companies & Rankings";
     }
@@ -75,11 +80,22 @@ export default function CategoryPage({
     if (lower.includes('polic') || lower.includes('reg')) return "Policy & Regulations";
     if (lower.includes('opin') || lower.includes('col')) return "Columns & Op-Ed";
     if (lower.includes('explain')) return "The Explained Series";
-    return category;
-  }, [category]);
+    return effectiveCategory;
+  }, [effectiveCategory]);
+
+  const catSlug = (displayCategory || '').toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+  const canonicalUrl = `https://directsellingindia.org/category/${catSlug}`;
 
   return (
     <div style={{ padding: '24px 0 60px', background: '#FFFFFF' }}>
+      <Helmet>
+        <title>{`${displayCategory} News & Analysis | Direct Selling India`}</title>
+        <meta name="description" content={categoryDescriptions[displayCategory] || `Read the latest ${displayCategory} articles and rankings on Direct Selling India.`} />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:title" content={`${displayCategory} | Direct Selling India`} />
+        <meta property="og:description" content={categoryDescriptions[displayCategory] || `Latest updates in ${displayCategory}`} />
+        <meta property="og:url" content={canonicalUrl} />
+      </Helmet>
       <div className="container">
         {/* Breadcrumb */}
         <div className="article-breadcrumbs">
