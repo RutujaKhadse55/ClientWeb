@@ -90,3 +90,4 @@ Crawl-delay: 10
 Sitemap: https://directsellingindia.org/sitemap.xml
 Sitemap: https://directsellingindia.org/sitemap-news.xml
 Sitemap: https://directsellingindia.org/sitemap-pages.xml
+Sitemap: https://directsellingindia.org/sitemap-rankings.xml
