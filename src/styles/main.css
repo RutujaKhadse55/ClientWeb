@@ -2324,3 +2324,304 @@ ul, ol {
     font-size: 1rem;
   }
 }
+
+/* ==========================================================================
+   ARTICLE DETAIL PAGES — RESPONSIVE ENHANCEMENTS
+   ========================================================================== */
+
+/* Article immersive hero header */
+.article-immersive-header {
+  background: linear-gradient(135deg, #1A3C34 0%, #1D2321 60%, #0F1A15 100%);
+  color: #FFFFFF;
+  padding: 48px 40px 40px;
+  margin-bottom: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.article-immersive-header::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.article-back-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255,255,255,0.7);
+  font-size: 0.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 18px;
+  transition: color 0.2s;
+  position: relative;
+  z-index: 1;
+}
+
+.article-back-nav:hover {
+  color: #FFFFFF;
+}
+
+.article-byline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.65);
+  position: relative;
+  z-index: 1;
+}
+
+.notice-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Article page containers */
+.article-content-body {
+  max-width: 780px;
+}
+
+/* ==========================================================================
+   ARTICLE PAGE RESPONSIVE (all 7 SEO pages)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .article-immersive-header {
+    padding: 28px 16px 24px;
+  }
+
+  .article-immersive-header h1 {
+    font-size: 1.6rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .article-immersive-header p.article-deck {
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .article-byline {
+    font-size: 0.74rem;
+    gap: 6px;
+  }
+
+  /* Container padding for article pages */
+  div[style*="padding: '40px 24px 80px'"],
+  div[style*="padding: '40px 20px 80px'"] {
+    padding: 20px 12px 60px !important;
+  }
+
+  /* Company rank cards */
+  div[style*="padding: '24px 28px'"] {
+    padding: 16px 14px !important;
+  }
+
+  /* Grid panels */
+  div[style*="gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))'"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Methodology and FAQ boxes */
+  div[style*="padding: '32px'"] {
+    padding: 18px 14px !important;
+  }
+
+  /* Serif headlines in articles */
+  h2.serif-headline {
+    font-size: 1.4rem !important;
+  }
+
+  /* Navigation buttons at bottom of article pages */
+  div[style*="justifyContent: 'space-between'"][style*="borderTop"] {
+    flex-direction: column;
+    align-items: stretch !important;
+  }
+  div[style*="justifyContent: 'space-between'"][style*="borderTop"] button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .article-immersive-header {
+    padding: 20px 12px 18px;
+  }
+
+  .article-immersive-header h1 {
+    font-size: 1.3rem !important;
+    line-height: 1.28 !important;
+    margin-bottom: 10px !important;
+  }
+
+  .article-immersive-header p.article-deck {
+    font-size: 0.88rem !important;
+  }
+
+  /* Image caps */
+  div[style*="maxHeight: '420px'"] img {
+    max-height: 200px !important;
+  }
+
+  /* Key facts pills */
+  span[style*="padding: '4px 12px'"] {
+    font-size: 0.72rem;
+    padding: 3px 8px !important;
+  }
+
+  /* Introduction boxes */
+  div[style*="padding: '28px 32px'"] {
+    padding: 14px 12px !important;
+    font-size: 0.93rem !important;
+  }
+}
+
+/* ==========================================================================
+   TABLE RESPONSIVE — All data tables
+   ========================================================================== */
+.table-responsive-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--ink-border);
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  table {
+    min-width: 480px;
+  }
+
+  .table-responsive-wrap {
+    margin-bottom: 16px;
+  }
+
+  /* Inline table wrapper */
+  div > table, section > table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+  }
+}
+
+/* ==========================================================================
+   FOOTER RESPONSIVE
+   ========================================================================== */
+@media (max-width: 480px) {
+  .news-site-footer a,
+  .news-site-footer button {
+    font-size: 0.82rem;
+  }
+
+  .footer-columns-grid > div {
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+}
+
+/* ==========================================================================
+   MODAL RESPONSIVE
+   ========================================================================== */
+@media (max-width: 480px) {
+  .search-modal-container {
+    border-radius: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .newsletter-modal,
+  .lead-magnet-modal,
+  .quiz-modal,
+  .checklist-modal {
+    padding: 20px 14px;
+    margin: 0 8px;
+    border-radius: 4px;
+  }
+}
+
+/* ==========================================================================
+   MARKET TICKER RESPONSIVE
+   ========================================================================== */
+@media (max-width: 480px) {
+  .market-ticker-strip {
+    padding: 4px 0;
+  }
+
+  .ticker-label {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   HERO NEWSPAPER GRID — RESPONSIVE OVERRIDES
+   ========================================================================== */
+@media (max-width: 768px) {
+  .hero-newspaper-grid {
+    display: block !important;
+  }
+
+  .hero-left-col,
+  .hero-right-col {
+    display: block;
+    width: 100%;
+    border-left: none !important;
+    border-top: 1px solid var(--ink-border);
+    padding-left: 0 !important;
+    padding-top: 20px;
+    margin-top: 20px;
+  }
+
+  .hero-left-col {
+    order: 2;
+    border-top: 1px solid var(--ink-border);
+  }
+}
+
+/* ==========================================================================
+   UTILITY CLASSES FOR RESPONSIVE VISIBILITY
+   ========================================================================== */
+.show-mobile {
+  display: none !important;
+}
+
+.hide-on-mobile {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .show-mobile {
+    display: block !important;
+  }
+
+  .hide-desktop {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   SMOOTH TRANSITIONS GLOBAL
+   ========================================================================== */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent horizontal overflow everywhere */
+html, body, #root {
+  max-width: 100vw;
+  overflow-x: hidden;
+}

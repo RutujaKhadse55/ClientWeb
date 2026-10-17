@@ -623,7 +623,7 @@ export default function ArticleDetailPage({
                     { id: "india-top-10-emerging-mlm-companies", title: "India Top 10 Emerging MLM Companies" },
                     { id: "india-top-10-new-mlm-startups", title: "India Top 10 New MLM Startups" },
                     { id: "india-top-10-fast-growing-mlm-companies", title: "India Top 10 Fast Growing MLM" },
-                    { id: "india-top-10-new-direct-selling-companies", title: "India Top 10 New Direct Selling" },
+                    { id: "india-top-20-new-direct-selling-companies", title: "India Top 20 New Direct Selling" },
                     { id: "emerging-indian-direct-selling-hgr-corporation", title: "Emerging Indian Direct Selling (HGR)" },
                     { id: "fastest-growing-mlm-startup-hgr-corporation", title: "Fastest-Growing MLM Startup (HGR)" }
                   ].map(item => {

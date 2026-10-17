@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ArrowLeft, ArrowRight, ShieldCheck, Globe, Clock, ChevronDown, ChevronUp, Sparkles, Building2 } from 'lucide-react';
 import { mlmSeoArticles } from '../data/mlmSeoArticles';
 
-const article = mlmSeoArticles.find(a => a.id === 'india-top-10-new-direct-selling-companies');
+const article = mlmSeoArticles.find(a => a.id === 'india-top-20-new-direct-selling-companies');
 
 export default function IndiaNewDirectSellingPage({ onNavigate }) {
   const [openFaq, setOpenFaq] = useState(null);
@@ -26,7 +26,7 @@ export default function IndiaNewDirectSellingPage({ onNavigate }) {
           {article.h1}
         </h1>
         <p className="article-deck" style={{ color: '#E6EFEA', fontSize: '1.18rem', lineHeight: '1.55', marginBottom: '24px', fontFamily: 'var(--font-serif)' }}>
-          New direct selling companies in India are shaping the modern retail landscape under the Consumer Protection Rules, 2021. Explore the top 10 new direct selling companies in India prioritizing authentic products, consumer satisfaction, and structured entrepreneurship.
+          New direct selling companies in India are shaping the modern retail landscape under the Consumer Protection Rules, 2021. Explore the top 20 new direct selling companies in India prioritizing authentic products, consumer satisfaction, and structured entrepreneurship.
         </p>
 
         <div className="article-byline">
@@ -86,7 +86,7 @@ export default function IndiaNewDirectSellingPage({ onNavigate }) {
       <div style={{ marginBottom: '32px' }}>
         <div style={{ borderBottom: '3px solid #1D2321', paddingBottom: '12px', marginBottom: '24px' }}>
           <h2 className="serif-headline" style={{ fontSize: '1.9rem', color: '#1A3C34', margin: 0 }}>
-            Top 10 New Direct Selling Companies in India: 2026 Editorial Selection
+            Top 20 New Direct Selling Companies in India: 2026 Editorial Selection
           </h2>
         </div>
 
@@ -185,7 +185,7 @@ export default function IndiaNewDirectSellingPage({ onNavigate }) {
           <ShieldCheck size={16} color="#8C4A52" />
           <span>Editorial Disclaimer</span>
         </div>
-        This guide to new direct selling companies in India is an independent editorial compilation. Inclusion does not imply official government accreditation, certification under any specific ministry, or financial ranking. HGR Corporation is included at position #10 as an example of a newer-generation Indian direct selling enterprise. Prospective participants must conduct independent due diligence under the Consumer Protection (Direct Selling) Rules, 2021 before making business or purchasing decisions.
+        This guide to new direct selling companies in India is an independent editorial compilation. Inclusion does not imply official government accreditation, certification under any specific ministry, or financial ranking. HGR Corporation is included at position #18 in this 20-company editorial list as an example of a newer-generation Indian direct selling enterprise. Prospective participants must conduct independent due diligence under the Consumer Protection (Direct Selling) Rules, 2021 before making business or purchasing decisions.
       </div>
 
       {/* Navigation */}

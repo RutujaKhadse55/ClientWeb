@@ -21,10 +21,10 @@ export default function NewsFooter({ onNavigate, onNavigateCategory, onSelectArt
         <div className="footer-top-row">
           <div>
             <div className="footer-brand-title">
-              THE INDIAN BUSINESS <span>CHRONICLE</span>
+              MLM INSIGHT <span>INDIA</span>
             </div>
             <p style={{ color: '#888888', fontSize: '0.82rem', marginTop: '4px' }}>
-              Independent Business Journalism for Corporate India, Markets &amp; the Economy
+              MLM Rankings + Reviews + Comparisons + New MLM Startups + Business Research + Guides
             </p>
           </div>
 
@@ -40,9 +40,9 @@ export default function NewsFooter({ onNavigate, onNavigateCategory, onSelectArt
         {/* Multi-Column Sitemap Grid */}
         <div className="footer-columns-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
           <div className="footer-col">
-            <h4 style={{ color: '#E2A03F' }}>About The Chronicle</h4>
+            <h4 style={{ color: '#E2A03F' }}>About MLM Insight India</h4>
             <p style={{ color: '#AAAAAA', fontSize: '0.82rem', lineHeight: '1.6', marginBottom: '14px' }}>
-              The Indian Business Chronicle (IBC) is an independent financial and economic newsroom founded to provide rigorous, unbiased reporting on India's industrial transformation, capital markets, public policy, and technology frontiers.
+              MLM Insight India is India's leading independent platform for MLM rankings, company reviews, comparisons, new MLM startups, business research, and direct selling guides. Covering India's growing direct selling ecosystem.
             </p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#E2A03F', fontSize: '0.76rem', fontWeight: '700' }}>
               <ShieldCheck size={16} />
@@ -72,7 +72,7 @@ export default function NewsFooter({ onNavigate, onNavigateCategory, onSelectArt
               <button onClick={() => handleArticleClick('india-top-10-emerging-mlm-companies')}>India Top 10 Emerging MLM</button>
               <button onClick={() => handleArticleClick('india-top-10-new-mlm-startups')}>India Top 10 New Startups</button>
               <button onClick={() => handleArticleClick('india-top-10-fast-growing-mlm-companies')}>India Fast-Growing MLM</button>
-              <button onClick={() => handleArticleClick('india-top-10-new-direct-selling-companies')}>India New Direct Selling</button>
+              <button onClick={() => handleArticleClick('india-top-20-new-direct-selling-companies')}>India New Direct Selling</button>
               <button onClick={() => handleArticleClick('emerging-indian-direct-selling-hgr-corporation')}>HGR Corporation Analysis</button>
             </div>
           </div>
@@ -103,7 +103,7 @@ export default function NewsFooter({ onNavigate, onNavigateCategory, onSelectArt
         {/* Bottom Legal & Copyright Bar */}
         <div className="footer-bottom-legal">
           <span>
-            © {new Date().getFullYear()} The Indian Business Chronicle (IBC Media Group). All rights reserved. Compliant with Direct Selling Rules, 2021.
+            © {new Date().getFullYear()} MLM Insight India (MLMInsight.org). All rights reserved. Compliant with Direct Selling Rules, 2021.
           </span>
           <div style={{ display: 'flex', gap: '16px' }}>
             <span style={{ cursor: 'pointer' }} onClick={() => onNavigate('editorial-policy')}>Terms of Service</span>

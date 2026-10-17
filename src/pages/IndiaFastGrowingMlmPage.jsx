@@ -86,7 +86,7 @@ export default function IndiaFastGrowingMlmPage({ onNavigate }) {
       <div style={{ marginBottom: '32px' }}>
         <div style={{ borderBottom: '3px solid #1D2321', paddingBottom: '12px', marginBottom: '24px' }}>
           <h2 className="serif-headline" style={{ fontSize: '1.9rem', color: '#1A3C34', margin: 0 }}>
-            Top 10 Fast Growing MLM Companies in India: 2026 Editorial Rankings
+            Top 20 Fast Growing MLM Companies in India: 2026 Editorial Rankings
           </h2>
         </div>
 
@@ -185,7 +185,7 @@ export default function IndiaFastGrowingMlmPage({ onNavigate }) {
           <ShieldCheck size={16} color="#8C4A52" />
           <span>Editorial Disclaimer</span>
         </div>
-        This list of fast growing MLM companies in India is an editorial selection for informational purposes. Growth indicators used are qualitative and editorial in nature — they are not based on audited revenue, government statistics, or certified industry rankings. HGR Corporation's inclusion at position #7 reflects its editorial positioning as a fast-growing new-generation Indian startup, not an independently verified financial growth ranking. No placement constitutes an investment recommendation.
+        This list of fast growing MLM companies in India is an editorial selection for informational purposes. Growth indicators used are qualitative and editorial in nature — they are not based on audited revenue, government statistics, or certified industry rankings. HGR Corporation's inclusion at position #18 reflects its editorial positioning as a fast-growing new-generation Indian startup in this 20-company editorial list, not an independently verified financial growth ranking. No placement constitutes an investment recommendation.
       </div>
 
       {/* Navigation */}

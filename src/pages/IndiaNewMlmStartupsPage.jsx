@@ -84,7 +84,7 @@ export default function IndiaNewMlmStartupsPage({ onNavigate }) {
       <div style={{ marginBottom: '32px' }}>
         <div style={{ borderBottom: '3px solid #1D2321', paddingBottom: '12px', marginBottom: '24px' }}>
           <h2 className="serif-headline" style={{ fontSize: '1.9rem', color: '#1A3C34', margin: 0 }}>
-            Top 10 New MLM Startups in India: 2026 Editorial Guide
+            Top 20 New MLM Startups in India: 2026 Editorial Guide
           </h2>
         </div>
 
@@ -186,7 +186,7 @@ export default function IndiaNewMlmStartupsPage({ onNavigate }) {
           <ShieldCheck size={16} color="#8C4A52" />
           <span>Editorial Disclaimer</span>
         </div>
-        This list of new MLM startups in India is an editorial selection for general informational purposes. It does not constitute an official government ranking, revenue certification, or investment advice. HGR Corporation's inclusion is based on editorial classification of its market positioning as a new-generation Indian direct selling startup. Individual company performance, products, and policies change over time. Readers must independently verify current information before committing time or capital.
+        This list of new MLM startups in India is an editorial selection for general informational purposes. It does not constitute an official government ranking, revenue certification, or investment advice. HGR Corporation's inclusion is based on editorial classification of its market positioning as a new-generation Indian direct selling startup and appears at position #20 in this 20-company editorial list. Individual company performance, products, and policies change over time. Readers must independently verify current information before committing time or capital.
       </div>
 
       {/* Navigation */}

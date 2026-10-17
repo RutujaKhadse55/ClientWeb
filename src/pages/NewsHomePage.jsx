@@ -52,13 +52,13 @@ export default function NewsHomePage({
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Direct Selling India",
-    "url": "https://directsellingindia.org/",
+    "name": "MLM Insight India",
+    "url": "https://mlminsight.org/",
     "potentialAction": {
       "@type": "SearchAction",
       "target": {
         "@type": "EntryPoint",
-        "urlTemplate": "https://directsellingindia.org/search?q={search_term_string}"
+        "urlTemplate": "https://mlminsight.org/search?q={search_term_string}"
       },
       "query-input": "required name=search_term_string"
     }
@@ -67,13 +67,13 @@ export default function NewsHomePage({
   return (
     <div>
       <Helmet>
-        <title>Direct Selling India: MLM Rankings, Company Reviews &amp; Industry Analysis 2026</title>
-        <meta name="description" content="India's leading platform for direct selling rankings, MLM company profiles, and consumer due diligence. Explore India Top 10 rankings, emerging companies like HGR Corporation, and regulatory updates." />
-        <meta name="keywords" content="direct selling india, mlm companies in india, emerging mlm company 2026, best mlm company in india 2026, top 10 mlm companies india, hgr corporation" />
-        <link rel="canonical" href="https://directsellingindia.org/" />
-        <meta property="og:title" content="Direct Selling India: MLM Rankings, Reviews &amp; News 2026" />
-        <meta property="og:description" content="India's leading platform for direct selling rankings, MLM company reviews, and market insights." />
-        <meta property="og:url" content="https://directsellingindia.org/" />
+        <title>MLM Insight India — MLM Rankings, Reviews, Comparisons &amp; New MLM Startups 2026 | MLMInsight.org</title>
+        <meta name="description" content="MLM Insight India — India's #1 independent platform for MLM Rankings, Reviews, Comparisons, New MLM Startups, Business Research &amp; Guides. Trusted intelligence on India's direct selling industry." />
+        <meta name="keywords" content="MLM rankings India, MLM reviews India, top MLM companies India 2026, new MLM startups India, direct selling India 2026, MLMInsight.org, MLM Insight India, HGR Corporation" />
+        <link rel="canonical" href="https://mlminsight.org/" />
+        <meta property="og:title" content="MLM Insight India — MLM Rankings, Reviews &amp; New MLM Startups 2026" />
+        <meta property="og:description" content="India's #1 independent platform for MLM Rankings, Reviews, Comparisons, New MLM Startups, Business Research &amp; Guides." />
+        <meta property="og:url" content="https://mlminsight.org/" />
         <meta property="og:type" content="website" />
         <script type="application/ld+json">
           {JSON.stringify(websiteSchema)}
@@ -476,7 +476,7 @@ export default function NewsHomePage({
               { id: "india-top-10-emerging-mlm-companies", label: "Top 10 Emerging MLM" },
               { id: "india-top-10-new-mlm-startups", label: "Top 10 Startups" },
               { id: "india-top-10-fast-growing-mlm-companies", label: "Fast Growing" },
-              { id: "india-top-10-new-direct-selling-companies", label: "New Direct Selling" }
+              { id: "india-top-20-new-direct-selling-companies", label: "New Direct Selling" }
             ].map(item => (
               <button
                 key={item.id}

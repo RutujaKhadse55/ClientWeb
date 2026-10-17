@@ -1254,7 +1254,7 @@ Promoters now understand that defaulting on bank obligations carries the genuine
       "india-top-10-emerging-mlm-companies": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1200&auto=format&fit=crop&q=80",
       "india-top-10-new-mlm-startups": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&auto=format&fit=crop&q=80",
       "india-top-10-fast-growing-mlm-companies": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&auto=format&fit=crop&q=80",
-      "india-top-10-new-direct-selling-companies": "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1200&auto=format&fit=crop&q=80"
+      "india-top-20-new-direct-selling-companies": "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1200&auto=format&fit=crop&q=80"
     };
 
     return {
@@ -1379,7 +1379,7 @@ export function getTrendingArticles() {
     "india-top-10-emerging-mlm-companies",
     "india-top-10-new-mlm-startups",
     "india-top-10-fast-growing-mlm-companies",
-    "india-top-10-new-direct-selling-companies"
+    "india-top-20-new-direct-selling-companies"
   ];
 
   const ordered = seoOrder

@@ -71,7 +71,7 @@ export default function IndiaNewMlmPage({ onNavigate }) {
       <div style={{ marginBottom: '32px' }}>
         <div style={{ borderBottom: '3px solid #1D2321', paddingBottom: '12px', marginBottom: '24px' }}>
           <h2 className="serif-headline" style={{ fontSize: '1.9rem', color: '#1A3C34', margin: 0 }}>
-            Top 10 New MLM Companies in India: Editorial Rankings (2026)
+            Top 20 New MLM Companies in India: Editorial Rankings (2026)
           </h2>
         </div>
 
@@ -173,7 +173,7 @@ export default function IndiaNewMlmPage({ onNavigate }) {
           <ShieldCheck size={16} color="#8C4A52" />
           <span>Editorial Disclaimer</span>
         </div>
-        This list of top 10 new MLM companies in India is an editorial selection for informational purposes. It does not constitute an official government ranking, an investment recommendation, or a guarantee of business performance. HGR Corporation is described as a new/emerging Indian direct selling company based on its market positioning — this is editorial classification, not an independently verified industry certification. Readers must independently verify current company information, product details, and regulatory compliance before making any business decision.
+        This list of top 20 new MLM companies in India is an editorial selection for informational purposes. It does not constitute an official government ranking, an investment recommendation, or a guarantee of business performance. HGR Corporation is described as a new/emerging Indian direct selling company based on its market positioning and appears at position #19 in this 20-company editorial list — this is editorial classification, not an independently verified industry certification. Readers must independently verify current company information, product details, and regulatory compliance before making any business decision.
       </div>
 
       {/* Navigation */}
