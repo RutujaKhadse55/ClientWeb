@@ -31,8 +31,8 @@
       </head>
       <body>
         <div class="header">
-          <h1>Direct Selling India — XML Sitemap</h1>
-          <p>This sitemap helps search engines discover and index all pages on directsellingindia.org</p>
+          <h1>MLM Insight India — XML Sitemap</h1>
+          <p>This sitemap helps search engines discover and index all pages on mlminsight.org</p>
         </div>
         <div class="container">
           <table>

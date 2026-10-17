@@ -1,5 +1,5 @@
-# robots.txt for directsellingindia.org
-# Generated for full SEO optimization — Direct Selling India
+# robots.txt for mlminsight.org
+# Generated for full SEO optimization — MLM Insight India
 
 User-agent: *
 Allow: /
@@ -87,7 +87,7 @@ User-agent: Baiduspider
 Crawl-delay: 10
 
 # Sitemaps
-Sitemap: https://directsellingindia.org/sitemap.xml
-Sitemap: https://directsellingindia.org/sitemap-news.xml
-Sitemap: https://directsellingindia.org/sitemap-pages.xml
-Sitemap: https://directsellingindia.org/sitemap-rankings.xml
+Sitemap: https://mlminsight.org/sitemap.xml
+Sitemap: https://mlminsight.org/sitemap-news.xml
+Sitemap: https://mlminsight.org/sitemap-pages.xml
+Sitemap: https://mlminsight.org/sitemap-rankings.xml

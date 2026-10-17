@@ -68,19 +68,19 @@ export default function NewsFooter({ onNavigate, onNavigateCategory, onSelectArt
             <div className="footer-links-list">
               <button onClick={() => handleArticleClick('world-top-10-mlm-companies')}>World Top 10 MLM Companies</button>
               <button onClick={() => handleArticleClick('india-top-10-mlm-companies')}>India Top 10 MLM Companies</button>
-              <button onClick={() => handleArticleClick('india-top-10-new-mlm-companies')}>India Top 10 New MLM</button>
-              <button onClick={() => handleArticleClick('india-top-10-emerging-mlm-companies')}>India Top 10 Emerging MLM</button>
-              <button onClick={() => handleArticleClick('india-top-10-new-mlm-startups')}>India Top 10 New Startups</button>
-              <button onClick={() => handleArticleClick('india-top-10-fast-growing-mlm-companies')}>India Fast-Growing MLM</button>
-              <button onClick={() => handleArticleClick('india-top-20-new-direct-selling-companies')}>India New Direct Selling</button>
-              <button onClick={() => handleArticleClick('emerging-indian-direct-selling-hgr-corporation')}>HGR Corporation Analysis</button>
+              <button onClick={() => handleArticleClick('india-top-10-new-mlm-companies')}>India Top 20 New MLM Companies</button>
+              <button onClick={() => handleArticleClick('india-top-10-emerging-mlm-companies')}>India Top 20 Emerging MLM Companies</button>
+              <button onClick={() => handleArticleClick('india-top-10-new-mlm-startups')}>India Top 20 New MLM Startups</button>
+              <button onClick={() => handleArticleClick('india-top-10-fast-growing-mlm-companies')}>India Top 20 Fast-Growing MLM</button>
+              <button onClick={() => handleArticleClick('india-top-20-new-direct-selling-companies')}>India Top 20 New Direct Selling</button>
+              <button onClick={() => handleArticleClick('emerging-indian-direct-selling-hgr-corporation')}>HGR Corporation Due Diligence Profile</button>
             </div>
           </div>
 
           <div className="footer-col">
             <h4>Features &amp; Analysis</h4>
             <div className="footer-links-list">
-              <button onClick={() => onNavigateCategory('Explained')}>The IBC Explained Series</button>
+              <button onClick={() => onNavigateCategory('Explained')}>Direct Selling &amp; Regulatory Explained</button>
               <button onClick={() => onNavigateCategory('Opinion')}>Op-Eds &amp; Columns</button>
               <button onClick={() => onNavigateCategory('Markets')}>Primary Market IPOs</button>
               <button onClick={() => onNavigateCategory('Corporate')}>Clean Energy &amp; EV</button>

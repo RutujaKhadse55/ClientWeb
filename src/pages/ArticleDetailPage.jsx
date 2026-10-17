@@ -85,28 +85,28 @@ export default function ArticleDetailPage({
     }
   };
 
-  const canonicalUrl = `https://directsellingindia.org/article/${article.id}`;
-  const pageTitle = article.metaTitle || `${article.title} | Direct Selling India`;
-  const pageDesc = article.metaDescription || article.subtitle || (article.intro ? article.intro.slice(0, 160) : "Direct Selling India Article");
+  const canonicalUrl = `https://mlminsight.org/article/${article.id}`;
+  const pageTitle = article.metaTitle || `${article.title} | MLM Insight India`;
+  const pageDesc = article.metaDescription || article.subtitle || (article.intro ? article.intro.slice(0, 160) : "MLM Insight India Article");
 
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "NewsArticle",
     "headline": article.title,
     "description": pageDesc,
-    "image": [article.heroImage || "https://directsellingindia.org/og-image.jpg"],
+    "image": [article.heroImage || "https://mlminsight.org/og-image.jpg"],
     "datePublished": "2026-09-01T08:00:00+05:30",
     "dateModified": "2026-09-05T11:15:00+05:30",
     "author": {
       "@type": "Person",
-      "name": author?.name || "Direct Selling India Newsroom"
+      "name": author?.name || "MLM Insight India Newsroom"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Direct Selling India",
+      "name": "MLM Insight India",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://directsellingindia.org/logo.png"
+        "url": "https://mlminsight.org/logo.png"
       }
     },
     "mainEntityOfPage": canonicalUrl
@@ -151,11 +151,11 @@ export default function ArticleDetailPage({
         <meta property="og:description" content={pageDesc} />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="article" />
-        <meta property="og:image" content={article.heroImage || "https://directsellingindia.org/og-image.jpg"} />
+        <meta property="og:image" content={article.heroImage || "https://mlminsight.org/og-image.jpg"} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={pageDesc} />
-        <meta name="twitter:image" content={article.heroImage || "https://directsellingindia.org/og-image.jpg"} />
+        <meta name="twitter:image" content={article.heroImage || "https://mlminsight.org/og-image.jpg"} />
         <script type="application/ld+json">
           {JSON.stringify(articleSchema)}
         </script>

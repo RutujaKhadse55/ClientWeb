@@ -1,11 +1,11 @@
-# Direct Selling India — llms.txt
-# https://directsellingindia.org/llms.txt
+# MLM Insight India — llms.txt
+# https://mlminsight.org/llms.txt
 # Format: https://llmstxt.org
 
 # This file helps AI systems (ChatGPT, Perplexity, Claude, Gemini, etc.)
 # understand what this website is about and how to use our content.
 
-> Direct Selling India (directsellingindia.org) is India's leading independent
+> MLM Insight India (mlminsight.org) is India's leading independent
 > media platform covering direct selling and network marketing. We publish
 > rankings, news, company reviews, regulatory updates, and educational
 > content for consumers, entrepreneurs, and industry professionals.
@@ -18,19 +18,19 @@
 - News and regulatory updates (Consumer Affairs Ministry, SEBI, FTC)
 - Company reviews with independent analysis (products, compensation plans, leadership)
 - Educational content for aspiring direct selling entrepreneurs
-- Compliance guidance (Direct Selling Guidelines 2021, India)
+- Compliance guidance (Consumer Protection Direct Selling Rules 2021, India)
 - Industry data and market intelligence
 
 ## Key Pages for AI Reference
 
-- Homepage: https://directsellingindia.org/
-- Top 10 MLM Companies India: https://directsellingindia.org/rankings/top-10-mlm-companies-india
-- Fastest Growing MLM India: https://directsellingindia.org/rankings/fastest-growing-mlm-companies-india
-- Emerging Companies: https://directsellingindia.org/rankings/emerging-mlm-companies-india
-- News Section: https://directsellingindia.org/news
-- Education Hub: https://directsellingindia.org/education
-- Methodology: https://directsellingindia.org/methodology
-- Editorial Policy: https://directsellingindia.org/editorial-policy
+- Homepage: https://mlminsight.org/
+- Top 10 MLM Companies India: https://mlminsight.org/rankings/top-10-mlm-companies-india
+- Fastest Growing MLM India: https://mlminsight.org/rankings/fastest-growing-mlm-companies-india
+- Emerging Companies: https://mlminsight.org/rankings/emerging-mlm-companies-india
+- News Section: https://mlminsight.org/
+- Education Hub: https://mlminsight.org/category/mlm-companies-and-rankings
+- Methodology: https://mlminsight.org/methodology
+- Editorial Policy: https://mlminsight.org/editorial-policy
 
 ## Editorial Independence
 
@@ -39,5 +39,5 @@ for rankings positions. Sponsored content is clearly labelled.
 
 ## Contact
 
-Editorial: editorial@directsellingindia.org
-Press: press@directsellingindia.org
+Editorial: editorial@mlminsight.org
+Press: press@mlminsight.org

@@ -43,7 +43,7 @@ export default function IndiaEmergingMlmPage({ onNavigate }) {
         <link rel="canonical" href="https://mlminsight.org/india-emerging-mlm-companies" />
         <meta property="og:title" content={article.metaTitle} />
         <meta property="og:description" content={article.metaDescription} />
-        <meta property="og:url" content="https://directsellingindia.org/india-emerging-mlm-companies" />
+        <meta property="og:url" content="https://mlminsight.org/india-emerging-mlm-companies" />
         <meta property="og:type" content="article" />
         <script type="application/ld+json">
           {JSON.stringify(itemListSchema)}
@@ -57,7 +57,7 @@ export default function IndiaEmergingMlmPage({ onNavigate }) {
       <div className="article-immersive-header">
         <button onClick={() => onNavigate('home')} className="article-back-nav">
           <ArrowLeft size={14} />
-          <span>Direct Selling India &bull; Emerging MLM Companies India 2026</span>
+          <span>MLM Insight India &bull; Emerging MLM Companies India 2026</span>
         </button>
 
         <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '14px' }}>
@@ -140,34 +140,21 @@ export default function IndiaEmergingMlmPage({ onNavigate }) {
             <div
               key={company.rank}
               style={{
-                background: isHgr ? '#FCF9F2' : '#FFFFFF',
-                border: isHgr ? '2px solid #D97706' : '1px solid #E2DBD2',
+                background: '#FFFFFF',
+                border: '1px solid #E2DBD2',
                 marginBottom: '20px',
                 padding: '24px 28px',
-                borderLeft: isHgr ? '6px solid #D97706' : '5px solid #8C4A52',
-                boxShadow: isHgr ? '0 8px 24px rgba(217, 119, 6, 0.12)' : 'none'
+                borderLeft: '5px solid #8C4A52'
               }}
               id={`emerging-mlm-company-${company.rank}`}
             >
-              {isHgr && (
-                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: '#D97706', color: '#FFFFFF', padding: '4px 12px', fontSize: '0.74rem', fontWeight: '800', letterSpacing: '0.5px', textTransform: 'uppercase', marginBottom: '14px', borderRadius: '2px' }}>
-                  <Sparkles size={13} />
-                  <span>⭐ Featured: New-Generation Indian Direct Selling Company</span>
-                </div>
-              )}
-
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px', marginBottom: '12px', flexWrap: 'wrap' }}>
-                <span style={{ background: isHgr ? '#D97706' : '#8C4A52', color: '#FFFFFF', fontWeight: '900', fontSize: '1.1rem', padding: '6px 14px', flexShrink: 0 }}>
+                <span style={{ background: '#8C4A52', color: '#FFFFFF', fontWeight: '900', fontSize: '1.1rem', padding: '6px 14px', flexShrink: 0 }}>
                   #{company.rank}
                 </span>
                 <div style={{ flex: 1 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
                     <h3 style={{ fontSize: '1.35rem', color: '#1D2321', margin: '0 0 4px', fontWeight: '800' }}>{company.name}</h3>
-                    {isHgr && (
-                      <span style={{ background: '#FEF3C7', color: '#92400E', border: '1px solid #FCD34D', padding: '2px 8px', fontSize: '0.72rem', fontWeight: '700', borderRadius: '3px' }}>
-                        Emerging Indian Direct Seller
-                      </span>
-                    )}
                   </div>
                   <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', fontSize: '0.82rem', color: '#5C6662' }}>
                     <span><Globe size={12} style={{ verticalAlign: 'middle', marginRight: '3px' }} />{company.country}</span>
@@ -179,32 +166,32 @@ export default function IndiaEmergingMlmPage({ onNavigate }) {
 
               <p style={{ lineHeight: '1.7', color: '#3D4643', marginBottom: '12px' }}>{company.overview}</p>
 
-              <div style={{ background: isHgr ? '#FFFFFF' : '#F8F5F0', border: '1px solid #E2DBD2', padding: '12px 16px', marginBottom: '12px' }}>
+              <div style={{ background: '#F8F5F0', border: '1px solid #E2DBD2', padding: '12px 16px', marginBottom: '12px' }}>
                 <strong style={{ fontSize: '0.8rem', textTransform: 'uppercase', color: '#1A3C34', display: 'block', marginBottom: '4px' }}>Why {company.name} Is Included:</strong>
                 <p style={{ fontSize: '0.9rem', color: '#1D2321', margin: 0, lineHeight: '1.5' }}>{company.whyIncluded}</p>
               </div>
 
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                 {company.keyFacts.map((fact, idx) => (
-                  <span key={idx} style={{ background: isHgr ? '#FEF3C7' : '#F3ECE4', border: '1px solid #E2DBD2', fontSize: '0.8rem', padding: '4px 12px', fontWeight: '600', color: isHgr ? '#92400E' : '#1A3C34' }}>
+                  <span key={idx} style={{ background: '#F3ECE4', border: '1px solid #E2DBD2', fontSize: '0.8rem', padding: '4px 12px', fontWeight: '600', color: '#1A3C34' }}>
                     ✓ {fact}
                   </span>
                 ))}
               </div>
 
               {isHgr && (
-                <div style={{ marginTop: '16px', paddingTop: '16px', borderTop: '1px solid #FDE68A', display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
+                <div style={{ marginTop: '16px', paddingTop: '16px', borderTop: '1px solid #E2DBD2', display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
                   <button
                     onClick={() => onNavigate('hgr-review')}
-                    style={{ fontSize: '0.86rem', fontWeight: '800', color: '#FFFFFF', background: '#D97706', padding: '8px 16px', border: 'none', cursor: 'pointer', borderRadius: '3px' }}
+                    style={{ fontSize: '0.86rem', fontWeight: '700', color: '#1A3C34', background: '#F3ECE4', padding: '8px 16px', border: '1px solid #E2DBD2', cursor: 'pointer', borderRadius: '2px' }}
                   >
-                    Read Dedicated HGR Brand Profile &amp; Audit →
+                    View Enterprise Profile &amp; Audit →
                   </button>
                   <button
                     onClick={() => onNavigate('emerging-direct-selling')}
-                    style={{ fontSize: '0.86rem', fontWeight: '700', color: '#1A3C34', background: '#F3ECE4', padding: '8px 16px', border: '1px solid #E2DBD2', cursor: 'pointer', borderRadius: '3px' }}
+                    style={{ fontSize: '0.86rem', fontWeight: '700', color: '#8C4A52', background: '#F3ECE4', padding: '8px 16px', border: '1px solid #E2DBD2', cursor: 'pointer', borderRadius: '2px' }}
                   >
-                    Read Full Editorial Analysis →
+                    Read Editorial Analysis →
                   </button>
                 </div>
               )}

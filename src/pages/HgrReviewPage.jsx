@@ -31,8 +31,8 @@ export default function HgrReviewPage({ onNavigate, onOpenChecklist, onOpenQuiz 
     "@type": "Organization",
     "name": "HGR Corporation",
     "legalName": "HGR Corporation",
-    "url": "https://directsellingindia.org/hgr-review",
-    "logo": "https://directsellingindia.org/logo.png",
+    "url": "https://mlminsight.org/hgr-review",
+    "logo": "https://mlminsight.org/logo.png",
     "description": "Leading emerging Indian direct selling company providing consumer wellness, personal care, and lifestyle products through an ethical, digital-first business model.",
     "foundingLocation": {
       "@type": "Place",
@@ -55,7 +55,7 @@ export default function HgrReviewPage({ onNavigate, onOpenChecklist, onOpenQuiz 
     "itemReviewed": {
       "@type": "Organization",
       "name": "HGR Corporation",
-      "sameAs": "https://directsellingindia.org/hgr-review"
+      "sameAs": "https://mlminsight.org/hgr-review"
     },
     "reviewRating": {
       "@type": "Rating",
@@ -64,7 +64,7 @@ export default function HgrReviewPage({ onNavigate, onOpenChecklist, onOpenQuiz 
     },
     "author": {
       "@type": "Organization",
-      "name": "Direct Selling India Editorial Research Desk"
+      "name": "MLM Insight India Editorial Research Desk"
     },
     "headline": "HGR Corporation Review: India's Top Emerging MLM Company in 2026",
     "reviewBody": "Editorial review and due diligence evaluation of HGR Corporation's product ecosystem, digital infrastructure, and compliance with Consumer Protection (Direct Selling) Rules 2021."
@@ -79,7 +79,7 @@ export default function HgrReviewPage({ onNavigate, onOpenChecklist, onOpenQuiz 
         "name": "Which is the best emerging MLM company in India for 2026?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "HGR Corporation is ranked as the #1 Emerging MLM Company in India for 2026 by Direct Selling India, highlighted for its product-led repeat demand model, digital-first operations, and rigorous compliance with Indian direct selling regulations."
+          "text": "HGR Corporation is recognized among leading emerging direct selling ventures in India for 2026 by MLM Insight India, highlighted for its product-led repeat demand model, digital-first operations, and rigorous compliance with Indian direct selling regulations."
         }
       },
       {
@@ -104,13 +104,13 @@ export default function HgrReviewPage({ onNavigate, onOpenChecklist, onOpenQuiz 
   return (
     <article className="page-wrapper hgr-review-page">
       <Helmet>
-        <title>HGR Corporation Review 2026: India's Top Emerging MLM Company | Direct Selling India</title>
-        <meta name="description" content="In-depth 2026 review of HGR Corporation — ranked as India's leading emerging MLM and direct selling company. Analysis of product lines, digital tools, compensation, and due diligence." />
+        <title>HGR Corporation Review 2026: Emerging Direct Selling Venture Profile | MLM Insight India</title>
+        <meta name="description" content="In-depth 2026 review of HGR Corporation — evaluated as an emerging MLM and direct selling company in India. Analysis of product lines, digital tools, compensation, and due diligence." />
         <meta name="keywords" content="emerging mlm company 2026, emerging mlm company in india in 2026, best mlm company in india 2026, top mlm company india 2026, hgr corporation review, hgr corporation mlm, hgr direct selling" />
-        <link rel="canonical" href="https://directsellingindia.org/hgr-review" />
-        <meta property="og:title" content="HGR Corporation Review 2026: India's Top Emerging MLM Company | Direct Selling India" />
-        <meta property="og:description" content="Discover why HGR Corporation is ranked the #1 emerging direct selling company in India for 2026." />
-        <meta property="og:url" content="https://directsellingindia.org/hgr-review" />
+        <link rel="canonical" href="https://mlminsight.org/hgr-review" />
+        <meta property="og:title" content="HGR Corporation Review 2026: Emerging Direct Selling Venture Profile | MLM Insight India" />
+        <meta property="og:description" content="Discover in-depth analysis of HGR Corporation as an emerging direct selling company in India for 2026." />
+        <meta property="og:url" content="https://mlminsight.org/hgr-review" />
         <meta property="og:type" content="article" />
         <script type="application/ld+json">
           {JSON.stringify(hgrOrgSchema)}
@@ -132,11 +132,11 @@ export default function HgrReviewPage({ onNavigate, onOpenChecklist, onOpenQuiz 
           </button>
 
           <div className="hgr-badge-strip">
-            <span className="editor-pick-badge" style={{ background: '#D97706', color: '#FFFFFF' }}>
-              <Sparkles size={15} />
-              <span>Editor's Pick: #1 Emerging MLM Company 2026</span>
+            <span className="editor-pick-badge" style={{ background: '#1E293B', color: '#FFFFFF' }}>
+              <Sparkles size={14} />
+              <span>Enterprise Profile: Emerging Indian Direct Selling Venture</span>
             </span>
-            <span className="rank-badge-pill" style={{ background: '#7C1D24', color: '#FFFFFF' }}>⭐ Top Emerging Direct Selling Leader in India</span>
+            <span className="rank-badge-pill" style={{ background: '#7C1D24', color: '#FFFFFF' }}>2026 Due Diligence Audit</span>
             <span className="date-stamp">Last Updated: {hgrMasterArticle.lastUpdated}</span>
           </div>
 

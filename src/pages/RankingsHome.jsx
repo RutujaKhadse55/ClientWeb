@@ -125,7 +125,7 @@ export default function RankingsHome({
                         <div>
                           <strong>{comp.name}</strong>
                           {comp.isEditorPick && (
-                            <span className="editor-table-badge">⭐ Editor's Pick</span>
+                            <span className="editor-table-badge">Featured Venture</span>
                           )}
                         </div>
                       </div>

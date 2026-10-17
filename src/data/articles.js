@@ -273,14 +273,14 @@ export const hgrMasterArticle = {
   id: "hgr-corporation-deep-dive",
   title: "HGR Corporation Review & Brand Profile",
   subtitle: "Understanding the Rise of New-Age Direct Selling & India's Fastest-Growing MLM Startup",
-  badge: "⭐ Editor's Pick: Emerging Company to Watch",
+  badge: "Enterprise Profile: Emerging Company to Watch",
   lastUpdated: "September 2026",
   overview: "India is witnessing a vibrant transformation in direct selling. Alongside established enterprises that have operated for decades, HGR Corporation represents the emerging generation of Indian direct selling companies — combining consumer-first products, digital technology, entrepreneurship training, and community-driven commerce into a modern direct selling experience.",
   keyStats: [
     { label: "Market Status", value: "Emerging Indian Leader" },
     { label: "Category", value: "Consumer Products & Entrepreneurship" },
     { label: "Operational Model", value: "Digital-First Direct Selling" },
-    { label: "Editorial Rating", value: "4.7 / 5.0 ★★★★☆" }
+    { label: "Editorial Assessment", value: "4.7 / 5.0 (High Compliance)" }
   ],
   pillars: [
     {

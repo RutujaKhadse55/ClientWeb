@@ -6,7 +6,7 @@
 
   <!-- Homepage -->
   <url>
-    <loc>https://directsellingindia.org/</loc>
+    <loc>https://mlminsight.org/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -14,7 +14,7 @@
 
   <!-- About -->
   <url>
-    <loc>https://directsellingindia.org/about</loc>
+    <loc>https://mlminsight.org/about</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -22,7 +22,7 @@
 
   <!-- Rankings Hub -->
   <url>
-    <loc>https://directsellingindia.org/rankings</loc>
+    <loc>https://mlminsight.org/rankings</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
@@ -30,7 +30,7 @@
 
   <!-- Top 10 MLM Companies India -->
   <url>
-    <loc>https://directsellingindia.org/rankings/top-10-mlm-companies-india</loc>
+    <loc>https://mlminsight.org/rankings/top-10-mlm-companies-india</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
@@ -38,7 +38,7 @@
 
   <!-- Fastest Growing MLM Companies -->
   <url>
-    <loc>https://directsellingindia.org/rankings/fastest-growing-mlm-companies-india</loc>
+    <loc>https://mlminsight.org/rankings/fastest-growing-mlm-companies-india</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -46,7 +46,7 @@
 
   <!-- Emerging MLM Companies -->
   <url>
-    <loc>https://directsellingindia.org/rankings/emerging-mlm-companies-india</loc>
+    <loc>https://mlminsight.org/rankings/emerging-mlm-companies-india</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -54,7 +54,7 @@
 
   <!-- New Direct Selling Companies -->
   <url>
-    <loc>https://directsellingindia.org/rankings/new-direct-selling-companies-india</loc>
+    <loc>https://mlminsight.org/rankings/new-direct-selling-companies-india</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
@@ -62,7 +62,7 @@
 
   <!-- New MLM Startups -->
   <url>
-    <loc>https://directsellingindia.org/rankings/new-mlm-startups-india</loc>
+    <loc>https://mlminsight.org/rankings/new-mlm-startups-india</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
@@ -70,7 +70,7 @@
 
   <!-- New MLM Companies -->
   <url>
-    <loc>https://directsellingindia.org/rankings/new-mlm-companies-india</loc>
+    <loc>https://mlminsight.org/rankings/new-mlm-companies-india</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
@@ -78,7 +78,7 @@
 
   <!-- World Top 10 MLM -->
   <url>
-    <loc>https://directsellingindia.org/rankings/world-top-10-mlm-companies</loc>
+    <loc>https://mlminsight.org/rankings/world-top-10-mlm-companies</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
@@ -86,7 +86,7 @@
 
   <!-- HGR Review (Canonical) -->
   <url>
-    <loc>https://directsellingindia.org/hgr-review</loc>
+    <loc>https://mlminsight.org/hgr-review</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -94,7 +94,7 @@
 
   <!-- Category: MLM Companies & Rankings -->
   <url>
-    <loc>https://directsellingindia.org/category/mlm-companies-and-rankings</loc>
+    <loc>https://mlminsight.org/category/mlm-companies-and-rankings</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
@@ -102,7 +102,7 @@
 
   <!-- Category: Markets -->
   <url>
-    <loc>https://directsellingindia.org/category/markets</loc>
+    <loc>https://mlminsight.org/category/markets</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
@@ -110,7 +110,7 @@
 
   <!-- Category: Business -->
   <url>
-    <loc>https://directsellingindia.org/category/business</loc>
+    <loc>https://mlminsight.org/category/business</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
@@ -118,7 +118,7 @@
 
   <!-- Category: Regulation -->
   <url>
-    <loc>https://directsellingindia.org/category/regulation</loc>
+    <loc>https://mlminsight.org/category/regulation</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
@@ -126,7 +126,7 @@
 
   <!-- How to Choose a Direct Selling Company (actual route) -->
   <url>
-    <loc>https://directsellingindia.org/how-to-choose</loc>
+    <loc>https://mlminsight.org/how-to-choose</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -134,7 +134,7 @@
 
   <!-- MLM vs Job -->
   <url>
-    <loc>https://directsellingindia.org/mlm-vs-job</loc>
+    <loc>https://mlminsight.org/mlm-vs-job</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
@@ -142,7 +142,7 @@
 
   <!-- Benefits of Direct Selling (actual route) -->
   <url>
-    <loc>https://directsellingindia.org/benefits-guide</loc>
+    <loc>https://mlminsight.org/benefits-guide</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
@@ -150,7 +150,7 @@
 
   <!-- Emerging Direct Selling -->
   <url>
-    <loc>https://directsellingindia.org/emerging-direct-selling</loc>
+    <loc>https://mlminsight.org/emerging-direct-selling</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -158,7 +158,7 @@
 
   <!-- Fastest Growing Startup -->
   <url>
-    <loc>https://directsellingindia.org/fastest-growing-startup</loc>
+    <loc>https://mlminsight.org/fastest-growing-startup</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -166,7 +166,7 @@
 
   <!-- Methodology -->
   <url>
-    <loc>https://directsellingindia.org/methodology</loc>
+    <loc>https://mlminsight.org/methodology</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -174,7 +174,7 @@
 
   <!-- Editorial Policy -->
   <url>
-    <loc>https://directsellingindia.org/editorial-policy</loc>
+    <loc>https://mlminsight.org/editorial-policy</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -182,49 +182,49 @@
 
   <!-- Direct SEO Article Routes -->
   <url>
-    <loc>https://directsellingindia.org/world-top-10-mlm</loc>
+    <loc>https://mlminsight.org/world-top-10-mlm</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://directsellingindia.org/india-top-10-mlm</loc>
+    <loc>https://mlminsight.org/india-top-10-mlm</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
-    <loc>https://directsellingindia.org/india-new-mlm-companies</loc>
+    <loc>https://mlminsight.org/india-new-mlm-companies</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
-    <loc>https://directsellingindia.org/india-emerging-mlm-companies</loc>
+    <loc>https://mlminsight.org/india-emerging-mlm-companies</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
-    <loc>https://directsellingindia.org/india-new-mlm-startups</loc>
+    <loc>https://mlminsight.org/india-new-mlm-startups</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
-    <loc>https://directsellingindia.org/india-fast-growing-mlm-companies</loc>
+    <loc>https://mlminsight.org/india-fast-growing-mlm-companies</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
-    <loc>https://directsellingindia.org/india-new-direct-selling-companies</loc>
+    <loc>https://mlminsight.org/india-new-direct-selling-companies</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>

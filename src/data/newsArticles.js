@@ -1432,6 +1432,13 @@ export function searchArticles(query, category = 'all') {
     (a.title && a.title.toLowerCase().includes(q)) ||
     (a.subtitle && a.subtitle.toLowerCase().includes(q)) ||
     (a.intro && a.intro.toLowerCase().includes(q)) ||
-    (a.tags && a.tags.some(t => t.toLowerCase().includes(q)))
+    (a.primaryKeyword && a.primaryKeyword.toLowerCase().includes(q)) ||
+    (a.tags && a.tags.some(t => t.toLowerCase().includes(q))) ||
+    (a.keywordVariants && a.keywordVariants.some(k => k.toLowerCase().includes(q))) ||
+    (a.companiesList && a.companiesList.some(c => 
+      c.name.toLowerCase().includes(q) || 
+      (c.focus && c.focus.toLowerCase().includes(q)) ||
+      (c.identity && c.identity.toLowerCase().includes(q))
+    ))
   );
 }

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { ArrowRight, Clock, Flame, BookOpen, TrendingUp, BarChart2, ShieldCheck, Zap } from 'lucide-react';
+import { ArrowRight, Clock, Flame, BookOpen, TrendingUp, BarChart2, ShieldCheck, Zap, Search, Award } from 'lucide-react';
 import { newsArticles, getTrendingArticles, getExplainedArticles, getOpinionArticles } from '../data/newsArticles';
+import { mlmSeoArticles } from '../data/mlmSeoArticles';
 import { getAuthorById } from '../data/authors';
 import { macroIndicators } from '../data/marketData';
 import ArticleCard from '../components/ArticleCard';
@@ -12,6 +13,52 @@ export default function NewsHomePage({
   onSelectAuthor,
   onOpenNewsletter
 }) {
+  // Benchmark Directory Tabs State
+  const [activeBenchmarkTab, setActiveBenchmarkTab] = useState('emerging');
+  const [benchmarkSearch, setBenchmarkSearch] = useState('');
+
+  // Benchmark tabs configuration (treats all companies equally with clean editorial naming)
+  const benchmarkTabs = [
+    {
+      id: 'emerging',
+      label: 'Emerging MLM Companies',
+      articleId: 'india-top-10-emerging-mlm-companies',
+      subtitle: 'New-generation companies with modern product models & digital infrastructure'
+    },
+    {
+      id: 'startups',
+      label: 'New MLM Startups',
+      articleId: 'india-top-10-new-mlm-startups',
+      subtitle: 'Post-2021 new direct selling ventures building sustainable consumer ecosystems'
+    },
+    {
+      id: 'new-mlm',
+      label: 'New MLM Companies',
+      articleId: 'india-top-10-new-mlm-companies',
+      subtitle: 'Recently established direct selling ventures with active distributor networks'
+    },
+    {
+      id: 'new-direct-selling',
+      label: 'New Direct Selling',
+      articleId: 'india-top-10-new-direct-selling-companies',
+      subtitle: 'Modern direct-to-consumer and community commerce direct sellers in India'
+    }
+  ];
+
+  const currentTabConfig = benchmarkTabs.find(t => t.id === activeBenchmarkTab) || benchmarkTabs[0];
+  const activeArticleData = mlmSeoArticles.find(a => a.id === currentTabConfig.articleId);
+  const rawCompanies = activeArticleData?.companies || [];
+
+  const filteredCompanies = rawCompanies.filter(comp => {
+    if (!benchmarkSearch.trim()) return true;
+    const query = benchmarkSearch.toLowerCase();
+    return (
+      comp.name?.toLowerCase().includes(query) ||
+      comp.focusArea?.toLowerCase().includes(query) ||
+      comp.country?.toLowerCase().includes(query)
+    );
+  });
+
   // Lead Story (World Top 10 MLM Companies as requested)
   const leadArticle = newsArticles.find(a => a.id === 'world-top-10-mlm-companies') || newsArticles.find(a => a.isFeaturedLead) || newsArticles[0];
   const leadAuthor = getAuthorById(leadArticle.authorId);
@@ -80,9 +127,97 @@ export default function NewsHomePage({
         </script>
       </Helmet>
 
-      {/* 1. HERO 3-COLUMN NEWSPAPER ENGINE (INDIAN EXPRESS PATTERN) */}
+      {/* 1. HERO 3-COLUMN NEWSPAPER ENGINE WITH DIRECT RANKINGS HUB */}
       <section className="hero-news-section">
         <div className="container">
+          {/* 2026 Core Benchmark Directories — Institutional Editorial Bar */}
+          <div 
+            className="rankings-quick-hub" 
+            style={{ 
+              background: '#F8F6F1', 
+              border: '1px solid #E2DBD2', 
+              borderLeft: '4px solid var(--accent-burgundy)', 
+              padding: '10px 16px', 
+              marginBottom: '16px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '12px',
+              flexWrap: 'wrap'
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <span style={{ 
+                display: 'inline-flex', 
+                alignItems: 'center', 
+                justifyContent: 'center',
+                width: '18px',
+                height: '18px',
+                background: 'var(--accent-burgundy)',
+                color: '#FFFFFF',
+                borderRadius: '2px',
+                fontSize: '0.68rem',
+                fontWeight: '800'
+              }}>
+                §
+              </span>
+              <span style={{ 
+                fontSize: '0.72rem', 
+                fontWeight: '800', 
+                textTransform: 'uppercase', 
+                color: '#111827', 
+                letterSpacing: '0.8px',
+                fontFamily: 'var(--font-sans)'
+              }}>
+                2026 BENCHMARK INDEX:
+              </span>
+            </div>
+            <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', flex: '1 1 auto' }}>
+              {[
+                { id: 'world-top-10-mlm-companies', label: 'World Top 10' },
+                { id: 'india-top-10-mlm-companies', label: 'India Top 10' },
+                { id: 'india-top-10-emerging-mlm-companies', label: 'Top 20 Emerging' },
+                { id: 'india-top-10-new-mlm-startups', label: 'Top 20 Startups' },
+                { id: 'india-top-20-new-direct-selling-companies', label: 'Top 20 Direct Selling' },
+                { id: 'india-top-10-new-mlm-companies', label: 'Top 20 New MLM' },
+                { id: 'emerging-indian-direct-selling-hgr-corporation', label: 'Enterprise Due Diligence' }
+              ].map(pill => (
+                <button
+                  key={pill.id}
+                  onClick={() => onSelectArticle(pill.id)}
+                  style={{
+                    fontSize: '0.74rem',
+                    fontWeight: '600',
+                    padding: '5px 12px',
+                    background: '#FFFFFF',
+                    color: '#262626',
+                    border: '1px solid #D5CEBF',
+                    borderRadius: '3px',
+                    cursor: 'pointer',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '4px',
+                    letterSpacing: '0.2px',
+                    boxShadow: '0 1px 2px rgba(0,0,0,0.02)',
+                    transition: 'all 0.15s ease'
+                  }}
+                  onMouseEnter={e => {
+                    e.currentTarget.style.background = '#1E293B';
+                    e.currentTarget.style.color = '#FFFFFF';
+                    e.currentTarget.style.borderColor = '#1E293B';
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.background = '#FFFFFF';
+                    e.currentTarget.style.color = '#262626';
+                    e.currentTarget.style.borderColor = '#D5CEBF';
+                  }}
+                >
+                  <span>{pill.label}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+
           <div className="hero-newspaper-grid">
             {/* Column 1: Left Briefs / Fast Catch-ups */}
             <div className="hero-left-col">
@@ -183,7 +318,7 @@ export default function NewsHomePage({
               <div>
                 <div className="col-header" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                   <Flame size={15} color="var(--accent-red)" />
-                  <span>Most Read on Dalal Street</span>
+                  <span>Most Read Direct Selling Reports</span>
                 </div>
                 <div className="trending-list">
                   {trendingArticles.map((art, idx) => (
@@ -214,133 +349,408 @@ export default function NewsHomePage({
         </div>
       </section>
 
-      {/* 2. TOP 10 LEADING DIRECT SELLING & MLM COMPANIES COMPARISON INDEX */}
+      {/* 2. TOP 20 DIRECT SELLING & EMERGING ENTERPRISES BENCHMARK DIRECTORY */}
       <section className="category-section-block" style={{ background: '#FAF7F2', borderTop: '2px solid #C27D38', borderBottom: '1px solid var(--ink-border)' }}>
         <div className="container">
-          <div className="section-title-strip" style={{ borderColor: '#C27D38' }}>
+          <div className="section-title-strip" style={{ borderColor: '#C27D38', flexWrap: 'wrap', gap: '12px' }}>
             <div>
               <span style={{ fontSize: '0.72rem', fontWeight: '800', textTransform: 'uppercase', color: '#C27D38', letterSpacing: '0.8px', display: 'block' }}>
-                INDUSTRY BENCHMARK TABLE
+                NATIONAL DIRECT SELLING DIRECTORY • 2026 BENCHMARK
               </span>
-              <h2 style={{ color: '#111111', margin: 0 }}>Top 10 New & Emerging Direct Selling Companies in India (2026 Guide)</h2>
+              <h2 style={{ color: '#111111', margin: '4px 0 0' }}>
+                India Top 20 Emerging &amp; New Direct Selling Companies (2026 Index)
+              </h2>
+              <p style={{ margin: '4px 0 0', fontSize: '0.84rem', color: 'var(--ink-secondary)' }}>
+                {currentTabConfig.subtitle} • Evaluated under Consumer Protection (Direct Selling) Rules, 2021
+              </p>
             </div>
             <button
               className="view-all-link"
-              onClick={() => onSelectArticle('india-top-10-emerging-mlm-companies')}
-              style={{ color: '#C27D38', fontWeight: '800' }}
+              onClick={() => onSelectArticle(currentTabConfig.articleId)}
+              style={{ color: '#C27D38', fontWeight: '800', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
             >
-              <span>Read Full Top 10 Guide & Due Diligence →</span>
+              <span>Read Full Top 20 Guide &amp; Due Diligence →</span>
             </button>
           </div>
 
-          <div className="mlm-table-wrapper" style={{ background: '#FFFFFF', border: '1px solid #E2DBD2', overflowX: 'auto', marginBottom: '16px', WebkitOverflowScrolling: 'touch' }}>
-            <table style={{ width: '100%', minWidth: '540px', borderCollapse: 'collapse', fontSize: '0.88rem', textAlign: 'left' }}>
-              <thead>
+          {/* Interactive Benchmark Controls: Category Tabs & Instant Search */}
+          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '12px', margin: '18px 0 14px' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+              {benchmarkTabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => {
+                    setActiveBenchmarkTab(tab.id);
+                    setBenchmarkSearch('');
+                  }}
+                  style={{
+                    padding: '8px 16px',
+                    fontSize: '0.82rem',
+                    fontWeight: '700',
+                    border: activeBenchmarkTab === tab.id ? '2px solid var(--accent-burgundy)' : '1px solid #D1D5DB',
+                    background: activeBenchmarkTab === tab.id ? 'var(--accent-burgundy)' : '#FFFFFF',
+                    color: activeBenchmarkTab === tab.id ? '#FFFFFF' : '#374151',
+                    cursor: 'pointer',
+                    borderRadius: '2px',
+                    transition: 'all 0.15s ease'
+                  }}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+
+            <div style={{ position: 'relative', minWidth: '240px', maxWidth: '320px', flex: '1 1 auto' }}>
+              <Search size={14} style={{ position: 'absolute', left: '10px', top: '50%', transform: 'translateY(-50%)', color: '#9CA3AF' }} />
+              <input
+                type="text"
+                placeholder="Filter 20 companies by name or focus..."
+                value={benchmarkSearch}
+                onChange={(e) => setBenchmarkSearch(e.target.value)}
+                style={{
+                  width: '100%',
+                  padding: '7px 10px 7px 30px',
+                  fontSize: '0.82rem',
+                  border: '1px solid #D1D5DB',
+                  borderRadius: '2px',
+                  background: '#FFFFFF',
+                  outline: 'none'
+                }}
+              />
+            </div>
+          </div>
+
+          {/* Helper Cohort Indicator for Normal Readers */}
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '8px', marginBottom: '8px', fontSize: '0.74rem', color: '#6B7280' }}>
+            <span>
+              💡 <strong>Directory Structure:</strong> Ranks 1–10 (Established Leaders) • Ranks 11–20 (Emerging Challengers &amp; Startups)
+            </span>
+            <span>Showing 20 of 20 verified enterprises</span>
+          </div>
+
+          {/* Top 20 Responsive Benchmark Table — Neutral, Genuine & Equal Display */}
+          <div className="mlm-table-wrapper" style={{ background: '#FFFFFF', border: '1px solid #E2DBD2', overflowX: 'auto', marginBottom: '16px', maxHeight: '580px', overflowY: 'auto', WebkitOverflowScrolling: 'touch' }}>
+            <table style={{ width: '100%', minWidth: '600px', borderCollapse: 'collapse', fontSize: '0.88rem', textAlign: 'left' }}>
+              <thead style={{ position: 'sticky', top: 0, zIndex: 10, background: '#F8FAFC' }}>
                 <tr style={{ background: '#F8FAFC', borderBottom: '2px solid var(--ink-border-dark)' }}>
-                  <th style={{ padding: '10px 14px', fontWeight: '800', textTransform: 'uppercase', fontSize: '0.75rem' }}>Rank & Company</th>
-                  <th style={{ padding: '10px 14px', fontWeight: '800', textTransform: 'uppercase', fontSize: '0.75rem' }}>Primary Focus Area</th>
-                  <th style={{ padding: '10px 14px', fontWeight: '800', textTransform: 'uppercase', fontSize: '0.75rem' }}>Market Identity</th>
-                  <th style={{ padding: '10px 14px', fontWeight: '800', textTransform: 'uppercase', fontSize: '0.75rem' }}>Action</th>
+                  <th style={{ padding: '12px 14px', fontWeight: '800', textTransform: 'uppercase', fontSize: '0.75rem', width: '28%' }}>Rank &amp; Company</th>
+                  <th style={{ padding: '12px 14px', fontWeight: '800', textTransform: 'uppercase', fontSize: '0.75rem', width: '32%' }}>Primary Focus Area</th>
+                  <th style={{ padding: '12px 14px', fontWeight: '800', textTransform: 'uppercase', fontSize: '0.75rem', width: '22%' }}>Market Classification</th>
+                  <th style={{ padding: '12px 14px', fontWeight: '800', textTransform: 'uppercase', fontSize: '0.75rem', width: '18%', textAlign: 'right' }}>Editorial Action</th>
                 </tr>
               </thead>
               <tbody>
-                {[
-                  { rank: 1, name: "Tiens India (Tianshi)", focus: "Traditional Chinese Health Products", identity: "Emerging Indian" },
-                  { rank: 2, name: "WinnerTree (India)", focus: "Agriculture & Organic Wellness", identity: "Emerging Indian" },
-                  { rank: 3, name: "Sami Direct", focus: "Herbal & Botanical Wellness", identity: "Emerging Indian" },
-                  { rank: 4, name: "Smartway India", focus: "Consumer Products & Daily Essentials", identity: "Emerging Indian" },
-                  { rank: 5, name: "Elken India", focus: "Health, Beauty & Water Purification", identity: "Emerging Indian" },
-                  { rank: 6, name: "HGR Corporation", focus: "Consumer Products & Entrepreneurship", identity: "Emerging Indian" },
-                  { rank: 7, name: "Avon India", focus: "Beauty, Skincare & Personal Care", identity: "Emerging Indian" },
-                  { rank: 8, name: "PM International India", focus: "FitLine Sports & Nutrition", identity: "Emerging Indian" },
-                  { rank: 9, name: "Vestige Prime", focus: "Premium Wellness & Lifestyle", identity: "Emerging Indian" },
-                  { rank: 10, name: "EcoLife Sciences", focus: "Eco-Friendly Consumer Goods", identity: "Emerging Indian" }
-                ].map((comp) => (
-                  <tr key={comp.rank} style={{ borderBottom: '1px solid #E2DBD2', background: '#FFFFFF' }}>
-                    <td style={{ padding: '10px 14px', fontWeight: '700', color: 'var(--ink-primary)' }}>
-                      <span style={{ display: 'inline-block', width: '24px', height: '24px', background: 'var(--accent-burgundy)', color: '#FFFFFF', textAlign: 'center', lineHeight: '24px', fontSize: '0.75rem', fontWeight: '800', marginRight: '8px' }}>
-                        #{comp.rank}
-                      </span>
-                      {comp.name}
-                    </td>
-                    <td style={{ padding: '10px 14px', color: 'var(--ink-secondary)' }}>{comp.focus}</td>
-                    <td style={{ padding: '10px 14px' }}>
-                      <span style={{ fontSize: '0.72rem', fontWeight: '700', textTransform: 'uppercase', padding: '2px 6px', background: '#FEF3C7', color: '#92400E' }}>
-                        {comp.identity}
-                      </span>
-                    </td>
-                    <td style={{ padding: '10px 14px' }}>
-                      <button
-                        onClick={() => onSelectArticle('india-top-10-emerging-mlm-companies')}
-                        style={{ fontSize: '0.76rem', fontWeight: '700', color: 'var(--accent-burgundy)', textTransform: 'uppercase' }}
-                      >
-                        View Profile →
-                      </button>
+                {filteredCompanies.length === 0 ? (
+                  <tr>
+                    <td colSpan={4} style={{ padding: '24px', textAlign: 'center', color: '#6B7280' }}>
+                      No companies match "{benchmarkSearch}". Try searching for another term.
                     </td>
                   </tr>
-                ))}
+                ) : (
+                  filteredCompanies.map((comp) => {
+                    const isHgr = comp.name?.toLowerCase().includes('hgr');
+                    return (
+                      <tr
+                        key={comp.rank}
+                        style={{
+                          borderBottom: '1px solid #E5E7EB',
+                          background: comp.rank % 2 === 0 ? '#F9FAFB' : '#FFFFFF',
+                          transition: 'background 0.15s ease'
+                        }}
+                      >
+                        <td style={{ padding: '11px 14px', fontWeight: '700', color: 'var(--ink-primary)' }}>
+                          <span
+                            style={{
+                              display: 'inline-block',
+                              width: '26px',
+                              height: '24px',
+                              background: 'var(--accent-burgundy)',
+                              color: '#FFFFFF',
+                              textAlign: 'center',
+                              lineHeight: '24px',
+                              fontSize: '0.75rem',
+                              fontWeight: '800',
+                              marginRight: '8px',
+                              borderRadius: '2px'
+                            }}
+                          >
+                            #{comp.rank}
+                          </span>
+                          <span>
+                            {comp.name}
+                          </span>
+                        </td>
+                        <td style={{ padding: '11px 14px', color: 'var(--ink-secondary)', fontSize: '0.84rem' }}>
+                          {comp.focusArea}
+                        </td>
+                        <td style={{ padding: '11px 14px' }}>
+                          <span
+                            style={{
+                              fontSize: '0.72rem',
+                              fontWeight: '700',
+                              textTransform: 'uppercase',
+                              padding: '3px 8px',
+                              background: '#F1F5F9',
+                              color: '#475569',
+                              borderRadius: '2px'
+                            }}
+                          >
+                            {comp.country || 'India'}
+                          </span>
+                        </td>
+                        <td style={{ padding: '11px 14px', textAlign: 'right' }}>
+                          <button
+                            onClick={() => {
+                              if (isHgr) {
+                                onSelectArticle('emerging-indian-direct-selling-hgr-corporation');
+                              } else {
+                                onSelectArticle(currentTabConfig.articleId);
+                              }
+                            }}
+                            style={{
+                              fontSize: '0.76rem',
+                              fontWeight: '700',
+                              color: 'var(--accent-burgundy)',
+                              textTransform: 'uppercase',
+                              background: 'transparent',
+                              border: 'none',
+                              cursor: 'pointer',
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              gap: '3px'
+                            }}
+                          >
+                            <span>View Profile →</span>
+                          </button>
+                        </td>
+                      </tr>
+                    );
+                  })
+                )}
               </tbody>
             </table>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px', marginTop: '16px' }}>
+          {/* Objective Industry Due Diligence & Regulatory Benchmark Banner */}
+          <div
+            style={{
+              background: '#F8FAFC',
+              border: '1px solid #E2E8F0',
+              borderLeft: '4px solid #1E293B',
+              padding: '16px 20px',
+              marginBottom: '20px',
+              display: 'flex',
+              flexWrap: 'wrap',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '14px'
+            }}
+          >
+            <div style={{ flex: '1 1 540px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
+                <ShieldCheck size={16} color="#1E293B" />
+                <span style={{ fontSize: '0.72rem', fontWeight: '800', textTransform: 'uppercase', color: '#1E293B', letterSpacing: '0.6px' }}>
+                  2026 EDITORIAL ASSESSMENT FRAMEWORK • CONSUMER PROTECTION RULES 2021
+                </span>
+              </div>
+              <h4 style={{ margin: '0 0 6px', fontSize: '0.98rem', color: '#0F172A', fontFamily: 'var(--font-serif)' }}>
+                Objective Verification Standards for India’s Direct Selling Ecosystem
+              </h4>
+              <p style={{ margin: 0, fontSize: '0.82rem', color: '#475569', lineHeight: '1.5' }}>
+                Every enterprise in our 20-company directory is audited under uniform standards: authentic product utility, transparent retail pricing, mandatory grievance redressal, and full compliance with the Consumer Protection (Direct Selling) Rules, 2021. Established market leaders (Ranks 1–10) and emerging challenger ventures (Ranks 11–20) are evaluated on identical criteria to provide impartial intelligence for consumers and distributors.
+              </p>
+            </div>
+            <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+              <button
+                onClick={() => onSelectArticle(currentTabConfig.articleId)}
+                style={{
+                  background: 'var(--accent-burgundy)',
+                  color: '#FFFFFF',
+                  padding: '8px 14px',
+                  fontSize: '0.78rem',
+                  fontWeight: '800',
+                  textTransform: 'uppercase',
+                  border: 'none',
+                  borderRadius: '2px',
+                  cursor: 'pointer'
+                }}
+              >
+                Read Full 2026 Guide →
+              </button>
+              <button
+                onClick={() => onNavigateCategory('Explained')}
+                style={{
+                  background: '#FFFFFF',
+                  color: '#1E293B',
+                  border: '1px solid #CBD5E1',
+                  padding: '8px 14px',
+                  fontSize: '0.78rem',
+                  fontWeight: '800',
+                  textTransform: 'uppercase',
+                  borderRadius: '2px',
+                  cursor: 'pointer'
+                }}
+              >
+                Compliance Standards →
+              </button>
+            </div>
+          </div>
+
+          {/* 3 Featured Guides — Elevated UI Cards */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '18px', marginTop: '16px' }}>
             <div
-              style={{ background: '#FFFFFF', border: '1px solid #E2DBD2', padding: '16px', cursor: 'pointer' }}
+              style={{ 
+                background: '#FFFFFF', 
+                border: '1px solid #E2DBD2', 
+                borderTop: '3px solid #C27D38', 
+                padding: '20px', 
+                cursor: 'pointer',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.03)',
+                transition: 'all 0.15s ease',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between'
+              }}
               onClick={() => onSelectArticle('emerging-indian-direct-selling-hgr-corporation')}
+              onMouseEnter={e => {
+                e.currentTarget.style.transform = 'translateY(-2px)';
+                e.currentTarget.style.boxShadow = '0 8px 20px rgba(0,0,0,0.08)';
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.03)';
+              }}
             >
-              <span style={{ fontSize: '0.68rem', fontWeight: '800', textTransform: 'uppercase', color: '#C27D38' }}>Emerging Models</span>
-              <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.05rem', margin: '4px 0 6px' }}>
-                An Emerging Indian Direct Selling Company: Understanding New-Age Models
-              </h4>
-              <p style={{ fontSize: '0.82rem', color: 'var(--ink-muted)', lineHeight: '1.45' }}>
-                How changing consumer behaviour, digital communication, and community-driven commerce are reshaping modern direct selling.
-              </p>
-              <span style={{ fontSize: '0.76rem', color: '#C27D38', fontWeight: '700', textTransform: 'uppercase', marginTop: '6px', display: 'inline-block' }}>
-                Read Deep Dive →
-              </span>
+              <div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+                  <span style={{ fontSize: '0.7rem', fontWeight: '800', textTransform: 'uppercase', color: '#8C4A52', letterSpacing: '0.6px' }}>
+                    INDUSTRY ANALYSIS • 2026
+                  </span>
+                  <span style={{ fontSize: '0.72rem', color: '#6B7280', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                    <Clock size={12} />
+                    <span>8 min read</span>
+                  </span>
+                </div>
+                <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.08rem', margin: '4px 0 8px', lineHeight: '1.35', color: '#111111' }}>
+                  An Emerging Indian Direct Selling Company: Understanding New-Age Models
+                </h4>
+                <p style={{ fontSize: '0.84rem', color: '#4B5563', lineHeight: '1.5' }}>
+                  How changing consumer behaviour, digital communication, and community-driven commerce are reshaping modern direct selling.
+                </p>
+              </div>
+              <div style={{ marginTop: '14px', paddingTop: '10px', borderTop: '1px solid #F3F4F6' }}>
+                <span style={{ fontSize: '0.78rem', color: '#8C4A52', fontWeight: '800', textTransform: 'uppercase', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                  <span>Read Deep Dive</span>
+                  <ArrowRight size={13} />
+                </span>
+              </div>
             </div>
 
             <div
-              style={{ background: '#FFFFFF', border: '1px solid #E2DBD2', padding: '16px', cursor: 'pointer' }}
+              style={{ 
+                background: '#FFFFFF', 
+                border: '1px solid #E2DBD2', 
+                borderTop: '3px solid #1E3A8A', 
+                padding: '20px', 
+                cursor: 'pointer',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.03)',
+                transition: 'all 0.15s ease',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between'
+              }}
               onClick={() => onSelectArticle('fastest-growing-mlm-startup-hgr-corporation')}
+              onMouseEnter={e => {
+                e.currentTarget.style.transform = 'translateY(-2px)';
+                e.currentTarget.style.boxShadow = '0 8px 20px rgba(0,0,0,0.08)';
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.03)';
+              }}
             >
-              <span style={{ fontSize: '0.68rem', fontWeight: '800', textTransform: 'uppercase', color: '#C27D38' }}>Startup Growth Metrics</span>
-              <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.05rem', margin: '4px 0 6px' }}>
-                India’s Fastest-Growing MLM Startup: Beyond the Growth Label
-              </h4>
-              <p style={{ fontSize: '0.82rem', color: 'var(--ink-muted)', lineHeight: '1.45' }}>
-                Evaluating real growth metrics: Customer retention, product utility, digital infrastructure, and sustainable long-term performance.
-              </p>
-              <span style={{ fontSize: '0.76rem', color: '#C27D38', fontWeight: '700', textTransform: 'uppercase', marginTop: '6px', display: 'inline-block' }}>
-                Read Report →
-              </span>
+              <div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+                  <span style={{ fontSize: '0.7rem', fontWeight: '800', textTransform: 'uppercase', color: '#1E3A8A', letterSpacing: '0.6px' }}>
+                    VENTURE RESEARCH • STARTUPS
+                  </span>
+                  <span style={{ fontSize: '0.72rem', color: '#6B7280', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                    <Clock size={12} />
+                    <span>9 min read</span>
+                  </span>
+                </div>
+                <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.08rem', margin: '4px 0 8px', lineHeight: '1.35', color: '#111111' }}>
+                  India’s Fastest-Growing MLM Startup: Beyond the Growth Label
+                </h4>
+                <p style={{ fontSize: '0.84rem', color: '#4B5563', lineHeight: '1.5' }}>
+                  Evaluating real growth metrics: Customer retention, product utility, digital infrastructure, and sustainable long-term performance.
+                </p>
+              </div>
+              <div style={{ marginTop: '14px', paddingTop: '10px', borderTop: '1px solid #F3F4F6' }}>
+                <span style={{ fontSize: '0.78rem', color: '#1E3A8A', fontWeight: '800', textTransform: 'uppercase', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                  <span>Read Report</span>
+                  <ArrowRight size={13} />
+                </span>
+              </div>
             </div>
 
             <div
-              style={{ background: '#FFFFFF', border: '1px solid #E2DBD2', padding: '16px', cursor: 'pointer' }}
+              style={{ 
+                background: '#FFFFFF', 
+                border: '1px solid #E2DBD2', 
+                borderTop: '3px solid #166534', 
+                padding: '20px', 
+                cursor: 'pointer',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.03)',
+                transition: 'all 0.15s ease',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between'
+              }}
               onClick={() => onSelectArticle('india-top-10-emerging-mlm-companies')}
+              onMouseEnter={e => {
+                e.currentTarget.style.transform = 'translateY(-2px)';
+                e.currentTarget.style.boxShadow = '0 8px 20px rgba(0,0,0,0.08)';
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.03)';
+              }}
             >
-              <span style={{ fontSize: '0.68rem', fontWeight: '800', textTransform: 'uppercase', color: '#1B7A43' }}>Due Diligence Checklist</span>
-              <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.05rem', margin: '4px 0 6px' }}>
-                What Should You Check Before Joining Any MLM Company?
-              </h4>
-              <p style={{ fontSize: '0.82rem', color: 'var(--ink-muted)', lineHeight: '1.45' }}>
-                6 crucial verification criteria: Product quality, business model clarity, customer demand, training, and 2021 regulatory compliance.
-              </p>
-              <span style={{ fontSize: '0.76rem', color: '#1B7A43', fontWeight: '700', textTransform: 'uppercase', marginTop: '6px', display: 'inline-block' }}>
-                Read Checklist →
-              </span>
+              <div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+                  <span style={{ fontSize: '0.7rem', fontWeight: '800', textTransform: 'uppercase', color: '#166534', letterSpacing: '0.6px' }}>
+                    REGULATORY AUDIT • 2021 RULES
+                  </span>
+                  <span style={{ fontSize: '0.72rem', color: '#6B7280', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                    <Clock size={12} />
+                    <span>11 min read</span>
+                  </span>
+                </div>
+                <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.08rem', margin: '4px 0 8px', lineHeight: '1.35', color: '#111111' }}>
+                  What Should You Check Before Joining Any MLM Company?
+                </h4>
+                <p style={{ fontSize: '0.84rem', color: '#4B5563', lineHeight: '1.5' }}>
+                  6 crucial verification criteria: Product quality, business model clarity, customer demand, training, and 2021 regulatory compliance.
+                </p>
+              </div>
+              <div style={{ marginTop: '14px', paddingTop: '10px', borderTop: '1px solid #F3F4F6' }}>
+                <span style={{ fontSize: '0.78rem', color: '#166534', fontWeight: '800', textTransform: 'uppercase', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                  <span>Read Checklist</span>
+                  <ArrowRight size={13} />
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 3. SIGNATURE "EXPLAINED" SECTION (INDIAN EXPRESS TRADEMARK) */}
+      {/* 3. SIGNATURE "EXPLAINED" SECTION (EDITORIAL TRADEMARK) */}
       <section className="explained-section">
         <div className="container">
           <div className="explained-header-row">
             <div className="explained-title-wrap">
-              <span className="explained-badge">IBC SIGNATURE</span>
+              <span className="explained-badge">MLM INSIGHT SIGNATURE</span>
               <h2 className="explained-main-heading">Explained</h2>
             </div>
             <button

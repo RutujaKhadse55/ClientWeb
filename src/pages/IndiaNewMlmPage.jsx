@@ -26,11 +26,11 @@ export default function IndiaNewMlmPage({ onNavigate }) {
           {article.h1}
         </h1>
         <p className="article-deck" style={{ color: '#E6EFEA', fontSize: '1.18rem', lineHeight: '1.55', marginBottom: '24px', fontFamily: 'var(--font-serif)' }}>
-          New MLM companies in India are redefining direct selling — with digital infrastructure, modern product portfolios, and structured entrepreneurship models. This guide covers the top 10 new MLM companies in India worth knowing about in 2026.
+          New MLM companies in India are redefining direct selling — with digital infrastructure, modern product portfolios, and structured entrepreneurship models. This guide covers the top 20 new MLM companies in India worth knowing about in 2026.
         </p>
 
         <div className="article-byline">
-          <span>By Direct Selling India Research Desk</span>
+          <span>By MLM Insight India Research Desk</span>
           <span>&bull;</span>
           <span><Clock size={13} style={{ verticalAlign: 'middle', marginRight: '4px' }} />{article.readTime}</span>
           <span>&bull;</span>

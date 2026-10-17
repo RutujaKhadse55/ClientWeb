@@ -84,15 +84,15 @@ export default function CategoryPage({
   }, [effectiveCategory]);
 
   const catSlug = (displayCategory || '').toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-  const canonicalUrl = `https://directsellingindia.org/category/${catSlug}`;
+  const canonicalUrl = `https://mlminsight.org/category/${catSlug}`;
 
   return (
     <div style={{ padding: '24px 0 60px', background: '#FFFFFF' }}>
       <Helmet>
-        <title>{`${displayCategory} News & Analysis | Direct Selling India`}</title>
-        <meta name="description" content={categoryDescriptions[displayCategory] || `Read the latest ${displayCategory} articles and rankings on Direct Selling India.`} />
+        <title>{`${displayCategory} News & Analysis | MLM Insight India`}</title>
+        <meta name="description" content={categoryDescriptions[displayCategory] || `Read the latest ${displayCategory} articles and rankings on MLM Insight India.`} />
         <link rel="canonical" href={canonicalUrl} />
-        <meta property="og:title" content={`${displayCategory} | Direct Selling India`} />
+        <meta property="og:title" content={`${displayCategory} | MLM Insight India`} />
         <meta property="og:description" content={categoryDescriptions[displayCategory] || `Latest updates in ${displayCategory}`} />
         <meta property="og:url" content={canonicalUrl} />
       </Helmet>

@@ -18,7 +18,7 @@ export default function SearchModal({ onClose, onSelectArticle }) {
           <input 
             type="text" 
             className="search-input-field" 
-            placeholder="Search news, companies, sectors, macro policies..." 
+            placeholder="Search MLM rankings, companies (e.g. HGR, Amway, Vestige), startups..." 
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             autoFocus
@@ -26,6 +26,29 @@ export default function SearchModal({ onClose, onSelectArticle }) {
           <button onClick={onClose} style={{ color: 'var(--ink-muted)' }}>
             <X size={20} />
           </button>
+        </div>
+
+        {/* Quick Search Suggestion Chips */}
+        <div style={{ padding: '8px 20px', background: '#F8FAFC', borderBottom: '1px solid var(--ink-border)', display: 'flex', gap: '6px', alignItems: 'center', flexWrap: 'wrap' }}>
+          <span style={{ fontSize: '0.7rem', fontWeight: '800', color: '#6B7280', textTransform: 'uppercase' }}>Popular:</span>
+          {['Top 20 Emerging MLM', 'Top 20 New Startups', 'HGR Corporation', 'India Top 10', 'New Direct Selling'].map(term => (
+            <button
+              key={term}
+              onClick={() => setQuery(term)}
+              style={{
+                fontSize: '0.7rem',
+                fontWeight: '600',
+                padding: '2px 8px',
+                background: '#FFFFFF',
+                color: 'var(--accent-burgundy)',
+                border: '1px solid #D1D5DB',
+                borderRadius: '12px',
+                cursor: 'pointer'
+              }}
+            >
+              {term}
+            </button>
+          ))}
         </div>
 
         {/* Category Filter Pills */}
@@ -57,7 +80,7 @@ export default function SearchModal({ onClose, onSelectArticle }) {
 
           {results.length === 0 ? (
             <div style={{ padding: '30px 0', textAlign: 'center', color: 'var(--ink-muted)' }}>
-              <p>No matching business reports or articles found.</p>
+              <p>No matching business reports or articles found. Try searching for "HGR", "Startups", or "Emerging".</p>
             </div>
           ) : (
             results.map(art => (
