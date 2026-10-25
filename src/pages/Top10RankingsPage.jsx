@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Clock, Filter, CheckCircle, AlertTriangle, ShieldCheck, ArrowRight } from 'lucide-react';
 import { companiesData } from '../data/companies';
 
@@ -12,6 +13,14 @@ export default function Top10RankingsPage({ onNavigate, onOpenChecklist }) {
 
   return (
     <div className="container" style={{ padding: '48px 24px 80px' }}>
+      <Helmet>
+        <title>Top 10 MLM Companies in India (2026 Directory) | MLM Insight</title>
+        <meta name="description" content="Official rankings and editorial comparison of the top 10 MLM companies in India for 2026. Filter by domestic and international network marketing firms." />
+        <link rel="canonical" href="https://mlminsight.org/rankings" />
+        <meta property="og:title" content="Top 10 MLM Companies in India (2026 Directory) | MLM Insight" />
+        <meta property="og:description" content="Official rankings and editorial comparison of the top 10 MLM companies in India for 2026. Filter by domestic and international network marketing firms." />
+        <meta property="og:url" content="https://mlminsight.org/rankings" />
+      </Helmet>
       {/* Header */}
       <div className="article-header-box">
         <button 

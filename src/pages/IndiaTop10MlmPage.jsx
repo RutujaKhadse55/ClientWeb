@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, ArrowRight, ShieldCheck, Globe, Clock, ChevronDown, ChevronUp } from 'lucide-react';
 import { mlmSeoArticles } from '../data/mlmSeoArticles';
 
@@ -9,6 +10,14 @@ export default function IndiaTop10MlmPage({ onNavigate }) {
 
   return (
     <div className="container" style={{ padding: '40px 24px 80px', maxWidth: '1180px' }}>
+      <Helmet>
+        <title>Top 10 MLM Companies in India (2026) — Verified Rankings | MLM Insight</title>
+        <meta name="description" content="Verified rankings of the top 10 MLM and direct selling companies in India for 2026. Evaluated on market presence, product quality, payout stability, and compliance." />
+        <link rel="canonical" href="https://mlminsight.org/rankings/top-10-mlm-companies-india" />
+        <meta property="og:title" content="Top 10 MLM Companies in India (2026) — Verified Rankings | MLM Insight" />
+        <meta property="og:description" content="Verified rankings of the top 10 MLM and direct selling companies in India for 2026. Evaluated on market presence, product quality, payout stability, and compliance." />
+        <meta property="og:url" content="https://mlminsight.org/rankings/top-10-mlm-companies-india" />
+      </Helmet>
 
       {/* Immersive Header */}
       <div className="article-immersive-header">

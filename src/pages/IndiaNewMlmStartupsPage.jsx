@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, ArrowRight, ShieldCheck, Globe, Clock, ChevronDown, ChevronUp, Sparkles, Zap } from 'lucide-react';
 import { mlmSeoArticles } from '../data/mlmSeoArticles';
 
@@ -9,6 +10,14 @@ export default function IndiaNewMlmStartupsPage({ onNavigate }) {
 
   return (
     <div className="container" style={{ padding: '40px 24px 80px', maxWidth: '1180px' }}>
+      <Helmet>
+        <title>{article?.metaTitle || "India Top 20 New MLM Startups (2026) | MLM Insight"}</title>
+        <meta name="description" content={article?.metaDescription || "Overview of newer direct selling ventures and startups in India."} />
+        <link rel="canonical" href="https://mlminsight.org/rankings/new-mlm-startups-india" />
+        <meta property="og:title" content={article?.metaTitle || "India Top 20 New MLM Startups (2026) | MLM Insight"} />
+        <meta property="og:description" content={article?.metaDescription} />
+        <meta property="og:url" content="https://mlminsight.org/rankings/new-mlm-startups-india" />
+      </Helmet>
 
       {/* Immersive Header */}
       <div className="article-immersive-header">

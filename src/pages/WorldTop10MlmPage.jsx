@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, ArrowRight, ShieldCheck, Globe, Clock, ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
 import { mlmSeoArticles } from '../data/mlmSeoArticles';
 
@@ -9,6 +10,14 @@ export default function WorldTop10MlmPage({ onNavigate }) {
 
   return (
     <div className="container" style={{ padding: '40px 24px 80px', maxWidth: '1180px' }}>
+      <Helmet>
+        <title>{article?.metaTitle || "World Top 10 MLM Companies (2026 Rankings) | MLM Insight"}</title>
+        <meta name="description" content={article?.metaDescription || "Overview of the world's 10 most recognised direct selling and MLM companies."} />
+        <link rel="canonical" href="https://mlminsight.org/rankings/world-top-10-mlm-companies" />
+        <meta property="og:title" content={article?.metaTitle || "World Top 10 MLM Companies (2026 Rankings) | MLM Insight"} />
+        <meta property="og:description" content={article?.metaDescription} />
+        <meta property="og:url" content="https://mlminsight.org/rankings/world-top-10-mlm-companies" />
+      </Helmet>
 
       {/* Immersive Header */}
       <div className="article-immersive-header">
